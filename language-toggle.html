@@ -1,0 +1,18 @@
+<button id="lang-toggle">🌐 English</button>
+
+<script>
+  const setLang = (lang) => {
+    document.body.classList.remove('lang-es', 'lang-en');
+    document.body.classList.add(`lang-${lang}`);
+    localStorage.setItem('lang', lang);
+    document.getElementById('lang-toggle').innerText =
+      lang === 'es' ? '🌐 English' : '🌐 Español';
+  };
+
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    const current = document.body.classList.contains('lang-es') ? 'es' : 'en';
+    setLang(current === 'es' ? 'en' : 'es');
+  });
+
+  setLang(localStorage.getItem('lang') || 'es');
+</script>

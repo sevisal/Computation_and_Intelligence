@@ -1,0 +1,25 @@
+/* Main accent color */
+$primary: #ff6f00;  /* Orange-like tone */
+
+/* Callout colors */
+.callout-note {
+  border-left-color: #ff9800;
+}
+.callout-question {
+  border-left-color: #009688;
+}
+.callout-tip {
+  border-left-color: #4caf50;
+}
+
+/* Font */
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Images centered */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
