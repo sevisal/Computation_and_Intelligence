@@ -6,14 +6,12 @@ website:
   title: "Computación e Inteligencia"
   navbar:
     left:
-      - text: "{{< var lang >}}"
+      - text: "🏠 Home"
         href: index.qmd
       - text: "Labs"
         menu:
           - text: "Lab 1"
             href: lab1.qmd
-  page-footer:
-    center: "© 2025 Carlos Sevilla Salcedo"
 
 format:
   html:
@@ -23,18 +21,4 @@ format:
     toc-depth: 3
     code-fold: true
     page-layout: article
-
-# Language-specific builds
-profiles:
-  - id: es
-    format:
-      html:
-        lang: es
-    execute:
-      filters: ["lang=es"]
-  - id: en
-    format:
-      html:
-        lang: en
-    execute:
-      filters: ["lang=en"]
+    include-after-body: language-toggle.html
