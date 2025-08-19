@@ -24,22 +24,31 @@ img {
   margin-right: auto;
 }
 
-/* Language switching - DEFAULT: Spanish only */
-.content-es {
+/* Language switching - Show Spanish by default, hide English */
+.lang-es {
   display: block;
 }
 
-.content-en {
+.lang-en {
   display: none;
 }
 
-/* When English is selected */
-body.lang-en .content-es {
+/* When body has lang-en class, show English and hide Spanish */
+body.lang-en .lang-es {
   display: none;
 }
 
-body.lang-en .content-en {
+body.lang-en .lang-en {
   display: block;
+}
+
+/* When body has lang-es class, show Spanish and hide English */
+body.lang-es .lang-es {
+  display: block;
+}
+
+body.lang-es .lang-en {
+  display: none;
 }
 
 /* Language toggle button styling */
@@ -62,6 +71,3 @@ body.lang-en .content-en {
 #lang-toggle:hover {
   background: darken($primary, 10%);
 }
-
-/* Hide Spanish by default */
-.lang-es { display: none; }
