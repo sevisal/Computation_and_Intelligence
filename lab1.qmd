@@ -1,53 +1,26 @@
----
-title: "Lab 1 — Introduction to Machine Learning"
----
-
-## Introduction
-
-::: {.content-es}
-¡Bienvenidos al primer laboratorio de Introducción al Aprendizaje Automático!  
-En esta sesión, exploraremos el concepto de machine learning usando **Orange3**.  
-Aprenderemos:
-- Qué es un modelo de machine learning
-- Cómo cargar y explorar datos
-- Cómo entrenar un modelo básico
-:::
-
-::: {.content-en}
-Welcome to the first lab of Introduction to Machine Learning!  
-In this session, we’ll explore the concept of machine learning using **Orange3**.  
-We’ll learn:
-- What a machine learning model is
-- How to load and explore data
-- How to train a basic model
-:::
+# <div class="content-es">Laboratorio 1: Análisis Exploratorio</div>
+<div class="content-en">Lab 1: Exploratory Analysis</div>
 
 ---
 
-## Step 1: Load the Dataset
+<div class="content-es">
 
-::: {.content-es}
-1. Abre **Orange3**  
-2. Arrastra el widget **File** y carga el dataset `iris.tab`  
-3. Conéctalo al widget **Data Table** para visualizarlo
-:::
+Bienvenido al **Laboratorio 1**.  
+En este laboratorio aprenderemos a explorar datos con Orange3.  
 
-::: {.content-en}
-1. Open **Orange3**  
-2. Drag the **File** widget and load the `iris.tab` dataset  
-3. Connect it to the **Data Table** widget to visualize it
-:::
+- Cargar un conjunto de datos.  
+- Visualizar distribuciones.  
+- Detectar valores atípicos.  
 
----
+</div>
 
-## Step 2: Train a Model
+<div class="content-en">
 
-::: {.content-es}
-Usa el widget **Logistic Regression** y conéctalo a **Test & Score**.  
-Evalúa la precisión y analiza los resultados.
-:::
+Welcome to **Lab 1**.  
+In this lab we will learn how to explore data with Orange3.  
 
-::: {.content-en}
-Use the **Logistic Regression** widget and connect it to **Test & Score**.  
-Evaluate accuracy and analyze the results.
-:::
+- Load a dataset.  
+- Visualize distributions.  
+- Detect outliers.  
+
+</div>
