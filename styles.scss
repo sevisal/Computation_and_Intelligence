@@ -24,17 +24,18 @@ img {
   margin-right: auto;
 }
 
-/* Language switching */
-body:not(.lang-es) .content-es {
-  display: none;
-}
-
-body:not(.lang-en) .content-en {
-  display: none;
-}
-
-body.lang-es .content-es {
+/* Language switching - DEFAULT: Spanish only */
+.content-es {
   display: block;
+}
+
+.content-en {
+  display: none;
+}
+
+/* When English is selected */
+body.lang-en .content-es {
+  display: none;
 }
 
 body.lang-en .content-en {
@@ -55,29 +56,9 @@ body.lang-en .content-en {
   font-size: 14px;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
 }
 
 #lang-toggle:hover {
   background: darken($primary, 10%);
-}
-
-/* Default language is Spanish */
-body {
-  &:not(.lang-en) {
-    .content-es {
-      display: block;
-    }
-    .content-en {
-      display: none;
-    }
-  }
-  
-  &.lang-en {
-    .content-es {
-      display: none;
-    }
-    .content-en {
-      display: block;
-    }
-  }
 }

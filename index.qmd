@@ -33,7 +33,3 @@ This site contains all the laboratory materials for the course. Here you'll find
 - **Labs**: Contains all course laboratories
 - **🌐**: Switch between Spanish and English
 :::
-
-<div id="lang-toggle-container">
-{{< include language-toggle.html >}}
-</div>
