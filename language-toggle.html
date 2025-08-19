@@ -2,22 +2,25 @@
 
 <script>
   const setLang = (lang) => {
-    if (lang === 'en') {
-      document.body.classList.add('lang-en');
-      document.getElementById('lang-toggle').innerText = '🌐 Español';
-    } else {
-      document.body.classList.remove('lang-en');
-      document.getElementById('lang-toggle').innerText = '🌐 English';
-    }
-    localStorage.setItem('lang', lang);
+    document.body.classList.remove("lang-es", "lang-en");
+    document.body.classList.add(`lang-${lang}`);
+    localStorage.setItem("lang", lang);
+
+    // toggle button text
+    const btn = document.getElementById("lang-toggle");
+    if (btn) btn.innerText = lang === "es" ? "🌐 English" : "🌐 Español";
   };
 
-  document.getElementById('lang-toggle').addEventListener('click', () => {
-    const isEnglish = document.body.classList.contains('lang-en');
-    setLang(isEnglish ? 'es' : 'en');
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("lang-toggle");
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        const current = document.body.classList.contains("lang-es") ? "es" : "en";
+        setLang(current === "es" ? "en" : "es");
+      });
+    }
 
-  // Initialize with saved language or default to Spanish
-  const savedLang = localStorage.getItem('lang') || 'es';
-  setLang(savedLang);
+    // set initial language
+    setLang(localStorage.getItem("lang") || "es");
+  });
 </script>
