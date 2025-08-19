@@ -12,6 +12,8 @@ website:
         menu:
           - text: "Lab 1"
             href: lab1.qmd
+  page-footer:
+    center: "© 2025 Carlos Sevilla Salcedo"
 
 format:
   html:

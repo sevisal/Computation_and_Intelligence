@@ -62,3 +62,6 @@ body.lang-en .content-en {
 #lang-toggle:hover {
   background: darken($primary, 10%);
 }
+
+/* Hide Spanish by default */
+.lang-es { display: none; }
