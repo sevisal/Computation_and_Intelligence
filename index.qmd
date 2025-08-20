@@ -1,35 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Language Toggle Example</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <button id="lang-toggle">English</button>
+---
+title: "Language Toggle Test"
+---
 
-  <div class="content-es">
-    <h1>¡Hola!</h1>
-    <p>Este es el contenido en español.</p>
-  </div>
+<button id="lang-toggle">English</button>
 
-  <div class="content-en">
-    <h1>Hello!</h1>
-    <p>This is the English content.</p>
-  </div>
+<div class="content-es">
+# ¡Hola!
+Este es el contenido en **español**.
+</div>
 
-  <script>
-    const button = document.getElementById("lang-toggle");
+<div class="content-en">
+# Hello!
+This is the content in **English**.
+</div>
 
-    button.addEventListener("click", () => {
-      document.body.classList.toggle("lang-en");
+```{=html}
+<script>
+  const button = document.getElementById("lang-toggle");
 
-      if (document.body.classList.contains("lang-en")) {
-        button.textContent = "Español";
-      } else {
-        button.textContent = "English";
-      }
-    });
-  </script>
-</body>
-</html>
+  button.addEventListener("click", () => {
+    document.body.classList.toggle("lang-en");
+    if (document.body.classList.contains("lang-en")) {
+      button.textContent = "Español";
+    } else {
+      button.textContent = "English";
+    }
+  });
+</script>
