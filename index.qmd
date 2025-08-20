@@ -1,29 +1,36 @@
+::: {.lang .es}
 ---
-title: "Language Toggle Test"
+title: "Computación e Inteligencia"
 ---
+¡Bienvenidos al curso de **Computación e Inteligencia**!
 
-<button id="lang-toggle">English</button>
+Este sitio contiene todos los materiales del laboratorio para el curso. Aquí encontrarás:
 
-<div class="content-es">
-# ¡Hola!
-Este es el contenido en **español**.
-</div>
+- Laboratorios prácticos
+- Ejercicios interactivos  
+- Recursos adicionales
 
-<div class="content-en">
-# Hello!
-This is the content in **English**.
-</div>
+### Navegación
 
-```{=html}
-<script>
-  const button = document.getElementById("lang-toggle");
+- **Labs**: Contiene todos los laboratorios del curso
+- **🌐**: Cambia entre Español e Inglés
+:::
 
-  button.addEventListener("click", () => {
-    document.body.classList.toggle("lang-en");
-    if (document.body.classList.contains("lang-en")) {
-      button.textContent = "Español";
-    } else {
-      button.textContent = "English";
-    }
-  });
-</script>
+::: {.lang .en}
+---
+title: "Computation and Inteligence"
+---
+Welcome to the **Computation and Intelligence** course!
+
+This site contains all the laboratory materials for the course. Here you'll find:
+
+- Practical laboratories
+- Interactive exercises
+- Additional resources
+
+### Navigation
+
+- **Labs**: Contains all course laboratories
+- **🌐**: Switch between Spanish and English
+
+:::

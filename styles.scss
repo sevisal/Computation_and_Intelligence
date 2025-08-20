@@ -1,20 +1,4 @@
-/* Default: Spanish visible, English hidden */
-.content-es { display: block; }
-.content-en { display: none; }
-
-body.lang-en .content-es { display: none; }
-body.lang-en .content-en { display: block; }
-
-/* Toggle button */
-#lang-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #ff6f00;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 1000;
+.lang-switch {
+  font-size: 1.2em;
+  padding: 0 0.5rem;
 }
