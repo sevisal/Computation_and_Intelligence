@@ -2,12 +2,26 @@ project:
   type: website
 
 website:
-  title: "ML Lab"
+  title: "Computation and Intelligence"
   site-url: "https://sevisal.github.io/Computation_and_Intelligence/"
-  navbar: false
+  navbar:
+    left:
+      - text: "🏠 Home"
+        href: index.qmd
+      - text: "Labs"
+        menu:
+          - text: "Lab 1"
+            href: lab1.qmd
+    right:
+      - text: "🌐"
+        href: "javascript:void(0)"
+
+  page-footer:
+    center: "© 2025 Carlos Sevilla Salcedo"
 
 format:
   html:
     theme: cosmo
     css: styles.css
-    include-after-body: lang-toggle.html
+    include-after-body: lang.js
+    relative_urls: true 
