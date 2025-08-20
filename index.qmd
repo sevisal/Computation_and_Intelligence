@@ -1,35 +1,14 @@
 ---
-title: "Computación e Inteligencia"
+title: "Lab 1"
+format: html
 ---
 
-## Welcome / Bienvenidos
+<div class="content-es">
+# Bienvenido al Laboratorio 1
+Este es el contenido en **español**.
+</div>
 
-::: {.content-es}
-¡Bienvenidos al curso de **Computación e Inteligencia**!
-
-Este sitio contiene todos los materiales del laboratorio para el curso. Aquí encontrarás:
-
-- Laboratorios prácticos
-- Ejercicios interactivos  
-- Recursos adicionales
-
-### Navegación
-
-- **Labs**: Contiene todos los laboratorios del curso
-- **🌐**: Cambia entre Español e Inglés
-:::
-
-::: {.content-en}
-Welcome to the **Computation and Intelligence** course!
-
-This site contains all the laboratory materials for the course. Here you'll find:
-
-- Practical laboratories
-- Interactive exercises
-- Additional resources
-
-### Navigation
-
-- **Labs**: Contains all course laboratories
-- **🌐**: Switch between Spanish and English
-:::
+<div class="content-en">
+# Welcome to Lab 1
+This is the content in **English**.
+</div>

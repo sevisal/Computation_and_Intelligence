@@ -1,31 +1,9 @@
-/* Accent color */
-$primary: #ff6f00;
+/* Default: Spanish visible, English hidden */
+.content-es { display: block; }
+.content-en { display: none; }
 
-/* Font */
-body {
-  font-family: "Segoe UI", Roboto, sans-serif;
-}
-
-/* Images centered */
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Language switching */
-.content-es {
-  display: block;
-}
-.content-en {
-  display: none;
-}
-body.lang-en .content-es {
-  display: none;
-}
-body.lang-en .content-en {
-  display: block;
-}
+body.lang-en .content-es { display: none; }
+body.lang-en .content-en { display: block; }
 
 /* Toggle button */
 #lang-toggle {
@@ -38,9 +16,5 @@ body.lang-en .content-en {
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
   z-index: 1000;
-}
-#lang-toggle:hover {
-  background: #e65c00;
 }
