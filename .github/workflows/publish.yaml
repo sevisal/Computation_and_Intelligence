@@ -2,7 +2,7 @@ name: Quarto Publish
 
 on:
   push:
-    branches: main
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -11,38 +11,31 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache Quarto
-        uses: actions/cache@v4
-        with:
-          path: ~/.quarto
-          key: ${{ runner.os }}-quarto-${{ hashFiles('_quarto.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-quarto-
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-      - uses: quarto-dev/quarto-actions/setup@v2
-      
       - name: Render Quarto Project
         run: quarto render
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v2
         with:
           path: _site
 
   deploy:
-    needs: build-deploy
     runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
