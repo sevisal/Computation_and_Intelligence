@@ -1,10 +1,12 @@
 <script>
-let currentLang = "en";
+let currentLang = localStorage.getItem("lang") || "en";
 
 function qs(sel) { return document.querySelector(sel); }
 
 function setLanguage(lang) {
   currentLang = lang;
+  localStorage.setItem("lang", lang);  // ✅ save preference
+
 
   // 1) Mostrar/ocultar bloques de contenido
   document.querySelectorAll(".lang").forEach(el => {

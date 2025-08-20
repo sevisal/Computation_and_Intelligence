@@ -1,7 +1,5 @@
 ::: {.lang .es}
----
-title: "Computación e Inteligencia"
----
+# Computación e Inteligencia
 ¡Bienvenidos al curso de **Computación e Inteligencia**!
 
 Este sitio contiene todos los materiales del laboratorio para el curso. Aquí encontrarás:
@@ -17,9 +15,7 @@ Este sitio contiene todos los materiales del laboratorio para el curso. Aquí en
 :::
 
 ::: {.lang .en}
----
-title: "Computation and Inteligence"
----
+# Computation and Inteligence
 Welcome to the **Computation and Intelligence** course!
 
 This site contains all the laboratory materials for the course. Here you'll find:
