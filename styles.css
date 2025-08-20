@@ -1,0 +1,93 @@
+/* ---------- Typography ---------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background-color: #5F96DD;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar a.nav-link {
+  color: white !important;
+  margin-right: 1rem;
+}
+
+.navbar a.nav-link:hover {
+  color: #ffdd57 !important;
+}
+
+/* ---------- Language Button ---------- */
+a[href='javascript:void(0)'] {
+  font-weight: bold;
+  background-color: #5F96DD;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  color: #333 !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a[href='javascript:void(0)']:hover {
+  background-color: #528fdd;
+  color: #222 !important;
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 2rem 0;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background-color: #5F96DD;
+  border-color: #5F96DD;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4578c2;
+  border-color: #4578c2;
+}
+
+/* ---------- Misc ---------- */
+footer {
+  padding: 1.5rem 0;
+  text-align: center;
+  background-color: #f5f5f5;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Optional: language content fade-in */
+.lang {
+  opacity: 1; /* already visible */
+  transition: opacity 0.3s ease;
+}

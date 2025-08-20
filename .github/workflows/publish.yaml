@@ -1,52 +1,33 @@
-name: Quarto Publish
+name: Render and Deploy Quarto site
 
 on:
   push:
-    branches: main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches:
+      - main   # deploy when main branch changes
+  workflow_dispatch:
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Step 1: Checkout repo
+      - uses: actions/checkout@v3
 
-      - name: Cache Quarto
-        uses: actions/cache@v4
+      # Step 2: Setup Quarto
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
         with:
-          path: ~/.quarto
-          key: ${{ runner.os }}-quarto-${{ hashFiles('_quarto.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-quarto-
+          quarto-version: '1.3.351' # or latest
 
-      - uses: quarto-dev/quarto-actions/setup@v2
-      
-      - name: Render Quarto Project
+      # Step 3: Render the site
+      - name: Render site
         run: quarto render
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-  deploy:
-    needs: build-deploy
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+      # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          keep_files: false
