@@ -12,6 +12,27 @@ Este sitio contiene todos los materiales del laboratorio para el curso. Aquí en
 
 - **Labs**: Contiene todos los laboratorios del curso
 - **🌐**: Cambia entre Español e Inglés
+
+### Laboratorios
+
+<div class="row">
+```{r results='asis'}
+labs <- quarto::from_yaml("_labs.yml")
+for (lab in labs) {
+  cat(sprintf('
+  <div class="col-md-4">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">%s</h5>
+        <p class="card-text">%s</p>
+        <a href="%s" class="btn btn-primary">Ir al Laboratorio</a>
+      </div>
+    </div>
+  </div>
+  ', lab$title$en, lab$description$en, lab$link))
+}
+```
+</div>
 :::
 
 ::: {.lang .en}
@@ -29,4 +50,24 @@ This site contains all the laboratory materials for the course. Here you'll find
 - **Labs**: Contains all course laboratories
 - **🌐**: Switch between Spanish and English
 
+### Labs
+
+<div class="row">
+```{r results='asis'}
+labs <- quarto::from_yaml("_labs.yml")
+for (lab in labs) {
+  cat(sprintf('
+  <div class="col-md-4">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">%s</h5>
+        <p class="card-text">%s</p>
+        <a href="%s" class="btn btn-primary">Go to Lab</a>
+      </div>
+    </div>
+  </div>
+  ', lab$title$en, lab$description$en, lab$link))
+}
+```
+</div>
 :::
