@@ -66,12 +66,17 @@ function switchLang() {
   if (url.includes(".en.")) {
     url = url.replace(".en.", ".es.");
   } else if (url.includes(".es.")) {
-    url = url.replace(".es.", ".en.");
+    if (url.includes("index.es.html")){
+        url = url.replace(".es.", ".");
+    }
+    else{
+        url = url.replace(".es.", ".en.");
+    }
   } else {
     // If at top-level (no .en. or .es.), default to targetLang folder
-    let parts = url.split('/');
-    parts.splice(parts.length - 1, 0, hello); // insert before last element
-    url = parts.join('/');
+    let parts = url.split('.');
+    parts.splice(parts.length - 1, 0, "es"); // insert before last element
+    url = parts.join('.');
   }
 
   // Navigate to the new URL

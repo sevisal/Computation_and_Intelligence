@@ -3,6 +3,7 @@ title: "Welcome to the **Computation and Intelligence** course!"
 format:
   html:
     toc-depth: 3
+output-file: index.html
 ---
 
 This site contains all the laboratory materials:
