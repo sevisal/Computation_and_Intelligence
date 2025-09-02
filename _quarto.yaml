@@ -1,20 +1,39 @@
 project:
   type: website
 
+languages:
+  en: 
+    title: "Computation and Intelligence"
+  es:
+    title: "Computación e Inteligencia"
+
 website:
   title: "Computation and Intelligence"
   site-url: "https://sevisal.github.io/Computation_and_Intelligence/"
   navbar:
     left:
       - text: "🏠 Home"
-        href: index.qmd
+        href: index.en.qmd
       - text: "Labs"
         menu:
           - text: "Lab 1"
-            href: lab1.qmd
+            href: lab1.en.qmd
+          # - text: "Lab 2"
+          #   href: lab2.en.qmd
+          # - text: "Lab 3"
+          #   href: lab3.en.qmd
+          # - text: "Lab 4"
+          #   href: lab4.en.qmd
+          # - text: "Lab 5"
+          #   href: lab5.en.qmd
+          # - text: "Lab 6"
+          #   href: lab6.en.qmd
+          # - text: "Lab 7"
+          #   href: lab7.en.qmd
     right:
       - text: "🌐"
         href: "javascript:void(0)"
+        id: lang-toggle
 
   page-footer:
     center: "© 2025 Carlos Sevilla Salcedo"
@@ -23,5 +42,16 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    include-after-body: lang.js
+    include-after-body: language.js
     relative_urls: true 
+    page-layout: full
+    toc: true
+    toc-location: left
+    toc-depth: 4
+    page-navigation: true
+    anchor-sections: true
+    toc-title: "Contents"
+    # Right margin for your cards
+    grid:
+      margin-width: 320px
+      sidebar-width: 260px

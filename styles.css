@@ -3,6 +3,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #333;
   line-height: 1.6;
+  text-align: justify;
 }
 h1, h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
@@ -50,19 +51,7 @@ a[href='javascript:void(0)']:hover {
 
 /* ---------- Sections ---------- */
 section {
-  padding: 2rem 0;
-}
-
-/* ---------- Cards ---------- */
-.card {
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-  border-radius: 8px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 0.5rem 0;
 }
 
 /* ---------- Buttons ---------- */
@@ -91,3 +80,98 @@ footer {
   opacity: 1; /* already visible */
   transition: opacity 0.3s ease;
 }
+
+/* Left column sticky index */
+.column:first-child {
+  position: sticky;
+  top: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid #ddd;
+}
+
+/* Right column lab cards */
+.column:last-child {
+  padding-left: 1rem;
+}
+
+.column:last-child .btn-primary {
+  display: block;
+  width: 100%;
+}
+
+.column:last-child img {
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.column:last-child img:hover {
+  transform: scale(1.05);
+}
+
+/* Style right-side cards */
+.right-cards {
+  position: fixed;
+  top: 100px;       /* adjust depending on header height */
+  right: 2rem;
+  width: 250px;
+}
+
+.card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Push main body so it doesn’t overlap with cards */
+main.content {
+  margin-right: 300px;
+}
+
+/* TOC style adjustments */
+.q-toc {
+  background: #fdfdfd;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+.q-toc a {
+  color: #5F96DD;
+  text-decoration: none;
+}
+.q-toc .active > a {
+  font-weight: bold;
+  color: #003366;
+}
+.toc {
+  text-align: left;
+  text-indent: 0;
+}
+
+/* Cards */
+.objective-card { background-color: #c0e2fa; padding: 1em; border-radius: 6px; margin-bottom: 1em; }
+.question-card { background-color: #bafde1; padding: 1em; border-radius: 6px; margin-bottom: 1em; }
+.final-note-card { background-color: #fff1dc; padding: 1em; border-radius: 6px; margin-bottom: 1em; font-style: italic; }
+
+.img-left {
+  float: left;
+  margin: 0 15px 10px 0;
+  width: 200px;
+}
+
+.img-right {
+  float: right;
+  margin: 0 0 10px 15px;
+  width: 200px;
+}
+
+.img-center {
+  display: block;
+  margin: 0 auto 1rem;
+  float: none;
+  clear: both;
+  max-width: 50%;
+  height: auto;
+}
+

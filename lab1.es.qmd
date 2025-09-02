@@ -1,0 +1,290 @@
+---
+title: "Sesión 1 de Laboratorio: Introducción a Orange y manejo de datos"
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    toc-title: "**Contenido**"
+---
+
+# Objetivos de la sesión
+
+::: {.objective-card}
+🎯 **Objetivo general:**  
+Familiarizarse con la herramienta **Orange Data Mining** y aprender a explorar y manejar datos antes de aplicar modelos.
+:::
+
+![](images/orange.jpg){.img-right}
+Orange Data Mining permite construir flujos de trabajo visuales para analizar datos, explorar relaciones entre variables y preparar datasets para modelado.   
+Es una plataforma de software libre orientada a la enseñanza y experimentación en ciencia de datos y aprendizaje automático.
+Su interfaz gráfica intuitiva permite arrastrar y conectar widgets para realizar tareas como carga de datos, visualización, preprocesamiento, modelado y evaluación de resultados sin necesidad de programar.  
+Orange también ofrece extensiones para análisis avanzado, minería de texto, bioinformática y visualizaciones interactivas, facilitando el aprendizaje y la exploración de técnicas modernas de inteligencia artificial.
+
+En esta sesión nos centraremos en:
+
+- Aprender a navegar la interfaz de Orange y sus principales categorías de widgets.
+- Cargar y examinar conjuntos de datos reales.
+- Identificar y clasificar los tipos de variables presentes en los datos.
+- Visualizar distribuciones y relaciones entre variables para descubrir patrones.
+- Seleccionar variables relevantes y personalizar el análisis.
+- Detectar problemas comunes en los datos, como valores ausentes o inconsistencias.
+
+Estas habilidades son fundamentales para realizar análisis exploratorio y preparar los datos antes de aplicar algoritmos de aprendizaje automático.
+
+<!-- ![Figura: annoying Orange](images/annoying.jpg)   -->
+**¡Vamos a comenzar!**
+
+---
+
+# Actividades propuestas
+
+## 1. Exploración de la interfaz de Orange
+
+::: {.objective-card}
+🎯 **Objetivo:** Familiarizarse con la interfaz gráfica y widgets. 
+:::
+
+En esta actividad exploraremos la interfaz de Orange y sus principales componentes. 
+![](images/orangefront.png){.img-center}
+
+Para ello, comienza haciendo lo siguiente:
+
+1. Abre la aplicación Orange y explora la interfaz.
+2. Examina las categorías de widgets: **Data**, **Visualize**, **Model**, **Evaluate**.
+3. Arrastra 2-3 widgets de diferentes categorías al lienzo (por ejemplo, **File**, **Scatter Plot**, **Test & Score**).
+4. Conecta los widgets y observa cómo fluye la información entre ellos.
+5. Explora las opciones de configuración de cada widget.
+
+::: {.question-card}
+📝 **Preguntas:**  
+
+1. ¿Qué permite hacer cada categoría?
+2. ¿Qué ventajas observas de trabajar visualmente con flujos de trabajo?
+<!-- Ocultar -->
+<!-- 1. **Data:** Permite cargar, explorar y preparar los datos antes del análisis.
+- **Visualize:** Ofrece herramientas para representar gráficamente los datos y descubrir patrones.
+- **Model:** Facilita la aplicación de algoritmos de aprendizaje automático para construir modelos.
+- **Evaluate:** Permite comparar y validar el rendimiento de los modelos generados.
+
+2. Trabajar visualmente con flujos de trabajo ayuda a entender mejor cada paso del análisis, facilita la experimentación y permite identificar rápidamente errores o mejoras en el proceso. -->
+:::
+
+---
+
+## 2. Carga de datos y visualización básica
+
+::: {.objective-card}
+🎯 **Objetivo:** Aprender a cargar datasets y visualizar sus contenidos.
+:::
+
+En esta actividad, deberás aprender a cargar un conjunto de datos en Orange y explorar su contenido utilizando los widgets disponibles. Para ello:
+
+
+1. Arrastra el widget **File** al lienzo y selecciona el archivo de datos proporcionado (`titanic.tab`, `heart_disease.tab`).
+![Source: Loofandjimmy.com](images/titanic.gif){.img-right}
+2. Conecta el widget **File** al widget **Data Table** para visualizar el dataset.
+3. Observa las columnas (atributos), filas (instancias) y los tipos de variables presentes en el conjunto de datos.
+4. Conecta el widget **File** al widget **Data Info** para obtener un resumen del dataset, incluyendo número de filas, columnas, tipos de variables y valores ausentes.  
+
+Esta exploración inicial te permitirá familiarizarte con la carga y visualización de datos en Orange, así como identificar posibles problemas que podrían afectar el análisis posterior.
+
+::: {.question-card}
+📝 **Preguntas:**  
+
+1. ¿Cuántas columnas y filas tiene el dataset?
+2. ¿Qué tipo de variables (categóricas, numéricas) puedes identificar?
+3. ¿Cuál es el propósito de la variable objetivo en este análisis?
+4. ¿Existen valores ausentes o inconsistentes en los datos? ¿Cómo los identificaste?
+5. ¿Por qué es importante revisar los datos antes de aplicar modelos?
+
+<!-- Ocultar -->
+<!-- 1. El dataset `titanic.tab` tiene 7 columnas y 2201 filas, el dataset `iris.tab` tiene 5 columnas y 150 filas.
+2. Las variables pueden ser categóricas (por ejemplo, `Survived` en `titanic.tab`) o numéricas (por ejemplo, `Age` en `titanic.tab`).
+3. La variable objetivo es la que queremos predecir o clasificar (por ejemplo, `Survived` indica si un pasajero sobrevivió o no).
+4. Puedes identificar valores ausentes observando celdas vacías en el widget Data Table o usando el widget Data Info.
+5. Revisar los datos es crucial para asegurar la calidad del análisis, evitar sesgos y mejorar el rendimiento de los modelos. -->
+:::
+
+---
+
+## 3. Clasificación de tipos de variables
+
+::: {.objective-card}
+🎯 **Objetivo:** Diferenciar variables categóricas, numéricas y la variable objetivo.
+:::
+
+![Figura: Counting error](images/counting.gif){.img-right}
+En esta actividad vas a identificar y clasificar los tipos de variables presentes en el conjunto de datos, diferenciando entre variables categóricas, numéricas y la variable objetivo (__target__). Esto es fundamental para entender cómo se pueden utilizar los datos en modelos de aprendizaje automático y para seleccionar correctamente la variable que se desea predecir.
+
+Para ello, realiza los siguientes pasos:
+
+1. Observa el dataset cargado en el widget **Data Table** y revisa cada columna.
+2. Utiliza el widget **Data Info** para obtener un resumen de los tipos de variables presentes (categóricas, numéricas, etc.).
+3. Analiza los nombres y valores de las columnas para identificar cuál podría ser la variable objetivo (la que se desea predecir).
+
+::: {.question-card}
+📝 **Preguntas:**  
+
+1. ¿Cuáles son las variables categóricas y cuáles son numéricas en el dataset?  
+2. ¿Qué problemas podrían surgir si se elige otra variable como objetivo?  
+3. ¿Cómo afecta la selección de la variable objetivo al tipo de modelo que se puede aplicar
+    posteriormente?
+
+<!-- Ocultar -->
+<!-- 1. Las variables categóricas en `titanic.tab` incluyen `Survived`, `Pclass`, `Sex`, `Embarked`, mientras que las numéricas incluyen `Age`, `SibSp`, `Parch`, `Fare`.  
+2. La variable objetivo es `Survived` porque indica si un pasajero sobrevivió
+o no, lo cual es relevante para el análisis de supervivencia en el Titanic.
+3. Elegir otra variable como objetivo, como `Age`, podría no tener sentido en el contexto del análisis y podría llevar a modelos menos útiles o interpretables.  
+4. La selección de la variable objetivo determina el tipo de problema (clasificación o regresión) y, por ende, los algoritmos y técnicas que se pueden aplicar posteriormente. -->
+
+:::
+
+---
+
+## 4. Visualización de distribuciones
+
+::: {.objective-card}
+🎯 **Objetivo:** Explorar cómo se distribuyen los valores de las variables.
+:::
+
+Vas ahora a visualizar las distribuciones de las variables en el conjunto de datos para entender mejor su comportamiento y características. Esto te ayudará a identificar patrones, tendencias y posibles problemas como desbalances en las clases. 
+
+![ ](images/gauss.png){.img-center}
+
+Comienza haciendo lo siguiente:
+
+1. Arrastra el widget **Distributions** al lienzo y conéctalo al widget **File** o **Select Columns**.
+2. Selecciona una variable numérica para ver su histograma y una variable categórica para ver su gráfico de barras.
+3. Observa la forma de las distribuciones, la presencia de valores atípicos y la frecuencia de cada categoría.
+4. Repite el proceso para varias variables importantes en el dataset, incluyendo la variable objetivo.
+5. Prueba a hacer este estudio usando el widget **Feature Statistics**.
+
+::: {.question-card}
+📝 **Preguntas:**  
+
+1. ¿Qué variables parecen más relevantes?  
+2. ¿Cómo afecta un desbalanceo al entrenamiento del modelo?
+3. ¿Qué observas sobre la presencia de valores atípicos en las variables numéricas?  
+4. ¿Cómo puede influir la distribución de las variables en la elección de técnicas de preprocesamiento y modelado?
+<!-- Ocultar -->
+<!-- 1. Las variables con distribuciones más variadas o con mayor impacto en la variable objetivo suelen ser más relevantes.  
+2. Un desbalanceo en las clases puede llevar a que el modelo aprenda a predecir siempre la clase mayoritaria, afectando negativamente su rendimiento.  
+3. La presencia de valores atípicos puede distorsionar las estadísticas descriptivas y afectar el rendimiento del modelo.  
+4. La distribución de las variables influye en la elección de técnicas como normalización, estandarización o transformación de datos. -->
+:::
+
+---
+
+## 5. Relaciones entre variables
+
+::: {.objective-card}
+🎯 **Objetivo:** Observar patrones y correlaciones entre variables.
+
+<!-- La figura debe mostrar un Scatter Plot de dos variables numéricas coloreadas por la variable objetivo -->
+:::
+
+En esta actividad, explorarás las relaciones entre diferentes variables en el conjunto de datos para identificar patrones, correlaciones y posibles interacciones que puedan ser relevantes para el análisis. Esto es crítico para entender cómo las variables se relacionan entre sí y cómo pueden influir en la variable objetivo.
+
+![ ](images/spiderman.jpg){.img-center}
+
+En este caso, realiza los siguientes pasos:
+
+1. Arrastra el widget **Scatter Plot** al lienzo y conéctalo al widget **File** o **Select Columns**.
+2. Selecciona dos variables numéricas para el eje X y el eje Y.
+3. Colorea los puntos según la variable objetivo para observar cómo se distribuyen las clases.
+4. Experimenta con diferentes pares de variables para descubrir otras relaciones interesantes.
+
+::: {.question-card}
+
+📝 **Preguntas:**
+
+1. ¿Se observan agrupaciones o separaciones claras entre clases?¿Qué quiere decir esto?
+2. Interpreta los patrones vistos en los diagramas de dispersión.
+3. ¿Qué relaciones entre variables podrían ser útiles para predecir la variable objetivo?  
+4. ¿Cómo podrían estas relaciones influir en la selección de características para el modelado?
+<!-- Ocultar -->
+<!-- 1. Si se observan agrupaciones claras, indica que las variables seleccionadas tienen un buen poder discriminativo para la variable objetivo.  
+2. Los patrones pueden indicar correlaciones positivas o negativas entre variables, así como la presencia de outliers.  
+3. Relaciones fuertes entre variables y la variable objetivo pueden ser útiles para mejorar la precisión del modelo. 
+4. Estas relaciones pueden guiar la selección de características, ayudando a elegir variables que aporten información relevante y descartando las redundantes o irrelevantes. -->
+:::
+
+---
+
+## 6. Personalización del análisis
+
+::: {.objective-card}
+🎯 **Objetivo:** Seleccionar sólo las variables relevantes y mejorar el flujo de trabajo.
+<!-- La figura debe mostrar cómo seleccionar columnas relevantes y ocultar las no informativas -->
+:::
+
+Como acabamos de ver, no todas las variables en un conjunto de datos son igualmente útiles para el análisis o modelado. En esta actividad, aprenderás a seleccionar y enfocarte en las variables más relevantes, mejorando así la eficiencia y efectividad del análisis. Lo puedes hacer siguiendo estos pasos:
+
+1. Usa el widget **Select Columns** para elegir las variables que consideres más importantes basándote en las visualizaciones previas.![Figura: Selection](images/selection.gif){.img-right}
+2. Oculta columnas que no aporten información relevante (por ejemplo, identificadores únicos, nombres, etc.).  
+3. Cambia la variable objetivo si es necesario y observa cómo afecta al análisis en los widgets conectados.
+4. Revisa y ajusta el flujo de trabajo para enfocarte en las variables seleccionadas.
+
+::: {.question-card}
+📝 **Preguntas:**
+
+1. ¿Qué criterios usaste para seleccionar las variables relevantes?  
+2. ¿Cómo afectó esto a las visualizaciones y al análisis?
+3. ¿Qué aprendiste sobre la importancia de la selección de variables en el análisis de datos?  
+4. ¿Qué pasos seguirías para validar que las variables seleccionadas son las más adecuadas?  
+
+<!-- Ocultar -->
+<!-- 1. Los criterios pueden incluir la relevancia para la variable objetivo, la variabilidad de la variable, la ausencia de valores nulos y la no redundancia con otras variables.  
+2. La selección de variables relevantes puede mejorar la claridad de las visualizaciones y facilitar la identificación de patrones.  
+3. La selección adecuada de variables es crucial para mejorar el rendimiento del modelo y evitar el sobreajuste.  
+4. Podrías usar técnicas de selección de características, validación cruzada y análisis de importancia de variables.   -->
+
+:::
+
+---
+
+## 7. Detección de problemas en los datos
+
+::: {.objective-card}
+🎯 **Objetivo:** Identificar valores ausentes y otras irregularidades.
+<!-- La figura debe mostrar un resumen del dataset, incluyendo número de filas, columnas, valores ausentes, etc. -->
+:::
+
+![Figura: Error](images/error.jpg){.img-right}
+Finalmente, es fundamental detectar y manejar problemas comunes en los datos, como valores ausentes, inconsistencias o errores. Estos problemas pueden afectar negativamente el análisis y la construcción de modelos si no se abordan adecuadamente. 
+
+Comprobarás esto utilizando la base de datos `heart_disease.tab` y siguiendo los siguientes pasos:
+
+1. Arrastra el widget **Data Info** al lienzo y conéctalo al widget **File** o **Select Columns**.
+2. Revisa el resumen del dataset que proporciona **Data Info**, prestando atención a:
+   - Número de filas y columnas.
+   - Tipos de variables.
+   - Valores ausentes o inconsistentes.
+3. Identifica cualquier problema potencial en los datos.
+4. Considera estrategias para tratar estos problemas, como rellenar valores ausentes, eliminar filas o columnas, o transformar datos.
+
+::: {.question-card}
+📝 **Preguntas:**
+
+1. ¿Qué problemas encontraste en los datos?  
+2. ¿Qué estrategias propondrías para manejar valores ausentes o inconsistencias?
+3. ¿Cómo decidirías entre eliminar datos o imputar valores?  
+4. ¿Qué consecuencias puede tener ignorar valores perdidos?
+
+<!-- Ocultar -->
+<!-- 1. Podrías encontrar valores ausentes en columnas importantes, inconsistencias en categorías o errores tipográficos.  
+2. Estrategias incluyen imputación (media, mediana, moda), eliminación de filas/columnas, o uso de modelos predictivos para rellenar valores.  
+3. La decisión depende del porcentaje de datos ausentes, la importancia de la variable y el impacto en el análisis.
+4. Ignorar valores perdidos puede llevar a sesgos en los resultados y a una menor precisión en los modelos. -->
+
+:::
+
+---
+
+## Nota final
+
+::: {.final-note-card}
+🎉 ¡Enhorabuena por el excelente trabajo! Ahora comprendes mejor la importancia de explorar y analizar los datos antes de modelar.  
+Antes de terminar, recuerda **guardar** tu flujo de trabajo con **File > Save As...** para poder retomarlo fácilmente en el futuro y seguir aprendiendo.  
+:::

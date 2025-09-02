@@ -1,0 +1,44 @@
+---
+title: "Welcome to the **Computation and Intelligence** course!"
+format:
+  html:
+    toc-depth: 3
+---
+
+This site contains all the laboratory materials:
+
+- Practical laboratories
+- Interactive exercises
+- Additional resources
+
+# More info
+Here you can add more details about the course, objectives, or general instructions.
+
+# Labs {#labs}
+## Lab 1
+![Lab 1](images/lab1.png){.img-fluid mb-2}
+[Go to Lab 1](lab1.en.qmd){.btn .btn-primary mb-3}
+
+<!-- ## Lab 2
+![Lab 2](images/lab2.png){.img-fluid mb-2}
+[Go to Lab 2](lab2.en.qmd){.btn .btn-primary mb-3}
+
+## Lab 3
+![Lab 3](images/lab3.png){.img-fluid mb-2}
+[Go to Lab 3](lab3.en.qmd){.btn .btn-primary mb-3}
+
+## Lab 4
+![Lab 4](images/lab4.png){.img-fluid mb-2}
+[Go to Lab 4](lab4.en.qmd){.btn .btn-primary mb-3}
+
+## Lab 5
+![Lab 5](images/lab5.png){.img-fluid mb-2}
+[Go to Lab 5](lab5.en.qmd){.btn .btn-primary mb-3}
+
+## Lab 6
+![Lab 6](images/lab6.png){.img-fluid mb-2}
+[Go to Lab 6](lab6.en.qmd){.btn .btn-primary mb-3}
+
+## Lab 7
+![Lab 7](images/lab.png){.img-fluid mb-2}
+[Go to Lab 7](lab7.en.qmd){.btn .btn-primary mb-3} -->
