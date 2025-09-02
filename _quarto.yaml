@@ -13,8 +13,8 @@ website:
   navbar:
     left:
       - text: "🏠 Home"
-        href: index.en.qmd
-      - text: "Labs"
+        href: index.html
+      - text: "🔬 Labs"
         menu:
           - text: "Lab 1"
             href: lab1.en.qmd
