@@ -261,7 +261,7 @@ main.content {
 }
 
 /* Lab card styling */
-.lab-grid .lab-card {
+.lab-grid > a.lab-card {
   position: relative;
   display: block;
   overflow: hidden;
@@ -270,19 +270,19 @@ main.content {
 }
 
 /* Image zoom effect */
-.lab-grid .lab-card img {
+.lab-grid > .lab-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.lab-grid .lab-card:hover img {
+.lab-grid > .lab-card:hover img {
   transform: scale(1.1);
 }
 
 /* Overlay with title + subtitle */
-.lab-grid .lab-card .overlay {
+.lab-grid > .lab-card .overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.4); /* dark overlay */
@@ -295,7 +295,7 @@ main.content {
 }
 
 /* Title and subtitle styles */
-.lab-grid .lab-card .overlay h3 {
+.lab-grid > .lab-card .overlay h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   font-weight: bold;
@@ -304,7 +304,7 @@ main.content {
   margin: 0;
 }
 
-.lab-grid .lab-card .overlay .subtitle {
+.lab-grid > .lab-card .overlay .subtitle {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   color: #fff !important;
@@ -313,6 +313,6 @@ main.content {
 }
 
 /* Hover effect for entire card */
-.lab-grid .lab-card:hover .overlay {
+.lab-grid > .lab-card:hover .overlay {
   background: rgba(0,0,0,0.5);
 }

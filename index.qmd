@@ -19,7 +19,6 @@ Here you can add more details about the course, objectives, or general instructi
 
 ```{=html}
 <div class="lab-grid">
-
   <a href="lab1.html" class="lab-card">
     <img src="images/lab1.jpg" alt="Lab 1">
     <div class="overlay">
