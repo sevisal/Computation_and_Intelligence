@@ -176,89 +176,27 @@ main.content {
 }
 
 /* ---------- Lab Cards Grid ---------- */
-/* .lab-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.lab-card {
-  text-decoration: none;
-}
-
-.card-inner {
-  position: relative; 
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
-
-.card-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.card-inner:hover img {
-  transform: scale(1.1);
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.overlay h3 {
-  color: #fff;
-  font-weight: bold;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-}
-
-.overlay-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.overlay-text h3 {
-  color: #fff;
-  font-weight: bold;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-.overlay-text .subtitle {
-  font-weight: normal;
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-
-.lab-card .overlay,
-.lab-card .overlay h3,
-.lab-card .overlay .subtitle {
-  color: #fff !important;
-} */
 
 /* Grid layout for lab cards */
 .lab-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
+
+@media (max-width: 900px) {
+  .lab-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .lab-grid {
+    grid-template-columns: 1fr; /* stack on phones */
+  }
+}
+
 
 /* Lab card styling */
 .lab-grid > a.lab-card {
