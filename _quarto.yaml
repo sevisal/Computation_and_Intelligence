@@ -10,7 +10,7 @@ languages:
 website:
   title: "Computation and Intelligence"
   site-url: "https://sevisal.github.io/Computation_and_Intelligence/"
-  favicon: "_resources/images/favicon.png"
+  favicon: "favicon.ico"
   navbar:
     left:
       - text: "🏠 Home"
