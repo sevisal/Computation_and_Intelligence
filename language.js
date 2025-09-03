@@ -27,7 +27,6 @@ function updateNavbarText(lang) {
   // Update page title
   document.title = navbarLabels[lang].title;
   
-  
   // Brand (if exists)
   const brand = document.querySelector(".navbar-brand");
   if (brand) brand.textContent = navbarLabels[lang].title;
@@ -54,38 +53,49 @@ function updateNavbarText(lang) {
 }
 
 function switchLang() {
-  // Get current URL
   let url = window.location.href;
-
-  // Determine target language
   let targetLang = (currentLang === "es") ? "en" : "es";
   localStorage.setItem("lang", targetLang);
   currentLang = targetLang;
 
-  // Replace '/en/' with '.es.' or vice versa
-  if (url.includes(".en.")) {
-    url = url.replace(".en.", ".es.");
-  } else if (url.includes(".es.")) {
-    if (url.includes("index.es.html")){
-        url = url.replace(".es.", ".");
+  // Handle index page separately
+  if (url.endsWith("/") || url.endsWith("index.html")) {
+    if (targetLang === "es") {
+      url = url.replace("index.html", "index.es.html");
     }
-    else{
-        url = url.replace(".es.", ".en.");
+  } else if (url.endsWith("index.es.html")) {
+    if (targetLang === "en") {
+      url = url.replace("index.es.html", "index.html");
     }
-  } else {
-    // If at top-level (no .en. or .es.), default to targetLang folder
-    let parts = url.split('.');
-    parts.splice(parts.length - 1, 0, "es"); // insert before last element
-    url = parts.join('.');
+  }
+  // Handle other pages: lab1.html <-> lab1.es.html
+  else if (url.includes(".es.html")) {
+    if (targetLang === "en") {
+      url = url.replace(".es.html", ".html");
+    }
+  } else if (url.endsWith(".html")) {
+    if (targetLang === "es") {
+      url = url.replace(".html", ".es.html");
+    }
   }
 
-  // Navigate to the new URL
   window.location.href = url;
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
+  // If landing on project root without .html, redirect based on saved lang
+  if (window.location.pathname.endsWith("/") || window.location.pathname.endsWith("/Computation_and_Intelligence/")) {
+    let saved = localStorage.getItem("lang") || "en";
+    if (saved === "es") {
+      window.location.href = "index.es.html";
+    } else {
+      window.location.href = "index.html";
+    }
+  }
+
   updateNavbarText(currentLang);
-  
+
   const switcher = document.querySelector("a[href='javascript:void(0)']");
   if (switcher) {
     switcher.style.cursor = "pointer";
@@ -95,4 +105,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 </script>

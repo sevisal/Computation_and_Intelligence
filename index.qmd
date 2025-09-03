@@ -3,7 +3,6 @@ title: "Welcome to the **Computation and Intelligence** course!"
 format:
   html:
     toc-depth: 3
-output-file: index.html
 ---
 
 This site contains all the laboratory materials:
@@ -18,7 +17,7 @@ Here you can add more details about the course, objectives, or general instructi
 # Labs {#labs}
 ## Lab 1
 ![Lab 1](images/lab1.png){.img-fluid mb-2}
-[Go to Lab 1](lab1.en.qmd){.btn .btn-primary mb-3}
+[Go to Lab 1](lab1.qmd){.btn .btn-primary mb-3}
 
 <!-- ## Lab 2
 ![Lab 2](images/lab2.png){.img-fluid mb-2}
