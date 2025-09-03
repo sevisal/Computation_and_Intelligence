@@ -15,7 +15,7 @@ format:
 Get familiar with the **Orange Data Mining** tool and learn how to explore and handle data before applying models.
 :::
 
-![](images/orange.jpg){.img-right}
+![](_resources/images/orange.jpg){.img-right}
 Orange Data Mining lets you build visual workflows to analyze data, explore relationships between variables, and prepare datasets for modeling.  
 It is a free software platform aimed at teaching and experimenting with data science and machine learning.
 Its intuitive graphical interface allows dragging and connecting widgets to perform tasks like loading data, visualization, preprocessing, modeling, and evaluating results without programming.  
@@ -45,7 +45,7 @@ These skills are fundamental for exploratory analysis and preparing data before 
 :::
 
 In this activity we will explore Orange's interface and main components. 
-![](images/orangefront.png){.img-center}
+![](_resources/images/orangefront.png){.img-center}
 
 To do this, start by:
 
@@ -73,7 +73,7 @@ To do this, start by:
 In this activity you will learn to load a dataset in Orange and explore its content using available widgets. To do this:
 
 1. Drag the **File** widget onto the canvas and select the provided data file (`titanic.tab`, `heart_disease.tab`).
-![Source: Loofandjimmy.com](images/titanic.gif){.img-right}
+![Source: Loofandjimmy.com](_resources/images/titanic.gif){.img-right}
 2. Connect the **File** widget to the **Data Table** widget to view the dataset.
 3. Inspect the columns (attributes), rows (instances), and variable types in the dataset.
 4. Connect the **File** widget to the **Data Info** widget to get a dataset summary, including number of rows, columns, variable types, and missing values.  
@@ -98,7 +98,7 @@ This initial exploration will help you get familiar with loading and viewing dat
 🎯 **Objective:** Distinguish categorical variables, numerical variables, and the target variable.
 :::
 
-![Figure: Counting error](images/counting.gif){.img-right}
+![Figure: Counting error](_resources/images/counting.gif){.img-right}
 In this activity you will identify and classify variable types in the dataset, distinguishing between categorical, numerical, and the target (__target__) variables. This is essential to understand how data can be used in machine learning models and to correctly choose the variable you want to predict.
 
 Steps:
@@ -125,7 +125,7 @@ Steps:
 
 Now you will visualize variable distributions to better understand their behavior and characteristics. This helps identify patterns, trends, and potential issues like class imbalance. 
 
-![ ](images/gauss.png){.img-center}
+![ ](_resources/images/gauss.png){.img-center}
 
 Start by:
 
@@ -154,7 +154,7 @@ Start by:
 
 In this activity you will explore relationships between variables to identify patterns, correlations, and potential interactions that may be relevant for analysis. This is critical to understand how variables relate to each other and to the target.
 
-![ ](images/spiderman.jpg){.img-center}
+![ ](_resources/images/spiderman.jpg){.img-center}
 
 Steps:
 
@@ -181,7 +181,7 @@ Steps:
 🎯 **Objective:** Select only relevant variables and improve the workflow.
 :::
 
-Not all variables in a dataset are equally useful for analysis or modeling. In this activity you will learn to select and focus on the most relevant variables, improving efficiency and effectiveness. To do this:![Figure: Selection](images/selection.gif){.img-right}
+Not all variables in a dataset are equally useful for analysis or modeling. In this activity you will learn to select and focus on the most relevant variables, improving efficiency and effectiveness. To do this:![Figure: Selection](_resources/images/selection.gif){.img-right}
 
 1. Use the **Select Columns** widget to choose variables you consider most important based on previous visualizations.
 2. Hide columns that don't add useful information (for example, unique identifiers, names, etc.).  
@@ -205,7 +205,7 @@ Not all variables in a dataset are equally useful for analysis or modeling. In t
 🎯 **Objective:** Identify missing values and other irregularities.
 :::
 
-![Figure: Error](images/error.jpg){.img-right}
+![Figure: Error](_resources/images/error.jpg){.img-right}
 Finally, it's essential to detect and handle common data issues like missing values, inconsistencies, or errors. These problems can negatively affect analysis and model building if not addressed.
 
 Using the `heart_disease.tab` dataset, follow these steps:

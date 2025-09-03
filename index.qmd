@@ -16,31 +16,19 @@ This site contains all the laboratory materials:
 Here you can add more details about the course, objectives, or general instructions.
 
 ## Explore the Labs
-
 ```{=html}
 <div class="lab-grid">
   <a href="lab1.html" class="lab-card">
-    <img src="images/lab1.jpg" alt="Lab 1">
+    <img src="_resources/images/lab1.jpg" alt="Lab 1">
     <div class="overlay">
       <h3>Lab 1</h3>
-      <span class="subtitle">Introduction to Orange</span>
+      <span class="subtitle">Introduction to Orange and Data Handling</span>
     </div>
   </a>
-<!-- <a href="lab1.html" class="lab-card">
-    <div class="card-inner">
-      <img src="images/lab1.jpg" alt="Lab 1">
-      <div class="overlay">
-        <div class="overlay-text">
-          <h3>Lab 1</h3>
-          <span class="subtitle">Introduction to Orange and Data Handling</span>
-        </div>
-      </div>
-    </div>
-  </a> -->
 
 <!-- <a href="lab2.html" class="lab-card">
     <div class="card-inner">
-      <img src="images/lab2.jpg" alt="Lab 2">
+      <img src="_resources/images/lab2.jpg" alt="Lab 2">
       <div class="overlay">
         <h3>Lab 2</h3>
       </div>
@@ -49,7 +37,7 @@ Here you can add more details about the course, objectives, or general instructi
 
   <a href="lab3.html" class="lab-card">
     <div class="card-inner">
-      <img src="images/lab3.jpg" alt="Lab 3">
+      <img src="_resources/images/lab3.jpg" alt="Lab 3">
       <div class="overlay">
         <h3>Lab 3</h3>
       </div>

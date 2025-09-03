@@ -10,6 +10,7 @@ languages:
 website:
   title: "Computation and Intelligence"
   site-url: "https://sevisal.github.io/Computation_and_Intelligence/"
+  favicon: "_resources/images/Icon.png?v=2"
   navbar:
     left:
       - text: "🏠 Home"
@@ -42,7 +43,6 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    favicon: "images/Icon.png"
     include-after-body: language.js
     relative_urls: true 
     page-layout: full

@@ -15,7 +15,7 @@ format:
 Familiarizarse con la herramienta **Orange Data Mining** y aprender a explorar y manejar datos antes de aplicar modelos.
 :::
 
-![](images/orange.jpg){.img-right}
+![](_resources/images/orange.jpg){.img-right}
 Orange Data Mining permite construir flujos de trabajo visuales para analizar datos, explorar relaciones entre variables y preparar datasets para modelado.   
 Es una plataforma de software libre orientada a la enseñanza y experimentación en ciencia de datos y aprendizaje automático.
 Su interfaz gráfica intuitiva permite arrastrar y conectar widgets para realizar tareas como carga de datos, visualización, preprocesamiento, modelado y evaluación de resultados sin necesidad de programar.  
@@ -32,7 +32,7 @@ En esta sesión nos centraremos en:
 
 Estas habilidades son fundamentales para realizar análisis exploratorio y preparar los datos antes de aplicar algoritmos de aprendizaje automático.
 
-<!-- ![Figura: annoying Orange](images/annoying.jpg)   -->
+<!-- ![Figura: annoying Orange](_resources/images/annoying.jpg)   -->
 **¡Vamos a comenzar!**
 
 ---
@@ -46,7 +46,7 @@ Estas habilidades son fundamentales para realizar análisis exploratorio y prepa
 :::
 
 En esta actividad exploraremos la interfaz de Orange y sus principales componentes. 
-![](images/orangefront.png){.img-center}
+![](_resources/images/orangefront.png){.img-center}
 
 Para ello, comienza haciendo lo siguiente:
 
@@ -82,7 +82,7 @@ En esta actividad, deberás aprender a cargar un conjunto de datos en Orange y e
 
 
 1. Arrastra el widget **File** al lienzo y selecciona el archivo de datos proporcionado (`titanic.tab`, `heart_disease.tab`).
-![Source: Loofandjimmy.com](images/titanic.gif){.img-right}
+![Source: Loofandjimmy.com](_resources/images/titanic.gif){.img-right}
 2. Conecta el widget **File** al widget **Data Table** para visualizar el dataset.
 3. Observa las columnas (atributos), filas (instancias) y los tipos de variables presentes en el conjunto de datos.
 4. Conecta el widget **File** al widget **Data Info** para obtener un resumen del dataset, incluyendo número de filas, columnas, tipos de variables y valores ausentes.  
@@ -114,7 +114,7 @@ Esta exploración inicial te permitirá familiarizarte con la carga y visualizac
 🎯 **Objetivo:** Diferenciar variables categóricas, numéricas y la variable objetivo.
 :::
 
-![Figura: Counting error](images/counting.gif){.img-right}
+![Figura: Counting error](_resources/images/counting.gif){.img-right}
 En esta actividad vas a identificar y clasificar los tipos de variables presentes en el conjunto de datos, diferenciando entre variables categóricas, numéricas y la variable objetivo (__target__). Esto es fundamental para entender cómo se pueden utilizar los datos en modelos de aprendizaje automático y para seleccionar correctamente la variable que se desea predecir.
 
 Para ello, realiza los siguientes pasos:
@@ -150,7 +150,7 @@ o no, lo cual es relevante para el análisis de supervivencia en el Titanic.
 
 Vas ahora a visualizar las distribuciones de las variables en el conjunto de datos para entender mejor su comportamiento y características. Esto te ayudará a identificar patrones, tendencias y posibles problemas como desbalances en las clases. 
 
-![ ](images/gauss.png){.img-center}
+![ ](_resources/images/gauss.png){.img-center}
 
 Comienza haciendo lo siguiente:
 
@@ -186,7 +186,7 @@ Comienza haciendo lo siguiente:
 
 En esta actividad, explorarás las relaciones entre diferentes variables en el conjunto de datos para identificar patrones, correlaciones y posibles interacciones que puedan ser relevantes para el análisis. Esto es crítico para entender cómo las variables se relacionan entre sí y cómo pueden influir en la variable objetivo.
 
-![ ](images/spiderman.jpg){.img-center}
+![ ](_resources/images/spiderman.jpg){.img-center}
 
 En este caso, realiza los siguientes pasos:
 
@@ -221,7 +221,7 @@ En este caso, realiza los siguientes pasos:
 
 Como acabamos de ver, no todas las variables en un conjunto de datos son igualmente útiles para el análisis o modelado. En esta actividad, aprenderás a seleccionar y enfocarte en las variables más relevantes, mejorando así la eficiencia y efectividad del análisis. Lo puedes hacer siguiendo estos pasos:
 
-1. Usa el widget **Select Columns** para elegir las variables que consideres más importantes basándote en las visualizaciones previas.![Figura: Selection](images/selection.gif){.img-right}
+1. Usa el widget **Select Columns** para elegir las variables que consideres más importantes basándote en las visualizaciones previas.![Figura: Selection](_resources/images/selection.gif){.img-right}
 2. Oculta columnas que no aporten información relevante (por ejemplo, identificadores únicos, nombres, etc.).  
 3. Cambia la variable objetivo si es necesario y observa cómo afecta al análisis en los widgets conectados.
 4. Revisa y ajusta el flujo de trabajo para enfocarte en las variables seleccionadas.
@@ -251,7 +251,7 @@ Como acabamos de ver, no todas las variables en un conjunto de datos son igualme
 <!-- La figura debe mostrar un resumen del dataset, incluyendo número de filas, columnas, valores ausentes, etc. -->
 :::
 
-![Figura: Error](images/error.jpg){.img-right}
+![Figura: Error](_resources/images/error.jpg){.img-right}
 Finalmente, es fundamental detectar y manejar problemas comunes en los datos, como valores ausentes, inconsistencias o errores. Estos problemas pueden afectar negativamente el análisis y la construcción de modelos si no se abordan adecuadamente. 
 
 Comprobarás esto utilizando la base de datos `heart_disease.tab` y siguiendo los siguientes pasos:

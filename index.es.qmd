@@ -20,7 +20,7 @@ Aquí puedes añadir descripciones adicionales del curso, objetivos o instruccio
 <div class="lab-grid">
   <a href="lab1.es.qmd" class="lab-card">
     <div class="card-inner">
-      <img src="images/lab1.jpg" alt="Lab 1">
+      <img src="_resources/images/lab1.jpg" alt="Lab 1">
       <div class="overlay">
         <div class="overlay-text">
           <h3>Laboratorio 1</h3>
@@ -32,7 +32,7 @@ Aquí puedes añadir descripciones adicionales del curso, objetivos o instruccio
 
 <!-- <a href="lab2.es.qmd" class="lab-card">
     <div class="card-inner">
-      <img src="images/lab2.jpg" alt="Lab 2">
+      <img src="_resources/images/lab2.jpg" alt="Lab 2">
       <div class="overlay">
         <h3>Lab 2</h3>
       </div>
@@ -41,7 +41,7 @@ Aquí puedes añadir descripciones adicionales del curso, objetivos o instruccio
 
   <a href="lab3.es.qmd" class="lab-card">
     <div class="card-inner">
-      <img src="images/lab3.jpg" alt="Lab 3">
+      <img src="_resources/images/lab3.jpg" alt="Lab 3">
       <div class="overlay">
         <h3>Lab 3</h3>
       </div>
