@@ -42,6 +42,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    favicon: "images/Icon.png"
     include-after-body: language.js
     relative_urls: true 
     page-layout: full
