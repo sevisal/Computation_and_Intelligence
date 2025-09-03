@@ -19,7 +19,15 @@ Here you can add more details about the course, objectives, or general instructi
 
 ```{=html}
 <div class="lab-grid">
+
   <a href="lab1.html" class="lab-card">
+    <img src="images/lab1.jpg" alt="Lab 1">
+    <div class="overlay">
+      <h3>Lab 1</h3>
+      <span class="subtitle">Introduction to Orange</span>
+    </div>
+  </a>
+<!-- <a href="lab1.html" class="lab-card">
     <div class="card-inner">
       <img src="images/lab1.jpg" alt="Lab 1">
       <div class="overlay">
@@ -29,7 +37,7 @@ Here you can add more details about the course, objectives, or general instructi
         </div>
       </div>
     </div>
-  </a>
+  </a> -->
 
 <!-- <a href="lab2.html" class="lab-card">
     <div class="card-inner">

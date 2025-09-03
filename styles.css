@@ -176,7 +176,7 @@ main.content {
 }
 
 /* ---------- Lab Cards Grid ---------- */
-.lab-grid {
+/* .lab-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
@@ -187,7 +187,7 @@ main.content {
 }
 
 .card-inner {
-  position: relative; /* key: makes overlay stick to this container */
+  position: relative; 
   overflow: hidden;
   border-radius: 0.5rem;
 }
@@ -250,4 +250,69 @@ main.content {
 .lab-card .overlay h3,
 .lab-card .overlay .subtitle {
   color: #fff !important;
+} */
+
+/* Grid layout for lab cards */
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Lab card styling */
+.lab-grid .lab-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  text-decoration: none; /* prevent default link styling */
+}
+
+/* Image zoom effect */
+.lab-grid .lab-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.lab-grid .lab-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay with title + subtitle */
+.lab-grid .lab-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* dark overlay */
+  display: flex;
+  flex-direction: column; /* stack title + subtitle */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Title and subtitle styles */
+.lab-grid .lab-card .overlay h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  margin: 0;
+}
+
+.lab-grid .lab-card .overlay .subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #fff !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  margin-top: 0.3rem;
+}
+
+/* Hover effect for entire card */
+.lab-grid .lab-card:hover .overlay {
+  background: rgba(0,0,0,0.5);
 }
