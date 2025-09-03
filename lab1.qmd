@@ -1,10 +1,237 @@
 ---
-title: "Lab 1: Exploratory Analysis"
+title: "Lab Session 1: Introduction to Orange and Data Handling"
+format:
+    html:
+        toc: true
+        toc-depth: 4
+        toc-location: left
+        toc-title: "**Contents**"
 ---
 
-Welcome to **Lab 1**.  
-In this lab we will learn how to explore data with Orange3.  
+# Session objectives
 
-- Load a dataset.  
-- Visualize distributions.  
-- Detect outliers.  
+::: {.objective-card}
+🎯 **General objective:**  
+Get familiar with the **Orange Data Mining** tool and learn how to explore and handle data before applying models.
+:::
+
+![](images/orange.jpg){.img-right}
+Orange Data Mining lets you build visual workflows to analyze data, explore relationships between variables, and prepare datasets for modeling.  
+It is a free software platform aimed at teaching and experimenting with data science and machine learning.
+Its intuitive graphical interface allows dragging and connecting widgets to perform tasks like loading data, visualization, preprocessing, modeling, and evaluating results without programming.  
+Orange also offers extensions for advanced analysis, text mining, bioinformatics, and interactive visualizations, facilitating learning and exploration of modern AI techniques.
+
+In this session we will focus on:
+
+- Learning to navigate Orange's interface and main widget categories.
+- Loading and inspecting real datasets.
+- Identifying and classifying variable types in the data.
+- Visualizing distributions and relationships between variables to discover patterns.
+- Selecting relevant features and tailoring the analysis.
+- Detecting common data issues such as missing values or inconsistencies.
+
+These skills are fundamental for exploratory analysis and preparing data before applying machine learning algorithms.
+
+**Let's get started!**
+
+---
+
+# Proposed activities
+
+## 1. Exploring Orange's interface
+
+::: {.objective-card}
+🎯 **Objective:** Get familiar with the graphical interface and widgets. 
+:::
+
+In this activity we will explore Orange's interface and main components. 
+![](images/orangefront.png){.img-center}
+
+To do this, start by:
+
+1. Open the Orange application and explore the interface.
+2. Examine the widget categories: **Data**, **Visualize**, **Model**, **Evaluate**.
+3. Drag 2–3 widgets from different categories onto the canvas (for example, **File**, **Scatter Plot**, **Test & Score**).
+4. Connect the widgets and observe how data flows between them.
+5. Explore each widget's configuration options.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. What does each category allow you to do?
+2. What advantages do you observe when working visually with workflows?
+:::
+
+---
+
+## 2. Loading data and basic visualization
+
+::: {.objective-card}
+🎯 **Objective:** Learn to load datasets and inspect their contents.
+:::
+
+In this activity you will learn to load a dataset in Orange and explore its content using available widgets. To do this:
+
+1. Drag the **File** widget onto the canvas and select the provided data file (`titanic.tab`, `heart_disease.tab`).
+![Source: Loofandjimmy.com](images/titanic.gif){.img-right}
+2. Connect the **File** widget to the **Data Table** widget to view the dataset.
+3. Inspect the columns (attributes), rows (instances), and variable types in the dataset.
+4. Connect the **File** widget to the **Data Info** widget to get a dataset summary, including number of rows, columns, variable types, and missing values.  
+
+This initial exploration will help you get familiar with loading and viewing data in Orange, and identify potential problems that could affect later analysis.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. How many columns and rows does the dataset have?
+2. What types of variables (categorical, numerical) can you identify?
+3. What is the purpose of the target variable in this analysis?
+4. Are there missing or inconsistent values in the data? How did you identify them?
+5. Why is it important to review the data before applying models?
+:::
+
+---
+
+## 3. Classifying variable types
+
+::: {.objective-card}
+🎯 **Objective:** Distinguish categorical variables, numerical variables, and the target variable.
+:::
+
+![Figure: Counting error](images/counting.gif){.img-right}
+In this activity you will identify and classify variable types in the dataset, distinguishing between categorical, numerical, and the target (__target__) variables. This is essential to understand how data can be used in machine learning models and to correctly choose the variable you want to predict.
+
+Steps:
+
+1. Inspect the dataset in the **Data Table** widget and review each column.
+2. Use the **Data Info** widget to obtain a summary of variable types (categorical, numerical, etc.).
+3. Analyze column names and values to identify which could be the target variable.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. Which variables are categorical and which are numerical in the dataset?  
+2. What problems might arise if you select a different variable as the target?  
+3. How does the choice of target variable affect the type of model you can apply later?
+:::
+
+---
+
+## 4. Visualizing distributions
+
+::: {.objective-card}
+🎯 **Objective:** Explore how variable values are distributed.
+:::
+
+Now you will visualize variable distributions to better understand their behavior and characteristics. This helps identify patterns, trends, and potential issues like class imbalance. 
+
+![ ](images/gauss.png){.img-center}
+
+Start by:
+
+1. Drag the **Distributions** widget to the canvas and connect it to **File** or **Select Columns**.
+2. Select a numerical variable to see its histogram and a categorical variable to see its bar chart.
+3. Observe distribution shapes, outliers, and category frequencies.
+4. Repeat for several important variables, including the target variable.
+5. Try the **Feature Statistics** widget for additional insights.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. Which variables seem most relevant?  
+2. How does class imbalance affect model training?
+3. What do you observe about outliers in numerical variables?  
+4. How can variable distributions influence preprocessing and modeling choices?
+:::
+
+---
+
+## 5. Relationships between variables
+
+::: {.objective-card}
+🎯 **Objective:** Observe patterns and correlations between variables.
+:::
+
+In this activity you will explore relationships between variables to identify patterns, correlations, and potential interactions that may be relevant for analysis. This is critical to understand how variables relate to each other and to the target.
+
+![ ](images/spiderman.jpg){.img-center}
+
+Steps:
+
+1. Drag the **Scatter Plot** widget to the canvas and connect it to **File** or **Select Columns**.
+2. Select two numerical variables for the X and Y axes.
+3. Color the points by the target variable to see class distribution.
+4. Experiment with different variable pairs to find interesting relationships.
+
+::: {.question-card}
+
+📝 **Questions:**
+
+1. Do you see clear groupings or separations between classes? What does that mean?
+2. Interpret the patterns seen in the scatter plots.
+3. Which variable relationships might help predict the target?  
+4. How might these relationships influence feature selection for modeling?
+:::
+
+---
+
+## 6. Customizing the analysis
+
+::: {.objective-card}
+🎯 **Objective:** Select only relevant variables and improve the workflow.
+:::
+
+Not all variables in a dataset are equally useful for analysis or modeling. In this activity you will learn to select and focus on the most relevant variables, improving efficiency and effectiveness. To do this:![Figure: Selection](images/selection.gif){.img-right}
+
+1. Use the **Select Columns** widget to choose variables you consider most important based on previous visualizations.
+2. Hide columns that don't add useful information (for example, unique identifiers, names, etc.).  
+3. Change the target variable if necessary and observe how it affects the connected widgets.
+4. Review and adjust the workflow to focus on selected variables.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. What criteria did you use to select relevant variables?  
+2. How did this affect visualizations and analysis?
+3. What did you learn about the importance of feature selection in data analysis?  
+4. What steps would you take to validate that the selected variables are appropriate?  
+:::
+
+---
+
+## 7. Detecting data problems
+
+::: {.objective-card}
+🎯 **Objective:** Identify missing values and other irregularities.
+:::
+
+![Figure: Error](images/error.jpg){.img-right}
+Finally, it's essential to detect and handle common data issues like missing values, inconsistencies, or errors. These problems can negatively affect analysis and model building if not addressed.
+
+Using the `heart_disease.tab` dataset, follow these steps:
+
+1. Drag the **Data Info** widget to the canvas and connect it to **File** or **Select Columns**.
+2. Review the dataset summary provided by **Data Info**, paying attention to:
+     - Number of rows and columns.
+     - Variable types.
+     - Missing or inconsistent values.
+3. Identify any potential problems in the data.
+4. Consider strategies to handle these issues, such as filling missing values, removing rows or columns, or transforming data.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. What problems did you find in the data?  
+2. What strategies would you propose to handle missing values or inconsistencies?
+3. How would you decide between removing data or imputing values?  
+4. What consequences can ignoring missing values have?
+:::
+
+---
+
+# Final note
+
+::: {.final-note-card}
+🎉 Well done! You now have a better understanding of the importance of exploring and analyzing data before modeling.  
+Before finishing, remember to **save** your workflow with **File > Save As...** so you can resume it later and continue learning.  
+:::
