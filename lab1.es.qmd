@@ -282,7 +282,7 @@ Comprobarás esto utilizando la base de datos `heart_disease.tab` y siguiendo lo
 
 ---
 
-## Nota final
+# Nota final
 
 ::: {.final-note-card}
 🎉 ¡Enhorabuena por el excelente trabajo! Ahora comprendes mejor la importancia de explorar y analizar los datos antes de modelar.  

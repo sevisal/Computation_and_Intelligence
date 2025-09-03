@@ -3,6 +3,7 @@ title: "¡Bienvenidos al curso de **Computación e Inteligencia**!"
 format:
   html:
     toc-depth: 3
+    toc-title: "**Contenido**"
 ---
 
 Esta web contiene todos los materiales del laboratorio para el curso:
@@ -14,31 +15,37 @@ Esta web contiene todos los materiales del laboratorio para el curso:
 # Más información
 Aquí puedes añadir descripciones adicionales del curso, objetivos o instrucciones generales.
 
-# Laboratorios {#laboratorios}
-## Laboratorio 1
-![Lab 1](images/lab1.png){.img-fluid mb-2}
-[Ir al Laboratorio 1](lab1.es.qmd){.btn .btn-primary mb-3}
+## Explora los Laboratorios
+```{=html}
+<div class="lab-grid">
+  <a href="lab1.es.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="images/lab1.jpg" alt="Lab 1">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3>Laboratorio 1</h3>
+          <span class="subtitle">Introducción a Orange y Manejo de Datos</span>
+        </div>
+      </div>
+    </div>
+  </a>
 
-<!-- ## Laboratorio 2
-![Lab 2](images/lab2.png){.img-fluid mb-2}
-[Ir al Laboratorio 2](lab2.es.qmd){.btn .btn-primary mb-3}
+<!-- <a href="lab2.es.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="images/lab2.jpg" alt="Lab 2">
+      <div class="overlay">
+        <h3>Lab 2</h3>
+      </div>
+    </div>
+  </a>
 
-## Laboratorio 3
-![Lab 3](images/lab3.png){.img-fluid mb-2}
-[Ir al Laboratorio 3](lab3.es.qmd){.btn .btn-primary mb-3}
-
-## Laboratorio 4
-![Lab 4](images/lab4.png){.img-fluid mb-2}
-[Ir al Laboratorio 4](lab4.es.qmd){.btn .btn-primary mb-3}
-
-## Laboratorio 5
-![Lab 5](images/lab5.png){.img-fluid mb-2}
-[Ir al Laboratorio 5](lab5.es.qmd){.btn .btn-primary mb-3}
-
-## Laboratorio 6
-![Lab 6](images/lab6.png){.img-fluid mb-2}
-[Ir al Laboratorio 6](lab6.es.qmd){.btn .btn-primary mb-3}
-
-## Laboratorio 7
-![Lab 7](images/lab7.png){.img-fluid mb-2}
-[Ir al Laboratorio 7](lab7.es.qmd){.btn .btn-primary mb-3} -->
+  <a href="lab3.es.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="images/lab3.jpg" alt="Lab 3">
+      <div class="overlay">
+        <h3>Lab 3</h3>
+      </div>
+    </div>
+  </a> -->
+</div>
+```
