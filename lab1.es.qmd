@@ -78,11 +78,10 @@ Para ello, comienza haciendo lo siguiente:
 🎯 **Objetivo:** Aprender a cargar datasets y visualizar sus contenidos.
 :::
 
+![Source: Loofandjimmy.com](_resources/images/titanic.gif){.img-right}
 En esta actividad, deberás aprender a cargar un conjunto de datos en Orange y explorar su contenido utilizando los widgets disponibles. Para ello:
 
-
 1. Arrastra el widget **File** al lienzo y selecciona el archivo de datos proporcionado (`titanic.tab`, `heart_disease.tab`).
-![Source: Loofandjimmy.com](_resources/images/titanic.gif){.img-right}
 2. Conecta el widget **File** al widget **Data Table** para visualizar el dataset.
 3. Observa las columnas (atributos), filas (instancias) y los tipos de variables presentes en el conjunto de datos.
 4. Conecta el widget **File** al widget **Data Info** para obtener un resumen del dataset, incluyendo número de filas, columnas, tipos de variables y valores ausentes.  
@@ -219,9 +218,10 @@ En este caso, realiza los siguientes pasos:
 <!-- La figura debe mostrar cómo seleccionar columnas relevantes y ocultar las no informativas -->
 :::
 
+![Figura: Selection](_resources/images/selection.gif){.img-right}
 Como acabamos de ver, no todas las variables en un conjunto de datos son igualmente útiles para el análisis o modelado. En esta actividad, aprenderás a seleccionar y enfocarte en las variables más relevantes, mejorando así la eficiencia y efectividad del análisis. Lo puedes hacer siguiendo estos pasos:
 
-1. Usa el widget **Select Columns** para elegir las variables que consideres más importantes basándote en las visualizaciones previas.![Figura: Selection](_resources/images/selection.gif){.img-right}
+1. Usa el widget **Select Columns** para elegir las variables que consideres más importantes basándote en las visualizaciones previas.!
 2. Oculta columnas que no aporten información relevante (por ejemplo, identificadores únicos, nombres, etc.).  
 3. Cambia la variable objetivo si es necesario y observa cómo afecta al análisis en los widgets conectados.
 4. Revisa y ajusta el flujo de trabajo para enfocarte en las variables seleccionadas.

@@ -70,10 +70,10 @@ To do this, start by:
 🎯 **Objective:** Learn to load datasets and inspect their contents.
 :::
 
-In this activity you will learn to load a dataset in Orange and explore its content using available widgets. To do this:
+In this activity you will learn to load a dataset in Orange and explore its content using available widgets. To do this:![Source: Loofandjimmy.com](_resources/images/titanic.gif){.img-right}
+
 
 1. Drag the **File** widget onto the canvas and select the provided data file (`titanic.tab`, `heart_disease.tab`).
-![Source: Loofandjimmy.com](_resources/images/titanic.gif){.img-right}
 2. Connect the **File** widget to the **Data Table** widget to view the dataset.
 3. Inspect the columns (attributes), rows (instances), and variable types in the dataset.
 4. Connect the **File** widget to the **Data Info** widget to get a dataset summary, including number of rows, columns, variable types, and missing values.  
@@ -181,7 +181,8 @@ Steps:
 🎯 **Objective:** Select only relevant variables and improve the workflow.
 :::
 
-Not all variables in a dataset are equally useful for analysis or modeling. In this activity you will learn to select and focus on the most relevant variables, improving efficiency and effectiveness. To do this:![Figure: Selection](_resources/images/selection.gif){.img-right}
+![Figure: Selection](_resources/images/selection.gif){.img-right}
+Not all variables in a dataset are equally useful for analysis or modeling. In this activity you will learn to select and focus on the most relevant variables, improving efficiency and effectiveness. To do this:
 
 1. Use the **Select Columns** widget to choose variables you consider most important based on previous visualizations.
 2. Hide columns that don't add useful information (for example, unique identifiers, names, etc.).  
