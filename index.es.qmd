@@ -6,16 +6,17 @@ format:
     toc-title: "**Contenido**"
 ---
 
-Esta web contiene todos los materiales del laboratorio para el curso:
+En esta web podrás encontrar los materiales de los laboratorios que utilizaremos para las sesiones de laboratorio de la asignatura. 
 
-- Laboratorios prácticos
-- Ejercicios interactivos
-- Recursos adicionales
+En este curso, aprenderás a manejar herramientas y técnicas fundamentales en el campo de la computación e inteligencia artificial utilizando un enfoque práctico. Trabajaremos principalmente con la herramienta **Orange Data Mining**, que facilita la exploración y análisis de datos a través de una interfaz gráfica intuitiva.
 
-# Más información
-Aquí puedes añadir descripciones adicionales del curso, objetivos o instrucciones generales.
+## Objetivos del Curso
+- Comprender los conceptos básicos de la computación y la inteligencia artificial.
+- Aprender a utilizar Orange Data Mining para el análisis de datos.
+- Desarrollar habilidades prácticas a través de ejercicios.
 
 ## Explora los Laboratorios
+Este curso está diseñado para que aprendas haciendo. ¡Explora los laboratorios, experimenta con los datos y no tengas miedo de equivocarte! 😃
 ```{=html}
 <div class="lab-grid">
   <a href="lab1.es.qmd" class="lab-card">

@@ -1,32 +1,37 @@
 ---
-title: "Welcome to the **Computation and Intelligence** course!"
+title: "Welcome to the **Computation and Intelligence** Course!"
 format:
   html:
     toc-depth: 3
     toc-title: "**Contents**"
 ---
 
-This site contains all the laboratory materials:
+On this site you can find the materials for the lab sessions we will use in the course's laboratory classes.
 
-- Practical laboratories
-- Interactive exercises
-- Additional resources
+In this course, you will learn how to use fundamental tools and techniques in the field of computing and artificial intelligence with a practical approach. We will work primarily with the **Orange Data Mining** tool, which makes data exploration and analysis easy through an intuitive graphical interface.
 
-# More info
-Here you can add more details about the course, objectives, or general instructions.
+## Course Objectives
+- Understand the basic concepts of computing and artificial intelligence.
+- Learn how to use Orange Data Mining for data analysis.
+- Develop practical skills through exercises.
 
 ## Explore the Labs
+This course is designed for learning by doing. Explore the labs, experiment with the data, and don't be afraid to make mistakes! 😃
 ```{=html}
 <div class="lab-grid">
-  <a href="lab1.html" class="lab-card">
-    <img src="_resources/images/lab1.jpg" alt="Lab 1">
-    <div class="overlay">
-      <h3>Lab 1</h3>
-      <span class="subtitle">Introduction to Orange and Data Handling</span>
+  <a href="lab1.es.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab1.jpg" alt="Lab 1">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3>Lab 1</h3>
+          <span class="subtitle">Introduction to Orange and Data Handling</span>
+        </div>
+      </div>
     </div>
   </a>
 
-<!-- <a href="lab2.html" class="lab-card">
+<!-- <a href="lab2.es.qmd" class="lab-card">
     <div class="card-inner">
       <img src="_resources/images/lab2.jpg" alt="Lab 2">
       <div class="overlay">
@@ -35,7 +40,7 @@ Here you can add more details about the course, objectives, or general instructi
     </div>
   </a>
 
-  <a href="lab3.html" class="lab-card">
+  <a href="lab3.es.qmd" class="lab-card">
     <div class="card-inner">
       <img src="_resources/images/lab3.jpg" alt="Lab 3">
       <div class="overlay">

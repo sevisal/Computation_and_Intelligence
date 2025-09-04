@@ -54,5 +54,5 @@ format:
     toc-title: "Contents"
     # Right margin for your cards
     grid:
-      margin-width: 320px
-      sidebar-width: 260px
+      margin-width: 620px
+      sidebar-width: 360px
