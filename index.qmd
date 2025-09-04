@@ -19,7 +19,7 @@ In this course, you will learn how to use fundamental tools and techniques in th
 This course is designed for learning by doing. Explore the labs, experiment with the data, and don't be afraid to make mistakes! 😃
 ```{=html}
 <div class="lab-grid">
-  <a href="lab1.es.qmd" class="lab-card">
+  <a href="lab1.qmd" class="lab-card">
     <div class="card-inner">
       <img src="_resources/images/lab1.jpg" alt="Lab 1">
       <div class="overlay">
