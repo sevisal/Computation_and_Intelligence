@@ -1,0 +1,33 @@
+```{=html}
+<div class="lab-grid">
+  <a href="lab1.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab1.jpg" alt="Lab 1">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3>Lab 1</h3>
+          <span class="subtitle">Introduction to Orange and Data Handling</span>
+        </div>
+      </div>
+    </div>
+  </a>
+
+<!-- <a href="lab2.es.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab2.jpg" alt="Lab 2">
+      <div class="overlay">
+        <h3>Lab 2</h3>
+      </div>
+    </div>
+  </a>
+
+  <a href="lab3.es.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab3.jpg" alt="Lab 3">
+      <div class="overlay">
+        <h3>Lab 3</h3>
+      </div>
+    </div>
+  </a> -->
+</div>
+```

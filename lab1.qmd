@@ -236,3 +236,8 @@ Using the `heart_disease.tab` dataset, follow these steps:
 🎉 Well done! You now have a better understanding of the importance of exploring and analyzing data before modeling.  
 Before finishing, remember to **save** your workflow with **File > Save As...** so you can resume it later and continue learning.  
 :::
+
+::: {.margin}
+# Explore the Labs {.unnumbered .unlisted}
+{{< include lab-cards.qmd >}}
+:::

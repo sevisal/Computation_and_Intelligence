@@ -8,6 +8,7 @@ format:
     toc-title: "**Contenido**"
 ---
 
+
 # Objetivos de la sesión
 
 ::: {.objective-card}
@@ -287,4 +288,9 @@ Comprobarás esto utilizando la base de datos `heart_disease.tab` y siguiendo lo
 ::: {.final-note-card}
 🎉 ¡Enhorabuena por el excelente trabajo! Ahora comprendes mejor la importancia de explorar y analizar los datos antes de modelar.  
 Antes de terminar, recuerda **guardar** tu flujo de trabajo con **File > Save As...** para poder retomarlo fácilmente en el futuro y seguir aprendiendo.  
+:::
+
+::: {.margin}
+# Labs {.unnumbered .unlisted}
+{{< include lab-cards.es.qmd >}}
 :::

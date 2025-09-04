@@ -16,37 +16,6 @@ En este curso, aprenderás a manejar herramientas y técnicas fundamentales en e
 - Desarrollar habilidades prácticas a través de ejercicios.
 
 ## Explora los Laboratorios
-Este curso está diseñado para que aprendas haciendo. ¡Explora los laboratorios, experimenta con los datos y no tengas miedo de equivocarte! 😃
-```{=html}
-<div class="lab-grid">
-  <a href="lab1.es.qmd" class="lab-card">
-    <div class="card-inner">
-      <img src="_resources/images/lab1.jpg" alt="Lab 1">
-      <div class="overlay">
-        <div class="overlay-text">
-          <h3>Laboratorio 1</h3>
-          <span class="subtitle">Introducción a Orange y Manejo de Datos</span>
-        </div>
-      </div>
-    </div>
-  </a>
+Este curso está diseñado para que aprendas haciendo. ¡Explora los laboratorios, experimenta con los datos y no tengas miedo a equivocarte! 😃
 
-<!-- <a href="lab2.es.qmd" class="lab-card">
-    <div class="card-inner">
-      <img src="_resources/images/lab2.jpg" alt="Lab 2">
-      <div class="overlay">
-        <h3>Lab 2</h3>
-      </div>
-    </div>
-  </a>
-
-  <a href="lab3.es.qmd" class="lab-card">
-    <div class="card-inner">
-      <img src="_resources/images/lab3.jpg" alt="Lab 3">
-      <div class="overlay">
-        <h3>Lab 3</h3>
-      </div>
-    </div>
-  </a> -->
-</div>
-```
+{{< include lab-cards.es.qmd >}}

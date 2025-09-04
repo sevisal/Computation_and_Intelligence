@@ -54,9 +54,13 @@ function updateNavbarText(lang) {
 
 function switchLang() {
   let url = window.location.href;
+  let hash = window.location.hash; // Save the hash
   let targetLang = (currentLang === "es") ? "en" : "es";
   localStorage.setItem("lang", targetLang);
   currentLang = targetLang;
+
+  // Remove hash for manipulation
+  url = url.replace(hash, "");
 
   // Handle index page separately
   if (url.endsWith("/") || url.endsWith("index.html")) {
@@ -79,6 +83,7 @@ function switchLang() {
     }
   }
 
+  // TODO: Map Spanish-English hash 
   window.location.href = url;
 }
 
