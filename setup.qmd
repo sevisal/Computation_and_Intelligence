@@ -1,0 +1,97 @@
+---
+title: "Installing Orange3 with Conda"
+format:
+    html:
+        toc: true
+        toc-depth: 4
+        toc-location: left
+        toc-title: "**Contents**"
+---
+
+# Prerequisites
+
+Before starting, make sure you have the following:
+
+- **Miniconda** or **Anaconda** installed.  
+  👉 You can download it from: [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution).
+- Access to a terminal: *Anaconda Prompt* (on Windows) or a regular terminal (Linux/macOS).
+
+---
+
+# Step 1: Create the `orange3-env.yml` File
+
+To make the installation reproducible, we will use a Conda environment file.  
+
+1. Open any text editor such as **Notepad**, **VS Code**, or **Sublime Text**.  
+2. Copy the following content into a new file:
+
+```yaml
+name: orange3
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - attrs
+  - orange3
+  - lightfm
+  - opencv
+  - scikit-image
+  - nltk
+  - spacy
+  - scikit-surprise
+```
+
+3. Save the file as **`orange3-env.yml`** in a location you can easily find.
+
+---
+
+# Step 2: Create the Conda Environment
+
+Now, we will use the `.yml` file to create the environment.
+
+1. Open your terminal (or Anaconda Prompt on Windows).  
+2. Navigate to the folder where you saved the file:
+
+```bash
+cd path/to/your/file
+```
+
+3. Run the following command to create the environment:
+
+```bash
+conda env create -f orange3-env.yml
+```
+
+---
+
+# Step 3: Activate the Environment
+
+Once the environment is created, activate it with:
+
+```bash
+conda activate orange3
+```
+
+---
+
+# Step 4: Launch Orange3
+
+Finally, to start Orange3, simply run:
+
+```bash
+orange-canvas
+```
+
+This command will open the Orange3 graphical user interface. 🎉
+
+---
+
+# Notes & Tips
+
+- If you already had an environment named `orange3`, Conda may ask you to remove or update it.  
+- The included libraries (e.g., `lightfm`, `scikit-surprise`, `spacy`) are optional but useful for labs in recommender systems and NLP.  
+- You can always remove the environment later with:
+  ```bash
+  conda remove --name orange3 --all
+  ```

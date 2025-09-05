@@ -1,0 +1,97 @@
+---
+title: "Instalación de Orange3 con Conda"
+format:
+    html:
+        toc: true
+        toc-depth: 4
+        toc-location: left
+        toc-title: "**Contenido**"
+---
+
+# Requisitos previos
+
+Antes de comenzar, asegúrate de tener lo siguiente:
+
+- **Miniconda** o **Anaconda** instalado.  
+  👉 Puedes descargarlo en: [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution).
+- Acceso a una terminal: *Anaconda Prompt* (en Windows) o una terminal normal (Linux/macOS).
+
+---
+
+# Paso 1: Crear el archivo `orange3-env.yml`
+
+Para hacer la instalación reproducible, usaremos un archivo de entorno de Conda.
+
+1. Abre cualquier editor de texto como **Notepad**, **VS Code** o **Sublime Text**.  
+2. Copia el siguiente contenido en un nuevo archivo:
+
+```yaml
+name: orange3
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - attrs
+  - orange3
+  - lightfm
+  - opencv
+  - scikit-image
+  - nltk
+  - spacy
+  - scikit-surprise
+```
+
+3. Guarda el archivo como **`orange3-env.yml`** en una ubicación fácil de encontrar.
+
+---
+
+# Paso 2: Crear el entorno Conda
+
+Ahora usaremos el archivo `.yml` para crear el entorno.
+
+1. Abre tu terminal (o Anaconda Prompt en Windows).  
+2. Navega a la carpeta donde guardaste el archivo:
+
+```bash
+cd ruta/del/archivo
+```
+
+3. Ejecuta el siguiente comando para crear el entorno:
+
+```bash
+conda env create -f orange3-env.yml
+```
+
+---
+
+# Paso 3: Activar el entorno
+
+Una vez creado el entorno, actívalo con:
+
+```bash
+conda activate orange3
+```
+
+---
+
+# Paso 4: Iniciar Orange3
+
+Finalmente, para abrir Orange3 ejecuta:
+
+```bash
+orange-canvas
+```
+
+Este comando abrirá la interfaz gráfica de Orange3. 🎉
+
+---
+
+# Notas y consejos
+
+- Si ya tenías un entorno llamado `orange3`, Conda puede pedirte que lo elimines o actualices.  
+- Las librerías incluidas (por ejemplo, `lightfm`, `scikit-surprise`, `spacy`) son opcionales pero útiles para los laboratorios de sistemas de recomendación y PLN.  
+- Puedes eliminar el entorno más adelante con:
+  ```bash
+  conda remove --name orange3 --all
+  ```

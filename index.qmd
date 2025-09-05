@@ -15,6 +15,9 @@ In this course, you will learn how to use fundamental tools and techniques in th
 - Learn how to use Orange Data Mining for data analysis.
 - Develop practical skills through exercises.
 
+## Setting up Orange and Required Libraries
+To get started with the labs, you'll need to set up Orange Data Mining along with some additional libraries. Please follow the instructions in the [Setup](setup.qmd) page to create the necessary environment.
+
 ## Explore the Labs
 This course is designed for learning by doing. Explore the labs, experiment with the data, and don't be afraid to make mistakes! 😃
 
