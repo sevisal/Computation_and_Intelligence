@@ -16,7 +16,7 @@ En este curso, aprenderás a manejar herramientas y técnicas fundamentales en e
 - Desarrollar habilidades prácticas a través de ejercicios.
 
 ## Configuración de Orange y Bibliotecas Requeridas
-Para comenzar con los laboratorios, necesitarás configurar Orange Data Mining junto con algunas bibliotecas adicionales. Por favor, sigue las instrucciones en la página de [Configuración](setup.qmd) para crear el entorno necesario.
+Para comenzar con los laboratorios, necesitarás configurar Orange Data Mining junto con algunas bibliotecas adicionales. Por favor, sigue las instrucciones en la página de [Configuración](setup.es.qmd) para crear el entorno necesario.
 
 ## Explora los Laboratorios
 Este curso está diseñado para que aprendas haciendo. ¡Explora los laboratorios, experimenta con los datos y no tengas miedo a equivocarte! 😃
