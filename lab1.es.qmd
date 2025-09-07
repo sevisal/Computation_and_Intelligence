@@ -1,5 +1,5 @@
 ---
-title: "Sesión 1 de Laboratorio: Introducción a Orange y manejo de datos"
+title: "Sesión 1 de laboratorio: Introducción a Orange y manejo de datos"
 format:
   html:
     toc: true
