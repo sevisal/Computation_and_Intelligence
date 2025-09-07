@@ -49,7 +49,7 @@ Estas habilidades son fundamentales para realizar análisis exploratorio y prepa
 En esta actividad exploraremos la interfaz de Orange y sus principales componentes. 
 ![](_resources/images/orangefront.png){.img-center}
 
-Para ello, comienza haciendo lo siguiente:
+Para ello comienza haciendo lo siguiente:
 
 1. Abre la aplicación Orange y explora la interfaz.
 2. Examina las categorías de widgets: **Data**, **Visualize**, **Model**, **Evaluate**.
@@ -80,7 +80,7 @@ Para ello, comienza haciendo lo siguiente:
 :::
 
 ![Source: Loofandjimmy.com](_resources/images/titanic.gif){.img-right}
-En esta actividad, deberás aprender a cargar un conjunto de datos en Orange y explorar su contenido utilizando los widgets disponibles. Para ello:
+En esta actividad deberás aprender a cargar un conjunto de datos en Orange y explorar su contenido utilizando los widgets disponibles. Para ello:
 
 1. Arrastra el widget **File** al lienzo y selecciona el archivo de datos proporcionado (`titanic.tab`, `heart_disease.tab`).
 2. Conecta el widget **File** al widget **Data Table** para visualizar el dataset.
@@ -184,7 +184,7 @@ Comienza haciendo lo siguiente:
 <!-- La figura debe mostrar un Scatter Plot de dos variables numéricas coloreadas por la variable objetivo -->
 :::
 
-En esta actividad, explorarás las relaciones entre diferentes variables en el conjunto de datos para identificar patrones, correlaciones y posibles interacciones que puedan ser relevantes para el análisis. Esto es crítico para entender cómo las variables se relacionan entre sí y cómo pueden influir en la variable objetivo.
+En esta actividad explorarás las relaciones entre diferentes variables en el conjunto de datos para identificar patrones, correlaciones y posibles interacciones que puedan ser relevantes para el análisis. Esto es crítico para entender cómo las variables se relacionan entre sí y cómo pueden influir en la variable objetivo.
 
 ![ ](_resources/images/spiderman.jpg){.img-center}
 
@@ -220,7 +220,7 @@ En este caso, realiza los siguientes pasos:
 :::
 
 ![Figura: Selection](_resources/images/selection.gif){.img-right}
-Como acabamos de ver, no todas las variables en un conjunto de datos son igualmente útiles para el análisis o modelado. En esta actividad, aprenderás a seleccionar y enfocarte en las variables más relevantes, mejorando así la eficiencia y efectividad del análisis. Lo puedes hacer siguiendo estos pasos:
+Como acabamos de ver no todas las variables en un conjunto de datos son igualmente útiles para el análisis o modelado. En esta actividad, aprenderás a seleccionar y enfocarte en las variables más relevantes, mejorando así la eficiencia y efectividad del análisis. Lo puedes hacer siguiendo estos pasos:
 
 1. Usa el widget **Select Columns** para elegir las variables que consideres más importantes basándote en las visualizaciones previas.!
 2. Oculta columnas que no aporten información relevante (por ejemplo, identificadores únicos, nombres, etc.).  
