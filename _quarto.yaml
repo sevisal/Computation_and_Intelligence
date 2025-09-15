@@ -21,18 +21,18 @@ website:
         menu:
           - text: "Lab 1"
             href: lab1.qmd
-          # - text: "Lab 2"
-          #   href: lab2.en.qmd
+          - text: "Lab 2"
+            href: lab2.qmd
           # - text: "Lab 3"
-          #   href: lab3.en.qmd
+          #   href: lab3.qmd
           # - text: "Lab 4"
-          #   href: lab4.en.qmd
+          #   href: lab4.qmd
           # - text: "Lab 5"
-          #   href: lab5.en.qmd
+          #   href: lab5.qmd
           # - text: "Lab 6"
-          #   href: lab6.en.qmd
+          #   href: lab6.qmd
           # - text: "Lab 7"
-          #   href: lab7.en.qmd
+          #   href: lab7.qmd
     right:
       - text: "🌐"
         href: "javascript:void(0)"

@@ -1,0 +1,341 @@
+---
+title: "Lab session 2: Data preprocessing"
+format:
+    html:
+        toc: true
+        toc-depth: 5
+        toc-location: left
+        toc-title: "**Contents**"
+---
+
+# Session objectives
+
+::: {.objective-card}
+🎯 **General objective:**  
+Learn how to prepare and preprocess data before modeling, ensuring that the datasets we work with are consistent, meaningful, and ready for machine learning algorithms.  
+:::
+
+![](_resources/images/processing.gif){.img-right}
+
+In real-world projects, data quality largely determines model quality. No matter how sophisticated an algorithm may be, poor data input will inevitably lead to unreliable predictions. Preprocessing is the stage where we clean, transform, and structure data so that models can learn effectively and without distortions.  
+
+In this session, we will develop an understanding of why preprocessing is essential, and then apply it in practice. You will see how to identify and select relevant attributes, deal with missing values, normalize variables that exist on very different scales, and investigate the effect of outliers. You will also learn why it is crucial to separate data into training and test subsets before evaluation. Finally, you will compare raw and preprocessed datasets to appreciate how much difference these steps make in practice. Mastering these ideas will help you avoid common mistakes such as data leakage, biased models, or overfitting.  
+
+---
+
+# Proposed activities
+Throughout these activities, you will work with dataset `Chronic Kidney Disease`. This dataset contains information about patients with chronic kidney disease, including various medical and demographic attributes. It is a common benchmark for classification tasks, where the goal is to predict the presence or absence of the disease based on other variables. You can download it from [this link](https://www.kaggle.com/datasets/mansoordaku/ckdisease/download). Load the dataset as we did in the previous session (using the **CSV File Import** widget). Once you are ready, we can start preprocessing it!
+
+## 1. Data cleaning
+::: {.objective-card}
+🎯 **Objective:** Identify and handle text categories.
+:::
+The first step in preprocessing is to ensure that the data is clean and consistent. This involves identifying and handling text categories, as well as ensuring that categorical variables are properly formatted.
+
+![](_resources/images/cleaning.jpg){.img-right}
+
+Visualize the content of the dataset and find any errors that might have ocurred during data collection. Identify any text categories and look for variables that contain text data, such as "yes"/"no" or other categorical values and make sure the unique values are correctly encoded. You can use the **Edit Domain** widget to rename or recode these categories if necessary. There might be inconsistencies in how categories are represented (e.g., "yes", "Yes", "YES"). Standardize these entries to ensure uniformity.
+
+Make sure the correct variable is set as the target variable (the one you want to predict). In this case, it should be the variable indicating the presence or absence of Chronic Kidney Disease (CKD). You can use the **Select Columns** widget to set the target variable appropriately.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. Are there any inconsistencies in the text categories? If so, how did you standardize them?
+2. Which variable did you set as the target variable, and why?
+3. Did you find any other issues in the dataset that needed to be addressed? If so, what were they?
+:::
+
+<!-- Solution
+1. Yes, there were inconsistencies such as "yes", "Yes", and "YES". I standardized them all to "yes" using the Edit Domain widget.
+2. I set the variable indicating the presence or absence of CKD as the target variable because it is the outcome we want to predict.
+3. I found some missing values in certain attributes, which I will address in the next step
+    -->
+
+---
+
+## 2. Data partitions
+
+::: {.objective-card}
+🎯 **Objective:** Understand the importance of making partitions in the dataset.  
+:::
+
+When we build a machine learning model, we want it to learn patterns that it can apply to new situations, not just memorize the examples we give it. To check whether this is happening, we need to separate our data into two parts:
+
+- **Training** set: the data the model uses to learn.
+- **Test** set: the data we keep aside to check how well the model works on unseen examples.
+
+If we only test the model on the same data it was trained on, the results can be misleading. The model might look perfect simply because it has memorized the answers, but this tells us little about how it will behave in the real world.
+
+![](_resources/images/exam.gif){.img-right}
+
+Think of it like studying for an exam:
+
+- You practice with exercises from your textbook (**training**).
+- Then you take the actual exam, which has different questions (**testing**).
+
+Only by doing well on the exam can you be sure that you truly understand the material, rather than just memorizing the practice exercises. Machine learning works the same way: testing on new data shows whether the model has really learned and can generalize to future cases.
+
+### 2.1 Random partitions
+
+Start by creating a random partition of the dataset into training and test sets. A common split is 70% for training and 30% for testing, but you can choose different proportions based on your needs.
+
+![Source:https://blogs.sas.com/content/subconsciousmusings/](_resources/images/randomsampling.png){.img-center}
+
+Use the **Data Sampler** widget to create a random partition of the dataset. Set the sampling type to "Random" and choose a proportion for the training set (e.g., 70% for training and 30% for testing). Connect the output of the **Data Sampler** to two **Data Table** widgets to visualize both the training and test sets. You need to ensure the input to each table is the corresponding output from the **Data Sampler** (one contains the training subset and the other contains the test subset). 
+
+Visualize how two relevant features are distributed in both subsets. You can use the **Scatter Plot** widget to visualize the relationship between two numerical features, and the **Distributions** widget to see how individual features are distributed. Compare the distributions in the training and test sets to see if they are similar.
+
+Then repeat the process with 95% for training and 5% for testing.
+
+::: {.question-card}
+📝 **Questions:**   
+
+1. What proportion did you choose for the training and test sets? Why? Change the proportion and see how it affects the distributions.
+2. Do the distributions of key features look similar in both subsets? If not, what differences did you observe?
+3. Why is it important to have similar distributions in both the training and test sets?
+4. How does changing the proportion of the split (e.g., 70/30 vs. 95/5) affect the distributions in the training and test sets?
+:::
+
+<!-- Solution
+
+1. A common choice is 70% for training and 30% for testing, as it provides a good balance between having enough data to train the model and enough data to evaluate its performance. Changing the proportion can affect the distributions; for example, a very small test set may not represent the overall data well. However, the choice can depend on the specific dataset and problem.
+2. The distributions should ideally be similar, but there may be some differences due to the randomness of the sampling process. If significant differences are observed, it could indicate that the random sampling did not capture the overall data distribution well.
+3. Similar distributions are important to ensure that the model is evaluated on data that is representative of what it was trained on. If the test set has a different distribution, the model's performance may not accurately reflect its ability to generalize to new data.
+ -->
+
+### 2.2 Stratified partitions
+
+In some cases, especially when dealing with imbalanced datasets (where one class is much more common than another), random sampling might not preserve the class distribution in both subsets. This can lead to misleading results when evaluating the model. To address this, we can use stratified sampling, which ensures that the class proportions are maintained in both the training and test sets.
+
+![Source:https://blogs.sas.com/content/subconsciousmusings/](_resources/images/stratifiedsampling.png){.img-center}
+
+Use the **Data Sampler** widget again, but this time set the sampling type to "Stratified". Choose the target variable (the one indicating the presence or absence of CKD) to ensure that both subsets maintain the same class distribution as the original dataset. Then repeat the process of visualizing the distributions of key features in both subsets using the **Scatter Plot** widget.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. How does stratified sampling differ from random sampling in terms of class distribution?
+2. Did you notice any differences in the distributions of key features between the training and test sets when using stratified sampling?
+3. Why is stratified sampling particularly important for imbalanced datasets?
+:::
+
+<!-- Solution
+
+1. Stratified sampling ensures that the class proportions are maintained in both the training and test sets, while random sampling may not preserve these proportions, especially in imbalanced datasets.
+2. When using stratified sampling, the distributions of key features in both subsets should be more similar compared to random sampling, especially for the target variable.
+3. Stratified sampling is important for imbalanced datasets because it prevents one class from being underrepresented in either the training or test set, which could lead to biased model performance and unreliable evaluation results.
+ -->
+
+### 2.3 Cross-validation
+
+In addition to creating a single training and test split, another common approach to evaluate machine learning models is cross-validation. This technique involves dividing the dataset into multiple subsets (or "folds") and training/testing the model multiple times, each time using a different fold as the test set and the remaining folds as the training set. This helps to ensure that the model's performance is robust and not dependent on a particular split of the data.
+
+![](_resources/images/Cross%20validation.png){.img-center}
+
+We will implement cross-validation in the next lab session when we start building and evaluating models. For now, just understand that it is a powerful technique to assess model performance more reliably.
+
+### 2.4 Validation set
+
+![](_resources/images/validation.gif){.img-right}
+
+In addition to the training and test sets, it is often useful to create a third subset called the validation set. This set is used during the model development process to tune hyperparameters and make decisions about model architecture without touching the test set. The validation set helps to prevent overfitting to the training data and provides an unbiased evaluation of the model during development.
+
+We will implement the validation set in the next lab session when we start building and evaluating models. For now, just understand its purpose and importance.
+
+---
+
+## 3. Data normalization
+
+::: {.objective-card}
+🎯 **Objective:** Understand the importance of normalizing data.
+:::
+
+When working with datasets that contain numerical features on different scales, it is important to normalize the data. Normalization ensures that all features contribute equally to the distance calculations used by many machine learning algorithms. If one feature has a much larger range than others, it can dominate the distance metric and lead to biased results. For example, if one feature ranges from 0 to 1 and another ranges from 0 to 1000, the second feature will have a much larger impact on the distance calculations. 
+
+### 3.1 Min-Max normalization
+
+Min-Max normalization is a common technique used to scale features to a specific range, usually [0, 1]. The formula for Min-Max normalization is:
+
+$$
+X' = \frac{X - X_{min}}{X_{max} - X_{min}}
+$$
+
+where:
+
+- $X$ is the original value,
+- $X_{min}$ is the minimum value of the feature,
+- $X_{max}$ is the maximum value of the feature,
+- $X'$ is the normalized value.
+
+Pass your data to the **Continuize** widget, and then connect the output to a **Distributions** widget to visualize the effect of normalization on the features. Visualize how two relevant features are distributed before and after applying Min-Max normalization.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What are the advantages of using Min-Max normalization?
+2. Are there any potential drawbacks to using Min-Max normalization?
+3. How did the distributions of the features change after applying Min-Max normalization?
+:::
+
+<!-- Solution
+1. Min-Max normalization scales features to a specific range, which can improve the performance of machine learning algorithms that rely on distance calculations. It also preserves the relationships between the original data points.
+2. One potential drawback is that Min-Max normalization is sensitive to outliers. If the dataset contains extreme values, they can significantly affect the scaling of the other data points.
+3. After applying Min-Max normalization, the distributions of the features should be scaled to the range [0, 1]. The shape of the distributions may remain similar, but the values will be adjusted to fit within the specified range.
+-->
+
+### 3.2 Standardization
+Standardization (also known as Z-score normalization) is another common technique used to scale features. It transforms the data to have a mean of 0 and a standard deviation of 1. The formula for the standardization is:
+$$
+X' = \frac{X - \mu}{\sigma}
+$$
+where:
+
+- $X$ is the original value,
+- $\mu$ is the mean of the feature,
+- $\sigma$ is the standard deviation of the feature,
+- $X'$ is the normalized value.
+
+Change the **Continuize** widget to "Standardization", and then connect the output to a **Distributions** widget to visualize the effect of Standardization on the features. Visualize how two relevant features are distributed before and after applying Standardization.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What are the advantages of using Standardization?
+2. Are there any potential drawbacks to using Standardization?
+3. How did the distributions of the features change after applying Standardization?
+:::
+
+<!-- Solution
+1. Standardization transforms features to have a mean of 0 and a standard deviation of 1, which can improve the performance of machine learning algorithms that assume normally distributed data. It is also less sensitive to outliers compared to Min-Max normalization.
+2. One potential drawback is that Standardization assumes that the data is normally distributed. If the data is heavily skewed, this method may not be appropriate.
+3. After applying Standardization, the distributions of the features should be centered around 0 with a standard deviation of 1. The shape of the distributions may remain similar, but the values will be adjusted to fit the standardized scale.
+-->
+
+### 3.3 Outlier effects on normalization
+
+![](_resources/images/bloodpressure.jpeg){.img-right}
+
+Outliers are extreme values that differ significantly from other observations in the dataset. They can arise due to measurement errors, data entry mistakes, or genuine variability in the data. Outliers can have a significant impact on normalization techniques, especially Min-Max normalization, as they can skew the scaling of the other data points.
+
+Let's take a look at variable `bp` (blood pressure) in the dataset. Use the  **Scatter Plot** and/or **Box Plot** widget to visualize the distribution of this variable and identify any potential outliers. Then, apply both Min-Max normalization and Standardization to the dataset using the **Continuize** widget, and visualize how the distributions of the `bp` variable change after normalization.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. How do outliers affect Min-Max normalization?
+2. How do outliers affect Standardization?
+:::
+
+<!-- Solution
+1. Outliers can significantly affect Min-Max normalization by stretching the range of the feature, which can lead to other data points being compressed into a smaller range.
+2. Outliers can also affect Standardization by increasing the standard deviation, which can lead to other data points being scaled down
+-->
+
+### 3.4 Normalization and data partitions
+
+It is crucial to apply normalization techniques only to the training set and then use the same parameters (e.g., min, max, mean, standard deviation) to transform the test set. This prevents data leakage, which occurs when information from the test set is used during the training process, leading to overly optimistic performance estimates. 
+
+To achieve this in Orange, you can use the **Apply Domain** widget to fit the normalization parameters on the training set and then apply them to the test set. To do it, you need to connect the output of the **Data Sampler** (training set) to the **Continuize** widget, and then connect the output of the **Continuize** widget to the **Apply Domain** widget and set it as `Template Data`. Finally, connect the test set output from the **Data Sampler** to the **Apply Domain** widget and set it as `Data`. This way, the normalization parameters are learned from the training set and applied to the test set.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. Why is it important to apply normalization techniques only to the training set?
+2. What could happen if we used the test set to fit the normalization parameters?
+3. How does the **Apply Domain** widget work in Orange for normalization?
+:::
+
+<!-- Solution
+1. It is important to apply normalization techniques only to the training set to prevent data leakage, which can lead to overly optimistic performance estimates.
+2. If we used the test set to fit the normalization parameters, it could introduce information from the test set into the training process, leading to biased results and an inaccurate assessment of the model's performance.
+3. The **Apply Domain** widget in Orange allows you to fit normalization parameters on the training set and then apply them to the test set, ensuring that the test set is transformed using the same parameters learned from the training data.
+-->
+
+::: {.final-note-card}
+The choice between normalization techniques like Min-Max normalization and Standardization depends on the specific characteristics of the dataset and the requirements of the machine learning algorithm being used. Min-Max normalization is often preferred when the data is uniformly distributed and the algorithm requires a specific range (e.g., [0, 1]). Standardization is more suitable for algorithms that assume normally distributed data or when the data contains outliers. 
+
+In practice, it is essential to visualize the data distribution before and after applying normalization techniques. This can help identify the most appropriate method and ensure that the transformed data meets the assumptions of the chosen machine learning algorithm. 
+:::
+
+---
+
+## 4. Data imputation
+::: {.objective-card}
+🎯 **Objective:** Learn how to fill missing values in the dataset.
+:::
+
+![](_resources/images/missing.jpg){.img-right}
+
+Missing values are a common issue in real-world datasets. They can occur for various reasons, such as data entry errors, equipment malfunctions, or respondents skipping questions in surveys. Handling missing values is crucial because they can lead to biased results and reduce the effectiveness of machine learning models. There are several strategies to deal with missing values, including:
+
+- **Removing rows or columns** with missing values (if the amount of missing data is small).
+- **Imputing missing values** using statistical measures (mean, median, mode) or more advanced techniques (e.g., k-nearest neighbors, regression).
+
+The choice of method depends on the nature of the data and the extent of missingness. 
+
+### 4.1 Removing missing values
+
+First, let's see how to remove rows with missing values. Use the **Impute** widget to filter out rows that contain any missing values. Connect the output to a **Data Table** widget to visualize the cleaned dataset.
+
+::: {.question-card}
+📝 **Questions:**
+1. How many rows were removed due to missing values?
+2. What are the potential drawbacks of removing rows with missing values?
+:::
+
+<!-- Solution
+1. The number of rows removed will depend on the specific dataset being used. You can check the number of rows before and after applying the filter to determine how many were removed.
+2. Removing rows with missing values can lead to a loss of valuable information, especially if a significant portion of the dataset contains missing values. It can also introduce bias if the missingness is not random (e.g., if certain groups are more likely to have missing data).
+-->
+
+### 4.2 Imputing missing values
+
+In many cases, it may be more appropriate to impute missing values rather than removing them. Imputation involves filling in missing values with estimated ones based on the available data. There are several methods for imputing missing values, including:
+
+- **Mean/Median/Mode Imputation:** Replace missing values with the mean, median, or mode of the column.
+- **K-Nearest Neighbors (KNN) Imputation:** Use the values from the nearest neighbors to estimate the missing values.
+- **Regression Imputation:** Use regression models to predict and fill in missing values based on other features.
+
+Use the **Impute** widget to fill in missing values. You can choose different imputation methods for different columns. Connect the output to a **Data Table** widget to visualize the imputed dataset.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What are the advantages and disadvantages of using imputation methods for handling missing values?
+2. How can you assess the impact of imputation on the overall dataset?
+3. In what situations might you prefer to use imputation over simply removing missing values?
+:::
+
+<!-- Solution
+1. Advantages of imputation include preserving the dataset size and retaining valuable information. Disadvantages include the potential introduction of bias if the imputation method does not accurately reflect the underlying data distribution.
+2. You can assess the impact of imputation by comparing the distributions of the original and imputed datasets, as well as evaluating the performance of machine learning models trained on both datasets.
+3. Imputation is preferred when the amount of missing data is significant, and removing rows would lead to a substantial loss of information. It is also useful when the missingness is not random, and removing rows could introduce bias.
+-->
+
+---
+
+# Mini-project: Preparing data for modeling
+
+In this mini-project, you will apply the concepts learned in this session to preprocess a new dataset. 
+
+![](_resources/images/car.jpg){.img-right}
+
+Imagine you have just joined a research group studying automobile quality and market pricing. The team has collected the **Imports 1985** dataset (available in the **Datasets** widget). The first impression may be that it is rich and detailed. However, a closer look reveals several problems: some attributes contain missing or inconsistent entries (often encoded as `?`), others are measured on very different scales, and there are a few extreme cases that could either be genuine market outliers or simple recording mistakes. In addition, some numeric columns may be stored as text and not correctly recognized as numeric, and not all available attributes are necessarily relevant for the prediction task.
+
+Your role is to design a preprocessing workflow in Orange that transforms this raw dataset into one that is trustworthy and ready for modeling (for example, predicting `price` or building a classifier for `symboling`). This will require decisions about which variables to keep, how to treat incomplete data, whether or not to adjust variable scales, and what to do with unusual values. Once you have reached a version of the dataset you consider appropriate, you will need to ensure it is properly divided into training and test subsets so that future models can be evaluated fairly.
+
+There is no single correct pipeline, and different choices may lead to different results. What matters is that you think carefully about each decision and can justify why you handled the data in the way you did. At the end, save your workflow and write a short reflection describing your reasoning: explain what steps you applied, which ones you decided were unnecessary, and how confident you are that the dataset is now ready to be used in the following lab sessions.
+
+# Final note
+
+::: {.final-note-card}
+✨ Excellent work! You have learned how to preprocess data effectively, which is a crucial step in any machine learning project. By cleaning the data, handling missing values, normalizing features, and creating appropriate data partitions, you have laid a solid foundation for building reliable models.
+
+In the next session, you will see how these choices impact the performance of supervised learning models. Remember to save both workflows (raw and preprocessed) so you can compare their effects.  
+:::
+
+::: {.margin}
+# Explore the Labs {.unnumbered .unlisted}
+{{< include lab-cards.qmd >}}
+:::

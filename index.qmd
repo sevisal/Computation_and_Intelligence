@@ -1,5 +1,5 @@
 ---
-title: "Welcome to the **Computation and Intelligence** Course!"
+title: "Welcome to the **Computation and Intelligence** course!"
 format:
   html:
     toc-depth: 3
@@ -10,15 +10,15 @@ On this site you can find the materials for the lab sessions we will use in the 
 
 In this course, you will learn how to use fundamental tools and techniques in the field of computing and artificial intelligence with a practical approach. We will work primarily with the **Orange Data Mining** tool, which makes data exploration and analysis easy through an intuitive graphical interface.
 
-## Course Objectives
+## Course objectives
 - Understand the basic concepts of computing and artificial intelligence.
 - Learn how to use Orange Data Mining for data analysis.
 - Develop practical skills through exercises.
 
-## Setting up Orange and Required Libraries
+## Setting up Orange and required libraries
 To get started with the labs, you'll need to set up Orange Data Mining along with some additional libraries. Please follow the instructions in the [Setup](setup.qmd) page to create the necessary environment.
 
-## Explore the Labs
+## Explore the labs
 This course is designed for learning by doing. Explore the labs, experiment with the data, and don't be afraid to make mistakes! 😃
 
 {{< include lab-cards.qmd >}}
