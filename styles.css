@@ -240,3 +240,66 @@ main.content {
 .hero .btn-primary:hover {
   background-color: #ffc107;
 }
+
+/* -------- Responsive Fixes -------- */
+
+/* Remove big side margin on smaller screens */
+@media (max-width: 992px) {
+  main.content {
+    margin-right: 0;
+  }
+}
+
+/* Make floated images shrink nicely */
+@media (max-width: 768px) {
+  .img-left,
+  .img-right {
+    float: none;
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+}
+
+/* Hero section scaling */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero .btn-primary {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Navbar: tighter padding + stack links if needed */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .navbar a.nav-link {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Cards spacing on small screens */
+@media (max-width: 576px) {
+  .objective-card,
+  .question-card,
+  .final-note-card {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
