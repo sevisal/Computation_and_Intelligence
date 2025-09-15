@@ -1,12 +1,6 @@
 project:
   type: website
 
-languages:
-  en: 
-    title: "Computation and Intelligence"
-  es:
-    title: "Computación e Inteligencia"
-
 website:
   title: "Computation and Intelligence"
   site-url: "https://sevisal.github.io/Computation_and_Intelligence/"
