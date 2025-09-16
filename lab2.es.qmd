@@ -25,7 +25,7 @@ En esta sesión, desarrollaremos una comprensión de por qué el preprocesamient
 
 # Actividades propuestas
 
-A lo largo de estas actividades, trabajarás con el conjunto de datos `Chronic Kidney Disease`. Este conjunto contiene información sobre pacientes con enfermedad renal crónica, incluyendo diversos atributos médicos y demográficos. Es un benchmark común para tareas de clasificación, donde el objetivo es predecir la presencia o ausencia de la enfermedad en función de otras variables. Puedes descargarlo desde [este enlace](https://www.kaggle.com/datasets/mansoordaku/ckdisease/download). Carga el conjunto de datos como hicimos en la sesión anterior (usando el widget **CSV File Import**). ¡Una vez listo, podemos comenzar a preprocesarlo!
+A lo largo de estas actividades, trabajarás con el conjunto de datos `Chronic Kidney Disease`. Este conjunto contiene información sobre pacientes con enfermedad renal crónica, incluyendo diversos atributos médicos y demográficos. Es un benchmark común para tareas de clasificación, donde el objetivo es predecir la presencia o ausencia de la enfermedad en función de otras variables. Puedes descargarlo desde [este enlace](https://www.kaggle.com/datasets/mansoordaku/ckdisease/download) y puedes encontrar una explicación de cada atributo en [UCI](https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease). Carga el conjunto de datos como hicimos en la sesión anterior (usando el widget **CSV File Import**). ¡Una vez listo, podemos comenzar a preprocesarlo!
 
 ## 1. Limpieza de datos
 
