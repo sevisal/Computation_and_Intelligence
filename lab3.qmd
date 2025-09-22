@@ -1,0 +1,230 @@
+---
+title: "Lab session 3: Regression Problems"
+format:
+    html:
+        toc: true
+        toc-depth: 5
+        toc-location: left
+        toc-title: "**Contents**"
+---
+
+# Session objectives
+
+::: {.objective-card}
+🎯 **General objective:** Understand regression modelling so that we can build predictors that generalise well and produce reliable, interpretable estimates.
+:::
+
+![](_resources/images/Regression.jpg){.img-right}
+In applied problems, the quality of a regression model depends not only on the algorithm but on how we frame the problem, prepare the inputs, and evaluate the results. Even a simple linear model can fail badly if predictors are on wildly different scales, if some variables are collinear, or if influential points dominate the fit. Preprocessing for regression therefore includes the usual cleaning and scaling steps plus diagnostic thinking about model assumptions (linearity, homoscedasticity, independence of errors) and the influence of outliers and leverage points.
+
+This session will develop an intuition for these issues and show how they influence both prediction and interpretation. We will examine the behaviour of ordinary least squares, learn why and when regularisation (Ridge and LASSO) is helpful, and practise selecting hyperparameters with cross-validation. You will also learn which metrics are appropriate for different goals (prediction accuracy vs. robustness vs. interpretability) and how to compare raw, baseline, and regularised models on held-out data.
+
+Mastering these ideas will help you avoid common pitfalls — overfitting, data leakage, misleading $R^2$ values, poor handling of multicollinearity, and overconfident coefficient estimates — so your regression analyses are both accurate and trustworthy.
+
+# Proposed activities
+
+Throughout these activities, you will work with the dataset **California Housing**. This dataset contains information about housing values across districts in California during the 1990 Census, including demographic and geographical attributes such as median income, average number of rooms, and population density. It is a well-known benchmark for regression tasks, where the goal is to predict the **median house value** from the other variables.  
+
+![](_resources/images/Housing.jpeg){.img-center}
+
+You can download the dataset in CSV format from [this link](https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/housing/housing.csv) (If you open it in a browser you will have to right click and **Save as...**). An explanation of each attribute can be found in the [scikit-learn documentation](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset).  
+
+Load the dataset into Orange and select the target variable for our problem (`median_house_value`). Once it is available in your workflow, we will use it to explore the behaviour of linear regression, study the risks of overfitting, and understand how **regularisation methods** and **cross-validation** can improve model performance. As we learned last week, it is crucial to split the data into training and test sets to evaluate the model's performance on unseen data.
+
+---
+
+## 1. Linear regression
+::: {.objective-card}
+🎯 **Objective:** Fit and interpret a linear regression model, and understand its assumptions and limitations.
+:::
+
+![](_resources/images/LR.jpg){.img-right}
+Linear regression is the simplest approach to modelling continuous outcomes. It assumes a linear relationship between predictors (features) and the target variable. While it is easy to fit and interpret, its reliability depends on how well the data satisfy certain assumptions: linearity, independence of errors, homoscedasticity (equal variance), and absence of strong multicollinearity among predictors.
+
+The idea behind linear regression is to find the coefficients (weights) for each predictor that minimize the sum of squared differences between the observed and predicted values. This is known as the **Ordinary Least Squares (OLS)** method and has the following mathematical formulation:
+$$
+L(\mathbf{w}) = \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 = \sum_{i=1}^{N} (y_i - \mathbf{w}^T \mathbf{x}_i)^2
+$$
+where $y_i$ is the actual value, $\hat{y}_i$ is the predicted value, $\mathbf{w}$ is the vector of coefficients, and $\mathbf{x}_i$ is the vector of features for observation $i$.
+
+
+In Orange, you can use the `Linear Regression` widget to build a model that predicts house values from the input attributes. The widget also allows you to inspect the coefficients of each predictor by clicking on the lower part of the window, which indicate the estimated change in the target for a one-unit change in the feature (all else being equal). To better observe the coefficients you can use the `Bar Plot` widget to visualize them.
+
+Remember, large coefficients can be a warning sign of multicollinearity or overfitting. 
+
+Now repeat the process but using the `Continuize` widget to standardize the features before fitting the model. Can you observe any changes in the coefficients?
+
+::: {.question-card}
+📝 **Questions:**   
+
+1. Which variables appear to have the strongest effect on housing prices according to the regression coefficients?
+2. Can we use these coefficients to assess the features' importance? Why or why not?
+3. Do you observe any unusually large or unstable coefficients? What could this indicate?
+:::
+
+<!-- Solution 
+1. Median income is usually the strongest predictor, followed by average number of rooms. 
+2. Only if the features are on the same scale and there is no multicollinearity. Standardizing helps with this.
+3. Yes, some variables show large coefficients, which may indicate multicollinearity or poor scaling. 
+-->
+
+---
+
+## 2. Model performance evaluation
+
+::: {.objective-card}
+🎯 **Objective:** Understand the different metrics to evaluate model performance.
+:::
+
+
+![](_resources/images/performance.gif){.img-right}
+When evaluating a regression model, it is crucial to assess its performance on unseen data to ensure it generalizes well. This is typically done by splitting the dataset into training and test sets. The training set is used to fit the model, while the test set is used to evaluate its performance. 
+
+In Orange, you can use the `Test & Score` widget to evaluate the performance of your regression model. This widget provides several metrics, including:
+- **Mean Squared Error (MSE):** The average of the squared differences between the predicted and actual values. It penalizes larger errors more than MAE, making it sensitive to outliers. It is calculated as:
+$$
+MSE = \frac{1}{N} \sum_{n=1}^{N} (y_n - \hat{y}_n)^2
+$$
+where $y_n$ is the actual value, $\hat{y}_n$ is the predicted value, and $N$ is the number of observations.
+- **Root Mean Squared Error (RMSE):** The square root of MSE, providing an error metric in the same units as the target variable. It is calculated as:
+$$
+RMSE = \sqrt{MSE} = \sqrt{\frac{1}{N} \sum_{n=1}^{N} (y_n - \hat{y}_n)^2}
+$$
+- **Mean Absolute Error (MAE):** The average absolute difference between the predicted and actual values. It gives an idea of how much the predictions deviate from the true values on average. It is calculated as:
+$$
+MAE = \frac{1}{N} \sum_{n=1}^{N} |y_n - \hat{y}_n|
+$$
+
+- **Mean Absolute Percentage Error (MAPE):** The average absolute percentage difference between the predicted and actual values. It is useful for understanding the error in relative terms, especially when the target variable has a wide range. It is calculated as:
+$$
+MAPE = \frac{100\%}{N} \sum_{n=1}^{N} \left| \frac{y_n - \hat{y}_n}{y_n} \right|
+$$
+- **R-squared ($R^2$):** The proportion of variance in the target variable that is explained by the model. It ranges from 0 to 1, with higher values indicating better fit. It is calculated as:
+$$
+R^2 = 1 - \frac{\sum_{n=1}^{N} (y_n - \hat{y}_n)^2}{\sum_{n=1}^{N} (y_n - \bar{y})^2}
+$$
+where $\bar{y}$ is the mean of the actual values.
+
+Use the `Predictions` widget to evaluate your linear regression model on the test set. You can connect the output of the `Linear Regression` widget to the `Predictions` widget, and then connect the output of the `Data Sampler` (test set) to the `Predictions` widget as well. Explore the diffferent metrics provided by the `Predictions` widget. Compare the results with and without standardizing the features using the `Continuize` widget.
+
+Plot the predicted vs. actual values using the `Scatter Plot` widget to visualize the model's performance. You can use the `Show regression line` option in the `Scatter Plot` widget to see how well the predictions align with the actual values.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. Which evaluation metric do you think is most appropriate for this regression problem? Why?
+2. How does standardizing the features affect the model's performance?
+3. Based on the scatter plot, how well does the model capture the relationship between the features and the target variable?
+:::
+
+<!-- Solution
+1. RMSE is often preferred as it provides an error metric in the same units as the target variable and penalizes larger errors more than MAE.
+2. Both models should perform similarly, as linear regression is not sensitive to feature scaling. However, standardizing can help with numerical stability and interpretability of coefficients.
+3. The scatter plot should show a linear relationship between the predicted and actual values, indicating that the model captures the relationship well. However, there may be some deviations, especially for extreme values.
+-->
+
+---
+
+## 3. Regularisation 
+
+::: {.objective-card}
+🎯 **Objective:** Explore the effects of regularization techniques on model performance and the difference between $\ell_1$ and $\ell_2$ regularization.
+:::
+
+![](_resources/images/generalisation.jpg){.img-right}
+We have seen that linear regression can be sensitive to multicollinearity and overfitting, especially when dealing with many predictors. Regularization techniques, such as Ridge ($\ell_2$ regularization) and LASSO ($\ell_1$ regularization), can help mitigate these issues by adding a penalty term to the loss function. This encourages simpler models that generalize better to unseen data.
+
+In the case of Ridge regression, the penalty term is the sum of the squared coefficients, while for LASSO, it is the sum of the absolute values of the coefficients. The mathematical formulations are as follows:
+
+- **Ridge Regression:**
+$$
+L_{Ridge}(\mathbf{w}) = \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^{M} w_j^2
+$$
+- **LASSO Regression:**
+$$
+L_{LASSO}(\mathbf{w}) = \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^{M} |w_j|
+$$
+where $\lambda$ is the regularization parameter that controls the strength of the penalty, $M$ is the number of predictors, and $w_j$ are the coefficients.
+
+In Orange, you can use the `Ridge Regression` and `Lasso Regression` options in the `Linear Regression` widget to fit models with these regularization techniques. Experiment with different values of the regularization parameter $\lambda$ (often denoted as alpha in the widgets) to see how it affects the model's coefficients and performance.
+
+### 3.1. Regularisation on overfitting
+
+![](_resources/images/copy.gif){.img-right}
+To illustrate the effects of regularization, we will create a synthetic dataset with repeated features that can lead to overfitting. You can download the dataset with repeated `MedInc` features from the following link: [Download Dataset with Redundant Features](https://example.com/synthetic_dataset.csv).
+
+Load the dataset into Orange and fit a linear regression model without regularization. Observe the coefficients and the model's performance on the test set using the `Test & Score` widget. Then, fit Ridge and LASSO regression models with different values of $\lambda$ and compare their coefficients and performance.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. How do the coefficients change with different values of $\lambda$ for Ridge and LASSO regression?
+2. Which regularization technique seems to perform better in this scenario? Why?
+3. How does regularization help mitigate overfitting in this case?
+:::
+
+<!-- Solution
+1. As $\lambda$ increases, the coefficients for both Ridge and LASSO regression shrink towards zero. LASSO can set some coefficients exactly to zero, effectively performing feature selection.
+2. LASSO may perform better in this scenario as it can eliminate redundant features by setting their coefficients to zero, leading to a simpler model.
+3. Regularization adds a penalty for large coefficients, discouraging the model from fitting noise in the training data and improving generalization to unseen data.
+-->
+
+### 3.2. Cross-validation for hyperparameter tuning
+
+::: {.objective-card}
+🎯 **Objective:** Use cross-validation to select the optimal regularization parameter $\lambda$ for Ridge and LASSO regression.
+:::
+
+In this section, we will work in a scenario where we have a high dimensional dataset with polynomial features. You can download the dataset with polynomial features from the following link: [Download Polynomial Dataset](https://example.com/polynomial_dataset.csv). 
+
+Choosing the right value of the regularization parameter $\lambda$ is crucial for balancing bias and variance in the model. A common approach to select $\lambda$ is to use cross-validation, which involves partitioning the training data into several folds, training the model on some folds, and validating it on the remaining fold. This process is repeated for different values of $\lambda$, and the value that yields the best average performance across folds is selected.
+
+![](_resources/images/crowded.gif){.img-right}
+In Orange, you can use the `Test & Score` widget with cross-validation enabled to evaluate the performance of Ridge and LASSO regression models for different values of $\lambda$. Unfortunately, Orange does not have a built-in hyperparameter tuning widget, so you will need to create a `Linear Regression` widget for each value of $\lambda$ and pass the predictor to the `Test & Score` widget. As we  will need to standardize the features for regularization, make sure to include the `Preprocessing` widget with the `Standardize` option enabled and pass it to the `Test & Score` widget as well. This will ensure that the scaling is done within each fold, preventing data leakage.
+
+Find the optimal value of $\lambda$ for both Ridge and LASSO regression by comparing their performance on the validation folds. Once you have selected the best $\lambda$, fit the final model on the entire training set and evaluate its performance on the test set.
+
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What is the optimal value of $\lambda$ for Ridge and LASSO regression based on cross-validation?
+2. How does the performance of the final models compare to the initial linear regression model without regularization?
+3. How does cross-validation help in selecting the regularization parameter and improving model generalization?
+:::
+
+<!-- Solution
+1. The optimal value of $\lambda$ will depend on the specific dataset and the results of cross-validation. It is typically the value that minimizes the average validation error.
+2. The final models with regularization should perform better on the test set compared to the initial linear regression model, as they are less likely to overfit the training data.
+3. Cross-validation provides a robust estimate of model performance by evaluating it on multiple subsets of the data, helping to select a regularization parameter that generalizes well to unseen data.
+-->
+
+---
+
+# Mini-project: Regression problems and regularisation
+
+In this mini-project, you will apply what you have learned about data preprocessing and regularization in regression.  
+
+![](_resources/images/energy.jpg){.img-right}
+
+Imagine you have joined a research initiative on sustainable architecture. The team is working with the **Energy Efficiency** dataset (available in the following [link](https://www.kaggle.com/datasets/elikplim/eergy-efficiency-dataset/download)). It contains building parameters such as wall area, roof area, and glazing area, along with two target variables: the heating load and the cooling load required for each design. For this exercise, you should **choose one of the two targets** to predict. Part of your task is to justify why you selected that particular target and how it affects your modeling decisions.  
+
+At first glance, the dataset seems straightforward, but it introduces some challenges that make it a useful test case. Several variables are measured on different scales, which can distort the influence of predictors if left unadjusted. There are also strong correlations among the input features, which can cause instability in linear regression models. These issues highlight the importance of both preprocessing and regularization.  
+
+Your task is to design a workflow in Orange that prepares this dataset for modeling and then builds a regularized linear regression model. This will involve making careful decisions about how to transform the data, whether to normalize or standardize the variables, and how to handle correlated predictors. Once your data is prepared, you will train a regression model with regularization, validate the choice of the regularization parameter through cross-validation, and finally evaluate its performance on a held-out test set.  
+
+As with previous projects, there is no single correct pipeline. Different workflows may yield different results, and what matters most is that you can explain and justify your decisions. At the end, save your workflow and write a short reflection describing how you prepared the data, which steps you decided were unnecessary, how you chose your prediction target, and how regularization affected the performance of your final model.  
+
+
+# Final note
+
+::: {.final-note-card}
+✨ Congratulations on completing Lab 3! You have explored the fundamentals of regression analysis, including fitting linear models, evaluating their performance, and applying regularization techniques to improve generalization.
+
+In the next session, you will delve into classification problems, learning how to build models that can categorize data into distinct classes. This will involve understanding different algorithms, performance metrics, and strategies for handling imbalanced datasets. Enjoy your journey into the world of machine learning! 🚀
+:::
+
+::: {.margin}
+# Explore the Labs {.unnumbered .unlisted}
+{{< include lab-cards.qmd >}}
+:::

@@ -11,8 +11,7 @@ format:
 # Session objectives
 
 ::: {.objective-card}
-🎯 **General objective:**  
-Learn how to prepare and preprocess data before modeling, ensuring that the datasets we work with are consistent, meaningful, and ready for machine learning algorithms.  
+🎯 **General objective:**  Learn how to prepare and preprocess data before modeling, ensuring that the datasets we work with are consistent, meaningful, and ready for machine learning algorithms.  
 :::
 
 ![](_resources/images/processing.gif){.img-right}
@@ -25,6 +24,8 @@ In this session, we will develop an understanding of why preprocessing is essent
 
 # Proposed activities
 Throughout these activities, you will work with dataset `Chronic Kidney Disease`. This dataset contains information about patients with chronic kidney disease, including various medical and demographic attributes. It is a common benchmark for classification tasks, where the goal is to predict the presence or absence of the disease based on other variables. You can download it from [this link](https://www.kaggle.com/datasets/mansoordaku/ckdisease/download) and can find an explanation of each attribute from [UCI](https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease). Load the dataset as we did in the previous session (using the **CSV File Import** widget). Once you are ready, we can start preprocessing it!
+
+---
 
 ## 1. Data cleaning
 ::: {.objective-card}
