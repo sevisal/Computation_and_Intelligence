@@ -47,7 +47,6 @@ L(\mathbf{w}) = \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 = \sum_{i=1}^{N} (y_i - \math
 $$
 where $y_i$ is the actual value, $\hat{y}_i$ is the predicted value, $\mathbf{w}$ is the vector of coefficients, and $\mathbf{x}_i$ is the vector of features for observation $i$.
 
-
 In Orange, you can use the `Linear Regression` widget to build a model that predicts house values from the input attributes. The widget also allows you to inspect the coefficients of each predictor by clicking on the lower part of the window, which indicate the estimated change in the target for a one-unit change in the feature (all else being equal). To better observe the coefficients you can use the `Bar Plot` widget to visualize them.
 
 Remember, large coefficients can be a warning sign of multicollinearity or overfitting. 
@@ -151,7 +150,7 @@ In Orange, you can use the `Ridge Regression` and `Lasso Regression` options in 
 ### 3.1. Regularisation on overfitting
 
 ![](_resources/images/copy.gif){.img-right}
-To illustrate the effects of regularization, we will create a synthetic dataset with repeated features that can lead to overfitting. You can download the dataset with repeated `MedInc` features from the following link: [Download Dataset with Redundant Features](https://github.com/sevisal/Computation_and_Intelligence/raw/main/_resources/data/california_housing_data_rep.csv){download}.
+To illustrate the effects of regularization, we will create a synthetic dataset with repeated features that can lead to overfitting. You can download the dataset with repeated `MedInc` features from the following link: [Download Dataset with Redundant Features](https://github.com/sevisal/Computation_and_Intelligence/raw/main/_resources/data/california_housing_data_rep.csv).
 
 Load the dataset into Orange and fit a linear regression model without regularization. Observe the coefficients and the model's performance on the test set using the `Test & Score` widget. Then, fit Ridge and LASSO regression models with different values of $\lambda$ and compare their coefficients and performance.
 
@@ -175,7 +174,7 @@ Load the dataset into Orange and fit a linear regression model without regulariz
 🎯 **Objective:** Use cross-validation to select the optimal regularization parameter $\lambda$ for Ridge and LASSO regression.
 :::
 
-In this section, we will work in a scenario where we have a high dimensional dataset with polynomial features. You can download the dataset with polynomial features from the following link: [Download Polynomial Dataset](https://github.com/sevisal/Computation_and_Intelligence/raw/main/_resources/data/california_housing_data_poly.csv){download}. 
+In this section, we will work in a scenario where we have a high dimensional dataset with polynomial features. You can download the dataset with polynomial features from the following link: [Download Polynomial Dataset](https://github.com/sevisal/Computation_and_Intelligence/raw/main/_resources/data/california_housing_data_poly.csv). 
 
 Choosing the right value of the regularization parameter $\lambda$ is crucial for balancing bias and variance in the model. A common approach to select $\lambda$ is to use cross-validation, which involves partitioning the training data into several folds, training the model on some folds, and validating it on the remaining fold. This process is repeated for different values of $\lambda$, and the value that yields the best average performance across folds is selected.
 
