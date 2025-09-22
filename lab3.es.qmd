@@ -80,6 +80,7 @@ Repite el proceso usando el widget `Continuize` para estandarizar las caracterí
 Al evaluar un modelo de regresión, es crucial medir su desempeño en datos no vistos para asegurar que generalice bien. Normalmente se divide el conjunto en entrenamiento y prueba: el primero se usa para ajustar el modelo y el segundo para evaluarlo.
 
 En Orange puedes usar el widget `Test & Score` para evaluar el rendimiento de tu modelo de regresión. Este widget ofrece varias métricas, entre ellas:
+
 - **Error cuadrático medio (MSE):** El promedio de los cuadrados de las diferencias entre los valores predichos y los reales. Penaliza más los errores grandes que el MAE, por lo que es sensible a valores atípicos. Se calcula como:
 $$
 MSE = \frac{1}{N} \sum_{n=1}^{N} (y_n - \hat{y}_n)^2
