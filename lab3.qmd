@@ -27,7 +27,7 @@ Throughout these activities, you will work with the dataset **California Housing
 
 ![](_resources/images/Housing.jpeg){.img-center}
 
-You can download the dataset in CSV format from [this link](https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/housing/housing.csv) (If you open it in a browser you will have to right click and **Save as...**). An explanation of each attribute can be found in the [scikit-learn documentation](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset).  
+You can download the dataset in CSV format from [this link](https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/housing/housing.csv){download} (If you open it in a browser you will have to right click and **Save as...**). An explanation of each attribute can be found in the [scikit-learn documentation](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset).  
 
 Load the dataset into Orange and select the target variable for our problem (`median_house_value`). Once it is available in your workflow, we will use it to explore the behaviour of linear regression, study the risks of overfitting, and understand how **regularisation methods** and **cross-validation** can improve model performance. As we learned last week, it is crucial to split the data into training and test sets to evaluate the model's performance on unseen data.
 
@@ -151,7 +151,7 @@ In Orange, you can use the `Ridge Regression` and `Lasso Regression` options in 
 ### 3.1. Regularisation on overfitting
 
 ![](_resources/images/copy.gif){.img-right}
-To illustrate the effects of regularization, we will create a synthetic dataset with repeated features that can lead to overfitting. You can download the dataset with repeated `MedInc` features from the following link: [Download Dataset with Redundant Features](https://example.com/synthetic_dataset.csv).
+To illustrate the effects of regularization, we will create a synthetic dataset with repeated features that can lead to overfitting. You can download the dataset with repeated `MedInc` features from the following link: [Download Dataset with Redundant Features](https://github.com/sevisal/Computation_and_Intelligence/raw/main/_resources/data/california_housing_data_rep.csv){download}.
 
 Load the dataset into Orange and fit a linear regression model without regularization. Observe the coefficients and the model's performance on the test set using the `Test & Score` widget. Then, fit Ridge and LASSO regression models with different values of $\lambda$ and compare their coefficients and performance.
 
@@ -175,7 +175,7 @@ Load the dataset into Orange and fit a linear regression model without regulariz
 🎯 **Objective:** Use cross-validation to select the optimal regularization parameter $\lambda$ for Ridge and LASSO regression.
 :::
 
-In this section, we will work in a scenario where we have a high dimensional dataset with polynomial features. You can download the dataset with polynomial features from the following link: [Download Polynomial Dataset](https://example.com/polynomial_dataset.csv). 
+In this section, we will work in a scenario where we have a high dimensional dataset with polynomial features. You can download the dataset with polynomial features from the following link: [Download Polynomial Dataset](https://github.com/sevisal/Computation_and_Intelligence/raw/main/_resources/data/california_housing_data_poly.csv){download}. 
 
 Choosing the right value of the regularization parameter $\lambda$ is crucial for balancing bias and variance in the model. A common approach to select $\lambda$ is to use cross-validation, which involves partitioning the training data into several folds, training the model on some folds, and validating it on the remaining fold. This process is repeated for different values of $\lambda$, and the value that yields the best average performance across folds is selected.
 
