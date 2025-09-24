@@ -79,7 +79,7 @@ Now repeat the process but using the `Continuize` widget to standardize the feat
 ![](_resources/images/performance.gif){.img-right}
 When evaluating a regression model, it is crucial to assess its performance on unseen data to ensure it generalizes well. This is typically done by splitting the dataset into training and test sets. The training set is used to fit the model, while the test set is used to evaluate its performance. 
 
-In Orange, you can use the `Test & Score` widget to evaluate the performance of your regression model. This widget provides several metrics, including:
+In Orange, you can use the `Predictions` widget to evaluate the performance of your regression model. This widget provides several metrics, including:
 - **Mean Squared Error (MSE):** The average of the squared differences between the predicted and actual values. It penalizes larger errors more than MAE, making it sensitive to outliers. It is calculated as:
 $$
 MSE = \frac{1}{N} \sum_{n=1}^{N} (y_n - \hat{y}_n)^2
