@@ -1,0 +1,208 @@
+---
+title: "Lab session 4: Classification Problems"
+format:
+    html:
+        toc: true
+        toc-depth: 5
+        toc-location: left
+        toc-title: "**Contents**"
+---
+
+# Session objectives
+
+::: {.objective-card}
+🎯 **General objective:** Learn how to frame and evaluate classification problems, developing models that not only achieve good accuracy but also provide insight into patterns that separate groups of interest.
+:::
+
+![](_resources/images/The_Square_Hole.jpg){.img-right}
+
+Classification is one of the most widely used tasks in machine learning, especially in biomedical and clinical research. Unlike regression, where we predict a continuous outcome, here the goal is to assign each observation to a discrete category. This shift in perspective changes everything: from the type of algorithms we use, to how we evaluate success, to the consequences of different types of errors. A model that misclassifies a patient’s condition, for instance, carries a very different implication than a model that slightly underestimates a continuous biomarker.
+
+Good classification pipelines require careful thought about class balance, choice of features, and the trade-off between sensitivity and specificity. Even highly accurate models can be misleading if they overfit to artefacts in the data or if they fail to generalise beyond the training cohort. Evaluation therefore demands more than a single metric: accuracy, precision, recall, F1 score, and confusion matrices all provide complementary perspectives on performance. This session will cultivate an intuition for these issues, showing how different algorithms behave under varying conditions, and how proper validation strategies help us judge the reliability of our results.
+
+# Proposed activities
+
+In this session we will work with the **Bone marrow mononuclear cells with AML** dataset, available directly in Orange’s widget datasets. This collection contains genomic profiles of single cells from bone marrow, some originating from patients with **acute myeloid leukemia (AML)** and others from healthy donors. The task is to classify whether each cell belongs to the AML group or the healthy control group based on its expression profile.
+
+![](_resources/images/bone.jpg){.img-center}
+
+This dataset illustrates several central challenges of biomedical classification: high-dimensional data, biological variability, and the need for interpretable decision rules. By loading it into Orange, selecting the correct target variable (cell type: AML vs. healthy), and connecting it with classification learners, you will explore the performance of common algorithms such as logistic regression and k-nearest neighbours. We will also investigate how class imbalance affects model behaviour, and why cross-validation is essential to obtain a fair estimate of predictive accuracy.
+
+Through these activities, you will develop a practical understanding of how to design, train, and evaluate classification models in settings where both accuracy and interpretability matter.
+
+---
+
+## 1. Prepare the data
+::: {.objective-card}
+🎯 **Objective:** Understand the dataset and prepare it for classification.
+:::
+
+In this first part, we will load the dataset and perform some initial exploration and preprocessing. This includes checking for missing values, understanding the distribution of classes, and visualising the data. Make sure to set the target variable correctly to indicate whether each cell is from an AML patient or a healthy donor.
+
+Partition the data into training and test sets, having the same percentage of samples in each subset and stratifying by the target variable. This will help us evaluate the model's performance more accurately later on. Visualise the samples you have and how they are distributed.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. How many samples are in each class (AML vs. healthy)? Is the dataset balanced or imbalanced?
+2. What insights did you gain from the initial visualisation of the data?
+3. Based on your exploration, do you think we need to do any further preprocessing?
+:::
+
+---
+
+## 2. Classification methods
+::: {.objective-card}
+🎯 **Objective:** Learn what are classification methods and what information they learn.
+:::
+
+Classification algorithms learn to assign labels to data points based on their features. Unlike regression, which predicts continuous outcomes, classification deals with discrete categories. In this part, we will explore two fundamental classification algorithms: **logistic regression** and **k-nearest neighbours (k-NN)**. We will train these models on the training set and evaluate their performance on the test set.
+
+### 2.1 Logistic Regression
+Last week we saw how to use linear regression for predicting continuous outcomes. Now, we will explore **logistic regression**, which is used for classification tasks. Logistic regression models the probability of a binary outcome based on one or more predictor variables. If we compare it to linear regression, we can see that while linear regression predicts a continuous value, logistic regression predicts the probability of a class membership (e.g., the probability of being in the AML group). The equation for logistic regression is:
+$$
+P(Y=1|X) = \frac{1}{1 + e^{-(w_0 + X_1 w_1 + ... + X_n w_n)}},
+$$
+
+where $P(Y=1|X)$ is the probability of the positive class (e.g., AML), $w_0$ is the intercept, $X_i$ are the predictor variables, and $w_i$ are the coefficients.
+
+In this part, you will connect the training data to a **Logistic Regression** widget in Orange, configure its parameters, and train the model. Then, connect the trained model to a **Bar Plot** widget to visualise the coefficients of the model. This will help you understand which features are most influential in predicting the class.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. How does logistic regression differ from linear regression?
+2. What are some advantages of using logistic regression for classification tasks?
+3. How can we interpret the coefficients of a logistic regression model?
+:::
+
+### 2.2 k-Nearest Neighbours (k-NN)
+
+![](_resources/images/neighbor.jpg){.img-right}
+Next, we will explore the **k-Nearest Neighbours (k-NN)** algorithm, which is a simple yet effective classification method. The k-NN algorithm classifies a new data point based on the majority class of its 'k' nearest neighbours in the training set. It is a non-parametric method, meaning it does not make any assumptions about the underlying data distribution. The choice of 'k' (the number of neighbours to consider) can significantly affect the model's performance. A small 'k' can lead to overfitting, while a large 'k' can smooth out the decision boundary too much.
+
+In this part, you will connect the training data to a **k-NN** widget in Orange, configure its parameters, and train the model. Use the **Scatter Plot** widget to visualise how the data points are distributed with respect to variables `HBB` and `HBD`.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. How does k-NN differ from logistic regression?
+2. What are some advantages of using k-NN for classification tasks?
+3. What can you observe about the distribution of data points in the scatter plot? How does this relate to the performance of the k-NN model?
+:::
+
+## 3. Decision boundary visualisation
+::: {.objective-card}
+🎯 **Objective:** Understand what decision boundaries are and how to visualise them.
+:::
+
+![](_resources/images/decission.jpg){.img-right}
+Decision boundaries are the surfaces that separate different classes in the feature space. They represent the points where the model is uncertain about the class label, meaning that a small change in the input features could lead to a different classification. Understanding decision boundaries is crucial for interpreting how a classification model makes decisions and for identifying potential areas of misclassification.
+
+We are going to use an add-on called **Educational** to visualise the decision boundary of the logistic regression model. This will help us understand how the model separates the two classes based on the features. To install the add-on, go to **Options > Add-ons** in Orange and select **Educational** from the list. Once installed, you can find the **Polynomial Classification** widget under the **Educational** section in the toolbox. Once you have trained the classification models, connect each one of them to one **Polynomial Classification** widget along with the test data to visualise the decision boundary. You can configure the widget to display the decision boundary for different pairs of features, such as `HBB` and `HBD`.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What are decision boundaries, and why are they important in classification tasks?
+2. How can visualising decision boundaries help us understand model performance?
+3. What challenges might arise when visualising decision boundaries in high-dimensional spaces?
+:::
+
+## 4. Model evaluation
+::: {.objective-card}
+🎯 **Objective:** Learn how to evaluate classification models using appropriate metrics.
+:::
+
+As happened with regression models, evaluating classification models is crucial to understand their performance. However, the metrics used for classification are different from those used for regression. In classification, we use metrics that consider the discrete nature of the outcomes. These are typically derived from the confusion matrix, which summarises the counts of sample correctly predicted as positive (true positive), correctly predicted as negative (true negative), incorrectly predicted as positive (false positive), and incorrectly predicted as negative (false negative).
+
+Some common metrics include:
+
+- **Confusion Matrix**: A table that summarises the performance of a classification model by showing the counts of true positive, true negative, false positive, and false negative predictions.
+- **Accuracy**: The proportion of correctly classified instances out of the total instances.
+$$
+\text{Accuracy} = \frac{\text{True Positives} + \text{True Negatives}}{\text{Total Instances}}
+$$
+- **Precision**: The proportion of true positive predictions out of all positive predictions made by the model.
+$$
+\text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}
+$$
+- **Recall (Sensitivity)**: The proportion of true positive predictions out of all actual positive instances.
+$$
+\text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}
+$$
+- **F1 Score**: The harmonic mean of precision and recall, providing a single metric that balances both.
+$$
+\text{F1 Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+$$
+
+To evaluate the models, connect the test data and the trained models to a **Predictions** widget in Orange. This widget will compute various evaluation metrics for each model, allowing you to compare their performance. 
+
+Additionally, you can use the **Confusion Matrix** widget to visualise the confusion matrix for each model. To do that, you need to connect the test data and the trained models to a **Predictions** widget first, and then connect the output of the **Predictions** widget to the **Confusion Matrix** widget.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What are the key differences between evaluation metrics for regression and classification?
+2. Why is it important to consider multiple metrics when evaluating classification models?
+3. Based on the evaluation results, which model performed better, and why?
+:::
+
+---
+
+## 5. Data imbalance
+::: {.objective-card}
+🎯 **Objective:** Learn how to handle imbalanced datasets in classification tasks.
+:::
+
+![](_resources/images/balance.jpg){.img-right}
+Class imbalance occurs when the classes in a dataset are not represented equally. For example, in a medical diagnosis dataset, there may be many more healthy patients than patients with a specific disease. This imbalance can lead to biased models that perform well on the majority class but poorly on the minority class. To address class imbalance, we can use techniques such as oversampling the minority class, undersampling the majority class, or using synthetic data generation methods like SMOTE (Synthetic Minority Over-sampling Technique).
+
+As this dataset is almost perfectly balanced, we will simulate an imbalanced scenario. 
+To do this, connect the training data to a **Select Rows** widget in Orange. Configure the widget to only use samples with a value of `HBG1` greater than 0. Visualise the class distribution using a **Distributions** widget to confirm the imbalance.
+
+
+
+After creating the imbalanced dataset, retrain the logistic regression and k-NN models using this new training set. Then, evaluate their performance on the original test set using the **Predictions** and **Confusion Matrix** widget. Compare the results with those obtained from the balanced dataset.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What changes did you observe in the model performance after introducing class imbalance?
+2. How can you mitigate the effects of class imbalance in your models? 
+:::
+
+<!-- Solutions:
+1. The model performance likely decreased, especially in metrics like recall and F1 score for the minority class. The models may have become biased towards predicting the majority class, leading to a higher number of false negatives for the minority class.
+2. To mitigate the effects of class imbalance, you can use techniques such as oversampling the minority class, undersampling the majority class, or using synthetic data generation methods like SMOTE. Additionally, you can experiment with different algorithms that are more robust to class imbalance or use ensemble methods to improve performance on the minority class.
+ -->
+
+---
+
+# Mini-project: Classification with imbalanced data
+
+![](_resources/images/fraud.jpg){.img-right}
+In this mini-project, you will apply what you have learned about classification, evaluation metrics, and strategies to handle class imbalance.  
+
+Imagine you are collaborating with a fintech startup developing tools to detect fraudulent transactions. The team provides you with the **Credit Card Fraud Detection** dataset (available in the following [link](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud/download)). It contains anonymised features derived from credit card transactions made in September 2013 by European cardholders. Among the 284,807 transactions, only 492 are fraudulent — less than 0.2% of the data. The target variable (`Class`) indicates whether a transaction is fraudulent (1) or legitimate (0).
+
+At first glance, this is a typical binary classification problem, but the extreme class imbalance creates serious challenges. A naive classifier that predicts “legitimate” for all cases would achieve over 99% accuracy, yet be useless in practice. This project will help you see why **accuracy alone is not sufficient** and why metrics like precision, recall, F1-score, and the ROC curve are essential to assess performance in such contexts.  
+
+Your task is to design a workflow in Orange that tackles this problem. You should load and explore the dataset, examine the distribution of the target classes, and then build and compare classification models such as logistic regression, random forest, and support vector machines. Part of your work will be to consider strategies for dealing with class imbalance, such as re-sampling, adjusting classification thresholds, or focusing on cost-sensitive evaluation metrics.  
+
+Once your models are trained and validated, reflect on how class imbalance influenced your decisions, what metrics best captured model performance, and whether you would prioritise detecting as many fraud cases as possible (high recall) or avoiding false alarms (high precision).  
+
+As with previous projects, there is no single correct pipeline. Different workflows may yield different trade-offs, and what matters most is that you can explain and justify your design choices. 
+
+# Final note
+
+::: {.final-note-card}
+✨ Congratulations on completing Lab 4! You have explored the fundamentals of classification problems, including handling imbalanced datasets, evaluating model performance, and applying different algorithms to improve classification accuracy.
+
+Next session, we will delve into clustering techniques, which will allow us to group similar data points without predefined labels. This will further enhance your understanding of unsupervised learning methods and their applications in various domains.
+:::
+
+::: {.margin}
+# Explore the Labs {.unnumbered .unlisted}
+{{< include lab-cards.qmd >}}
+:::

@@ -333,7 +333,7 @@ Imagina que acabas de unirte a un grupo de investigación que estudia la calidad
 
 Tu papel es diseñar un flujo de trabajo de preprocesamiento en Orange que transforme este conjunto de datos en uno confiable y listo para el modelado (por ejemplo, para predecir el `price` o construir un clasificador para `symboling`). Esto requerirá tomar decisiones sobre qué variables conservar, cómo tratar los datos incompletos, si ajustar o no las escalas de las variables y qué hacer con los valores inusuales. Una vez que hayas llegado a una versión del conjunto de datos que consideres adecuada, deberás asegurarte de que esté correctamente dividido en subconjuntos de entrenamiento y prueba para que los modelos futuros puedan evaluarse de manera justa.
 
-No existe una única secuencia de pasos correcta, y diferentes elecciones pueden llevar a resultados distintos. Lo importante es que pienses cuidadosamente en cada decisión y puedas justificar por qué trataste los datos de la manera en que lo hiciste. Al final, guarda tu flujo de trabajo y escribe una breve reflexión describiendo tu razonamiento: explica qué pasos aplicaste, cuáles decidiste que no eran necesarios y qué tan seguro estás de que el conjunto de datos ahora está listo para usarse en las siguientes sesiones de laboratorio.
+No existe una única secuencia de pasos correcta, y diferentes elecciones pueden llevar a resultados distintos. Lo importante es que pienses cuidadosamente en cada decisión y puedas justificar por qué trataste los datos de la manera en que lo hiciste.
 
 # Nota final
 

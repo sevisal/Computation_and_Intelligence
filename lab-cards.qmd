@@ -33,5 +33,16 @@
       </div>
     </div>
   </a>
+  <a href="lab4.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab4.jpg" alt="Lab 4">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3>Lab 4</h3>
+          <span class="subtitle">Classification Problems</span>
+        </div>
+      </div>
+    </div>
+  </a>
 </div>
 ```

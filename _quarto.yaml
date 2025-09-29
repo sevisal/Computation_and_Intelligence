@@ -19,8 +19,8 @@ website:
             href: lab2.qmd
           - text: "Lab 3"
             href: lab3.qmd
-          # - text: "Lab 4"
-          #   href: lab4.qmd
+          - text: "Lab 4"
+            href: lab4.qmd
           # - text: "Lab 5"
           #   href: lab5.qmd
           # - text: "Lab 6"

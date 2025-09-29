@@ -29,7 +29,7 @@ A lo largo de estas actividades trabajarás con el conjunto de datos **Californi
 
 ![](_resources/images/Housing.jpeg){.img-center}
 
-Puedes descargar el conjunto en formato CSV desde este enlace: https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/housing/housing.csv (si lo abres en el navegador, haz clic derecho y selecciona "Guardar como..." para descargarlo). Una explicación de cada atributo está disponible en la documentación de scikit-learn: https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset.
+Puedes descargar el conjunto en formato CSV desde [este enlace](https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/housing/housing.csv) (si lo abres en el navegador, haz clic derecho y selecciona "Guardar como..." para descargarlo). Una explicación de cada atributo está disponible en la [documentación de scikit-learn](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset).
 
 Carga el conjunto de datos en Orange y selecciona la variable objetivo para nuestro problema (`median_house_value`). Una vez que esté disponible en tu flujo de trabajo, la usaremos para explorar el comportamiento de la regresión lineal, estudiar los riesgos del sobreajuste y entender cómo las **técnicas de regularización** y la **validación cruzada** pueden mejorar el rendimiento del modelo. Como aprendimos la semana pasada, es crucial dividir los datos en conjuntos de entrenamiento y prueba para evaluar el rendimiento en datos no vistos.
 
@@ -207,13 +207,13 @@ En este mini-proyecto aplicarás lo aprendido sobre preprocesamiento y regulariz
 
 ![](_resources/images/energy.jpg){.img-right}
 
-Imagina que te unes a una iniciativa de investigación sobre arquitectura sostenible. El equipo trabaja con el conjunto de datos **Energy Efficiency** (disponible en el siguiente enlace: https://www.kaggle.com/datasets/elikplim/eergy-efficiency-dataset/download). Contiene parámetros de edificios como área de muros, área de techo y área de acristalamiento, junto con dos variables objetivo: la carga de calefacción y la carga de refrigeración requerida para cada diseño. Para este ejercicio, debes **elegir una de las dos variables objetivo** para predecir. Parte de tu tarea es justificar por qué seleccionaste esa variable y cómo afecta tus decisiones de modelado.
+Imagina que te unes a una iniciativa de investigación sobre arquitectura sostenible. El equipo trabaja con el conjunto de datos **Energy Efficiency** (disponible en el siguiente [enlace](https://www.kaggle.com/datasets/elikplim/eergy-efficiency-dataset/download)). Contiene parámetros de edificios como área de muros, área de techo y área de acristalamiento, junto con dos variables objetivo: la carga de calefacción y la carga de refrigeración requerida para cada diseño. Para este ejercicio, debes **elegir una de las dos variables objetivo** para predecir. Parte de tu tarea es justificar por qué seleccionaste esa variable y cómo afecta tus decisiones de modelado.
 
 El conjunto plantea varios retos útiles: varias variables están en escalas distintas, lo que puede distorsionar la influencia de los predictores si no se ajusta; además hay fuertes correlaciones entre entradas que pueden producir inestabilidad en modelos lineales. Estos problemas subrayan la importancia del preprocesamiento y la regularización.
 
 Tu tarea es diseñar un flujo de trabajo en Orange que prepare este conjunto para modelado y luego construya un modelo de regresión lineal regularizado. Esto incluirá decisiones sobre transformaciones, si normalizar o estandarizar variables y cómo manejar predictores correlacionados. Después de preparar los datos, entrenarás un modelo con regularización, validarás la elección del parámetro de regularización mediante validación cruzada y finalmente evaluarás su rendimiento en un conjunto de prueba reservado.
 
-No hay una única solución correcta. Lo importante es que puedas explicar y justificar tus decisiones. Al final, guarda tu flujo de trabajo y escribe una breve reflexión describiendo cómo preparaste los datos, qué pasos consideraste innecesarios, qué objetivo elegiste para predecir y cómo afectó la regularización al rendimiento del modelo final.
+No hay una única solución correcta. Lo importante es que puedas explicar y justificar tus decisiones. 
 
 # Nota final
 

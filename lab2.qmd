@@ -326,7 +326,7 @@ Imagine you have just joined a research group studying automobile quality and ma
 
 Your role is to design a preprocessing workflow in Orange that transforms this raw dataset into one that is trustworthy and ready for modeling (for example, predicting `price` or building a classifier for `symboling`). This will require decisions about which variables to keep, how to treat incomplete data, whether or not to adjust variable scales, and what to do with unusual values. Once you have reached a version of the dataset you consider appropriate, you will need to ensure it is properly divided into training and test subsets so that future models can be evaluated fairly.
 
-There is no single correct pipeline, and different choices may lead to different results. What matters is that you think carefully about each decision and can justify why you handled the data in the way you did. At the end, save your workflow and write a short reflection describing your reasoning: explain what steps you applied, which ones you decided were unnecessary, and how confident you are that the dataset is now ready to be used in the following lab sessions.
+There is no single correct pipeline, and different choices may lead to different results. What matters is that you think carefully about each decision and can justify why you handled the data in the way you did. 
 
 # Final note
 
