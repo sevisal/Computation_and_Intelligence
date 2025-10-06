@@ -44,7 +44,7 @@ By restricting attention to this subset we aim to isolate the mechanical and siz
 
 ## 1.1. Data preprocessing and exploration 
 ::: {.objective-card}
-🎯 **Objective:** 
+🎯 **Objective:** Testing your knowledge on datasets preprocessing.
 :::
 
 Load the dataset from the following [link](https://raw.githubusercontent.com/selva86/datasets/master/Cars93.csv) and inspect its global statistics: range, typical scales and missing values. Interpret what each feature measures (units and semantic meaning) and consider simple preprocessing choices that make clustering meaningful. 
@@ -353,6 +353,7 @@ Paste this into a `Python Script` widget connected to the output of `K-Means`. I
 ![](_resources/images/pixel.jpg){.img-right}
 High-dimensional data like images can be challenging to visualize directly. The original dataset lives in a 784-dimensional space (28×28), but we can use dimensionality reduction to project the data onto two dimensions while preserving as much structure as possible. 
 Two common methods are:
+
 - **Principal Component Analysis (PCA):** a linear technique that finds the directions of maximum variance in the data.
 - **t-Distributed Stochastic Neighbor Embedding (t-SNE):** a non-linear technique that preserves local relationships and is particularly effective for visualizing clusters.
 

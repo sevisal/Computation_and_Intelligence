@@ -352,6 +352,7 @@ Pega esto en un widget `Python Script` conectado a la salida de `K-Means`. Mostr
 ![](_resources/images/pixel.jpg){.img-right}
 Los datos de alta dimensión, como las imágenes, pueden ser difíciles de visualizar directamente. El conjunto de datos original vive en un espacio de 784 dimensiones (28×28), pero podemos usar la reducción de dimensionalidad para proyectar los datos en dos dimensiones mientras se preserva la mayor parte de la estructura posible.
 Dos métodos comunes son:
+
 - **Análisis de Componentes Principales (PCA):** una técnica lineal que encuentra las direcciones de máxima varianza en los datos.
 - **t-Distributed Stochastic Neighbor Embedding (t-SNE):** una técnica no lineal que preserva las relaciones locales y es particularmente efectiva para visualizar clústeres.
 
