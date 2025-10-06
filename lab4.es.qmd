@@ -199,6 +199,6 @@ En la próxima sesión, profundizaremos en las técnicas de agrupamiento, que no
 :::
 
 ::: {.margin}
-# Explore the Labs {.unnumbered .unlisted}
+# Explora los Laboratorios {.unnumbered .unlisted}
 {{< include lab-cards.qmd >}}
 :::

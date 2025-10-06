@@ -33,10 +33,6 @@ This lab session will guide you through practical applications of these techniqu
 
 # 1. Clustering with the Cars93 dataset
 
-::: {.objective-card}
-🎯 **General goal:** Explore unsupervised grouping of vehicles using a compact set of numeric features. Learn how K-Means discovers representative centroids, how to decide the number of clusters, and how to interpret the centroid profiles back in the original units.
-:::
-
 ![](_resources/images/smallcar.gif){.img-right}
 
 The **Cars93** dataset collects measurements and descriptive variables for 93 car models. It is small enough for interactive exploration, yet rich enough to illustrate common issues in clustering: features with different scales, the need for sensible preprocessing, and the interpretation of learned cluster centres.

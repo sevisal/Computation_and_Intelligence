@@ -291,6 +291,6 @@ Antes de terminar, recuerda **guardar** tu flujo de trabajo con **File > Save As
 :::
 
 ::: {.margin}
-# Labs {.unnumbered .unlisted}
+# Explora los Laboratorios {.unnumbered .unlisted}
 {{< include lab-cards.es.qmd >}}
 :::
