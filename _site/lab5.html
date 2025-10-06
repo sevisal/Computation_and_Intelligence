@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab session 5: Unsupervised Learning – Computation and Intelligence</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4a7a96b21a03351c55c192b07b14734f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Computation and Intelligence</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./setup.html"> 
+<span class="menu-text">🔧 Setup</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🔬 Labs</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-labs">    
+        <li>
+    <a class="dropdown-item" href="./lab1.html">
+ <span class="dropdown-text">Lab 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab2.html">
+ <span class="dropdown-text">Lab 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab3.html">
+ <span class="dropdown-text">Lab 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab4.html">
+ <span class="dropdown-text">Lab 4</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="javascript:void(0)"> 
+<span class="menu-text">🌐</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title"><strong>Contents</strong></h2>
+   
+  <ul>
+  <li><a href="#session-objectives" id="toc-session-objectives" class="nav-link active" data-scroll-target="#session-objectives">Session objectives</a></li>
+  <li><a href="#clustering-with-the-cars93-dataset" id="toc-clustering-with-the-cars93-dataset" class="nav-link" data-scroll-target="#clustering-with-the-cars93-dataset">1. Clustering with the Cars93 dataset</a>
+  <ul>
+  <li><a href="#data-preprocessing-and-exploration" id="toc-data-preprocessing-and-exploration" class="nav-link" data-scroll-target="#data-preprocessing-and-exploration">1.1. Data preprocessing and exploration</a></li>
+  <li><a href="#k-means-clustering-and-evaluation" id="toc-k-means-clustering-and-evaluation" class="nav-link" data-scroll-target="#k-means-clustering-and-evaluation">1.2. K-Means clustering and evaluation</a></li>
+  <li><a href="#interpreting-and-visualising-clusters" id="toc-interpreting-and-visualising-clusters" class="nav-link" data-scroll-target="#interpreting-and-visualising-clusters">1.3. Interpreting and visualising clusters</a></li>
+  <li><a href="#centroids-analysis" id="toc-centroids-analysis" class="nav-link" data-scroll-target="#centroids-analysis">1.4. Centroids analysis</a></li>
+  </ul></li>
+  <li><a href="#low-dimensional-representation-and-clustering-on-an-image-dataset" id="toc-low-dimensional-representation-and-clustering-on-an-image-dataset" class="nav-link" data-scroll-target="#low-dimensional-representation-and-clustering-on-an-image-dataset">2. Low-Dimensional Representation and Clustering on an Image Dataset</a>
+  <ul>
+  <li><a href="#preprocess-the-dataset" id="toc-preprocess-the-dataset" class="nav-link" data-scroll-target="#preprocess-the-dataset">2.1 Preprocess the Dataset</a></li>
+  <li><a href="#clustering-and-centroid-analysis" id="toc-clustering-and-centroid-analysis" class="nav-link" data-scroll-target="#clustering-and-centroid-analysis">2.2. Clustering and Centroid Analysis</a></li>
+  <li><a href="#low-dimensional-representation" id="toc-low-dimensional-representation" class="nav-link" data-scroll-target="#low-dimensional-representation">2.3 Low-Dimensional Representation</a></li>
+  </ul></li>
+  <li><a href="#final-note" id="toc-final-note" class="nav-link" data-scroll-target="#final-note">Final note</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab session 5: Unsupervised Learning</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="session-objectives" class="level1">
+<h1>Session objectives</h1>
+<div class="objective-card">
+<p>🎯 <strong>General objective:</strong> Explore the principles and applications of unsupervised learning using visual and intuitive examples. Learn how clustering and dimensionality reduction can reveal hidden structure in complex datasets, particularly image data.</p>
+</div>
+<p><img src="_resources/images/unsupervised.jpg" class="img-right img-fluid"></p>
+<p>Unlike regression or classification, <strong>unsupervised learning</strong> does not rely on predefined labels. Its goal is to uncover <strong>patterns, groups, or latent structures</strong> in the data itself. This makes it especially useful when labels are unavailable, expensive, or subjective — as often happens in exploratory data analysis or in scientific research where we seek to identify new phenomena.</p>
+<p>Unsupervised learning algorithms find structure in unlabeled data. In other words, the algorithm tries to “make sense” of the data by itself. Unlike supervised learning, there is no ground truth to compare predictions against.</p>
+<p>Two major families of unsupervised learning methods are:</p>
+<ul>
+<li><strong>Clustering:</strong> grouping similar samples together (e.g., K-Means, hierarchical clustering).</li>
+<li><strong>Dimensionality reduction:</strong> compressing data into a smaller set of variables while preserving as much information as possible (e.g., PCA, t-SNE, UMAP).</li>
+</ul>
+<p>Both techniques are complementary: clustering helps us identify potential categories, while dimensionality reduction helps us visualise or simplify high-dimensional data.</p>
+<p>This lab session will guide you through practical applications of these techniques using the <strong>Cars93</strong> dataset for clustering and the <strong>Fashion-MNIST</strong> dataset for dimensionality reduction and clustering of images. You will learn how to preprocess data, choose appropriate algorithms, evaluate results, and interpret findings in a meaningful way.</p>
+<hr>
+</section>
+<section id="clustering-with-the-cars93-dataset" class="level1">
+<h1>1. Clustering with the Cars93 dataset</h1>
+<div class="objective-card">
+<p>🎯 <strong>General goal:</strong> Explore unsupervised grouping of vehicles using a compact set of numeric features. Learn how K-Means discovers representative centroids, how to decide the number of clusters, and how to interpret the centroid profiles back in the original units.</p>
+</div>
+<p><img src="_resources/images/smallcar.gif" class="img-right img-fluid"></p>
+<p>The <strong>Cars93</strong> dataset collects measurements and descriptive variables for 93 car models. It is small enough for interactive exploration, yet rich enough to illustrate common issues in clustering: features with different scales, the need for sensible preprocessing, and the interpretation of learned cluster centres.</p>
+<p>In this part of the lab we will focus only on the following numeric features:<br>
+<code>Price</code>, <code>MPG.highway</code>, <code>MPG.city</code>, <code>Horsepower</code>, <code>Fuel.tank.capacity</code>, <code>Passengers</code>, <code>Weight</code>, <code>Length</code>, and <code>RPM</code>.<br>
+By restricting attention to this subset we aim to isolate the mechanical and size-related signals that typically drive vehicle clustering. The experiments in this lab must use <strong>only</strong> the features listed above.</p>
+<section id="data-preprocessing-and-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-preprocessing-and-exploration">1.1. Data preprocessing and exploration</h2>
+<div class="objective-card">
+<p>🎯 <strong>Objective:</strong></p>
+</div>
+<p>Load the dataset from the following <a href="https://raw.githubusercontent.com/selva86/datasets/master/Cars93.csv">link</a> and inspect its global statistics: range, typical scales and missing values. Interpret what each feature measures (units and semantic meaning) and consider simple preprocessing choices that make clustering meaningful.</p>
+<div class="question-card">
+<p>📝 <strong>Questions:</strong></p>
+<ol type="1">
+<li>What are the key preprocessing steps you will take to prepare the data for clustering?</li>
+<li>How do the features differ in scale and distribution? Which features might dominate distance calculations if left unscaled?</li>
+<li>Are there any missing values or outliers that need to be addressed before clustering?</li>
+</ol>
+</div>
+</section>
+<section id="k-means-clustering-and-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="k-means-clustering-and-evaluation">1.2. K-Means clustering and evaluation</h2>
+<div class="objective-card">
+<p>🎯 <strong>Objective:</strong> Learn how to apply K-Means clustering to the Cars93 dataset and evaluate the results.</p>
+</div>
+<p><img src="_resources/images/group.jpg" class="img-right img-fluid"> K-Means is a simple and widely used clustering algorithm that partitions data into <em>K</em> groups based on feature similarity. K-Means partitions the feature space into <em>K</em> regions by iteratively assigning points to the nearest centroid and recomputing centroids as cluster means. The centroids are the arithmetic means that summarise each group. K-Means is simple, fast and interpretable, but it depends strongly on the number of clusters <em>K</em> and on the distance metric induced by the chosen preprocessing.</p>
+<p>When choosing <em>K</em> you should balance two goals: (1) cluster quality, which can be quantified with internal scores such as the <strong>silhouette</strong>, and (2) parsimony — we avoid many tiny clusters that add little interpretability. The silhouette score measures how well each point fits its assigned cluster compared to other clusters; higher silhouette indicates clearer separation.</p>
+<p>Use the <code>K-Means</code> widget in Orange to try several values of <em>K</em> and inspect the centroids in a table.</p>
+<div class="question-card">
+<p>📝 <strong>Questions:</strong></p>
+<ol type="1">
+<li>How does the silhouette score change as you vary <em>K</em>? Is there a clear optimal value?</li>
+<li>Examine the centroid profiles for different <em>K</em>. Do they represent meaningful vehicle types?</li>
+<li>How sensitive are the clusters to your preprocessing choices (e.g., scaling)?</li>
+</ol>
+</div>
+</section>
+<section id="interpreting-and-visualising-clusters" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-and-visualising-clusters">1.3. Interpreting and visualising clusters</h2>
+<div class="objective-card">
+<p>🎯 <strong>Objective:</strong> Learn how to interpret and visualize the clusters obtained from K-Means.</p>
+</div>
+<p>Once you have chosen a suitable <em>K</em> and obtained clusters, the next step is to interpret what they represent. The centroid profiles can be converted back to the original feature units to understand the typical characteristics of each cluster.</p>
+<p>K-Means is unsupervised: it finds structure in the input features without seeing the car type or segment labels. To evaluate how meaningful the discovered groups are you can compare them to known labels (e.g.&nbsp;type or manufacturer) and look at label distributions inside clusters. For this we will use a small Python snippet inside Orange’s <code>Python Script</code> widget. The snippet below visualises, for each cluster, the distribution of true labels (if a true label exists in the table). Paste it into a <code>Python Script</code> widget that receives the <code>K-Means</code> output (so <code>in_data</code> contains the assigned <code>Cluster</code> meta and any available class variable).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram: true-label distribution per cluster</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Paste this into a Python Script widget connected to the output of K-Means.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># It expects a single Orange input (available as `in_data`).</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># --- LOAD DATA ---</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> in_data.X</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> in_data.Y</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>class_var <span class="op">=</span> in_data.domain.class_var</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CONVERT LABELS TO STRINGS IF POSSIBLE ---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> class_var <span class="kw">and</span> class_var.is_discrete <span class="kw">and</span> class_var.values:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> np.array([class_var.values[<span class="bu">int</span>(v)] <span class="cf">for</span> v <span class="kw">in</span> y])</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> np.array(y).astype(<span class="bu">str</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># --- EXTRACT CLUSTERS ---</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>meta_names <span class="op">=</span> [m.name <span class="cf">for</span> m <span class="kw">in</span> in_data.domain.metas]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'Cluster'</span> <span class="kw">in</span> meta_names:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    clusters, _ <span class="op">=</span> in_data.get_column_view(<span class="st">'Cluster'</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    clusters <span class="op">=</span> np.array(clusters)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    cluster_ids <span class="op">=</span> np.unique(clusters)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    n_clusters <span class="op">=</span> <span class="bu">len</span>(cluster_ids)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    clusters <span class="op">=</span> np.zeros(<span class="bu">len</span>(X))</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    cluster_ids <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    n_clusters <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># --- PLOT HISTOGRAMS OF LABEL DISTRIBUTION PER CLUSTER ---</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span>n_clusters, figsize<span class="op">=</span>(<span class="dv">5</span> <span class="op">*</span> n_clusters, <span class="dv">4</span>))</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure iterable axes even if one cluster</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> n_clusters <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> [ax]</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, cid <span class="kw">in</span> <span class="bu">enumerate</span>(cluster_ids):</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    mask <span class="op">=</span> clusters <span class="op">==</span> cid</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    cluster_labels <span class="op">=</span> labels[mask]</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    unique_vals, counts <span class="op">=</span> np.unique(cluster_labels, return_counts<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    ax[i].bar(unique_vals, counts, color<span class="op">=</span><span class="st">"cornflowerblue"</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    ax[i].set_title(<span class="ss">f"Cluster </span><span class="sc">{</span>cid<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    ax[i].set_xlabel(<span class="st">"True label"</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    ax[i].set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    ax[i].grid(which<span class="op">=</span><span class="st">'major'</span>, color<span class="op">=</span><span class="st">'gray'</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, linestyle<span class="op">=</span><span class="st">'dotted'</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># rotate x-axis tick labels by 45 degrees for readability</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    ax[i].set_xticks(<span class="bu">range</span>(<span class="bu">len</span>(unique_vals)))</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    ax[i].set_xticklabels(unique_vals, rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This code generates a histogram for each cluster, showing how many cars of each true label are present. This helps assess whether the clusters correspond to meaningful categories.</p>
+<div class="question-card">
+<p>📝 <strong>Questions:</strong></p>
+<ol type="1">
+<li>Do the clusters correspond to known vehicle types or segments? Which clusters are most homogeneous?</li>
+<li>Are there clusters that mix many different labels? What might this indicate about the features used?</li>
+</ol>
+</div>
+</section>
+<section id="centroids-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="centroids-analysis">1.4. Centroids analysis</h2>
+<div class="objective-card">
+<p>🎯 <strong>Objective:</strong> Learn how to interpret K-Means centroids in the original feature space.</p>
+</div>
+<p><img src="_resources/images/escale.png" class="img-right img-fluid"></p>
+<p>Centroids summarise what K-Means has learned. If you standardised features before clustering, centroids are expressed in the scaled space. To interpret them in real units (e.g., price in dollars, weight in pounds) you must undo the scaling. Orange’s widgets do not provide an automatic inverse transform, so we will reconstruct centroids and de-standardise them in a short <code>Python Script</code> that accepts two inputs: the original <code>File</code> (pre-scaling) and the <code>K-Means</code> centroids (post-scaling). The script below assumes you used standardization (zero mean, unit variance).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Orange</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># --- ACCESS INPUTS ---</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> in_datas[<span class="dv">0</span>].X.shape[<span class="dv">0</span>] <span class="op">&gt;</span> in_datas[<span class="dv">1</span>].X.shape[<span class="dv">0</span>]:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    orig_data <span class="op">=</span> in_datas[<span class="dv">0</span>]        <span class="co"># original data</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    centroid_data <span class="op">=</span> in_datas[<span class="dv">1</span>]    <span class="co"># output from KMeans or scaled data</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> in_datas[<span class="dv">0</span>].X.shape[<span class="dv">0</span>] <span class="op">&lt;</span> in_datas[<span class="dv">1</span>].X.shape[<span class="dv">0</span>]:</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    orig_data <span class="op">=</span> in_datas[<span class="dv">1</span>]        <span class="co"># original data</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    centroid_data <span class="op">=</span> in_datas[<span class="dv">0</span>]    <span class="co"># output from KMeans or scaled data</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Error! One of your input data should be the centroids!'</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># --- COMPUTE MEAN AND STD ---</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>X_orig <span class="op">=</span> orig_data.X</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> np.nanmean(X_orig, axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>stds <span class="op">=</span> np.nanstd(X_orig, axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># --- INVERSE TRANSFORM CENTROIDS ---</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>centroids_scaled <span class="op">=</span> centroid_data.X</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>centroids_rescaled <span class="op">=</span> centroids_scaled <span class="op">*</span> stds <span class="op">+</span> means</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CREATE DOMAIN WITHOUT CLASS VARIABLE ---</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>attrs <span class="op">=</span> orig_data.domain.attributes  <span class="co"># only features</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>new_domain <span class="op">=</span> Orange.data.Domain(attrs)  <span class="co"># exclude class_var</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CREATE TABLE ---</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>centroid_table <span class="op">=</span> Orange.data.Table.from_numpy(</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    new_domain,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    centroids_rescaled</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>centroid_table.name <span class="op">=</span> <span class="st">"De-standardized Centroids"</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>out_data <span class="op">=</span> centroid_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Paste this into a <code>Python Script</code> widget that receives two inputs (first the original <code>File</code> widget; second the <code>K-Means</code> centroids). You can connect the output to a <code>Data Table</code>, <code>Heat Map</code> or <code>Box Plot</code> to inspect which features are high or low in each centroid.</p>
+<div class="question-card">
+<p>📝 <strong>Questions:</strong></p>
+<ol type="1">
+<li>What do the de-standardized centroids reveal about the typical characteristics of each cluster?</li>
+<li>Which features most clearly distinguish the clusters? Are there any surprising patterns?</li>
+<li>Do the centroids correspond to meaningful vehicle types or market segments?</li>
+</ol>
+</div>
+<hr>
+</section>
+</section>
+<section id="low-dimensional-representation-and-clustering-on-an-image-dataset" class="level1">
+<h1>2. Low-Dimensional Representation and Clustering on an Image Dataset</h1>
+<p>In this second part, we will work with image data — specifically, the <strong>Fashion-MNIST</strong> dataset — to explore clustering and low-dimensional embeddings.<br>
+Unlike the tabular <em>Cars93</em> data, these datasets have thousands of features (pixels), so visualization and interpretation require <strong>dimensionality reduction</strong>.</p>
+<hr>
+<section id="preprocess-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="preprocess-the-dataset">2.1 Preprocess the Dataset</h2>
+<p>The <strong>Fashion-MNIST</strong> dataset contains grayscale images of 28×28 pixels, each corresponding to one of ten clothing categories.</p>
+<div style="width:50%; margin:auto;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Item</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">T-shirt/top</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Trouser</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Pullover</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Dress</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Coat</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Sandal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Shirt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Sneaker</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Bag</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Ankle boot</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ensure the labels are <strong>categorical</strong>, not numeric (you can use the <code>Edit Domain</code> widget to change them).</p>
+<p>To visualize a few samples from the dataset, connect the <code>File</code> widget to a <code>Python Script</code> widget and paste the following:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get data and labels</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> in_data.X</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> in_data.Y</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>class_var <span class="op">=</span> in_data.domain.class_var</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>n_samples, n_features <span class="op">=</span> X.shape</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Shuffle data for visualization</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> np.arange(n_samples)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>np.random.shuffle(idx)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> X[idx]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> y[idx]</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert numeric labels to strings if available</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> class_var.is_discrete <span class="kw">and</span> class_var.values:</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> np.array([class_var.values[<span class="bu">int</span>(v)] <span class="cf">for</span> v <span class="kw">in</span> y])</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> y.astype(<span class="bu">int</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine image size</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>side <span class="op">=</span> <span class="bu">int</span>(np.sqrt(n_features))</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> side <span class="op">*</span> side <span class="op">!=</span> n_features:</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Warning: </span><span class="sc">{</span>n_features<span class="sc">}</span><span class="ss"> features not a perfect square — forcing 28×28"</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    side <span class="op">=</span> <span class="dv">28</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot random samples</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>n_show <span class="op">=</span> <span class="bu">min</span>(<span class="dv">25</span>, n_samples)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_show):</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">5</span>, <span class="dv">5</span>, i <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    plt.imshow(X[i].reshape(side, side), cmap<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    plt.axis(<span class="st">"off"</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="bu">str</span>(labels[i]))</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This code will display a grid of 25 random images from the dataset, each labeled with its corresponding category.</p>
+<div class="question-card">
+<p>📝 <strong>Questions:</strong></p>
+<ol type="1">
+<li>What do the visualized samples reveal about the dataset’s diversity and complexity?</li>
+<li>How well do the images represent their respective categories?</li>
+<li>What challenges might arise when clustering or classifying these images?</li>
+</ol>
+</div>
+</section>
+<section id="clustering-and-centroid-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="clustering-and-centroid-analysis">2.2. Clustering and Centroid Analysis</h2>
+<div class="objective-card">
+<p>🎯 <strong>Objective:</strong> Apply K-Means clustering to the Fashion-MNIST dataset and analyze the resulting clusters.</p>
+</div>
+<p>Due to the high dimensionality of image data, clustering directly on pixel values can be challenging. However, K-Means can still provide insights into the dataset’s structure. Use the <code>K-Means</code> widget in Orange to cluster the images, experimenting with different values of <code>K</code>.</p>
+<p>Then visualize the cluster centroids using the following Python Script:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CONFIGURATION ---</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>img_shape <span class="op">=</span> (<span class="dv">28</span>, <span class="dv">28</span>)  <span class="co"># adjust to your dataset</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># --- LOAD DATA ---</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> in_data.X</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># --- EXTRACT CLUSTERS ---</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>meta_names <span class="op">=</span> [m.name <span class="cf">for</span> m <span class="kw">in</span> in_data.domain.metas]</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'Cluster'</span> <span class="kw">in</span> meta_names:</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    clusters, _ <span class="op">=</span> in_data.get_column_view(<span class="st">'Cluster'</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    clusters <span class="op">=</span> np.array(clusters)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    cluster_ids <span class="op">=</span> np.unique(clusters)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    clusters <span class="op">=</span> np.zeros(X.shape[<span class="dv">0</span>], dtype<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    cluster_ids <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># --- COMPUTE CENTROIDS ---</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>centroids <span class="op">=</span> [np.mean(X[clusters <span class="op">==</span> c], axis<span class="op">=</span><span class="dv">0</span>) <span class="cf">for</span> c <span class="kw">in</span> cluster_ids]</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># --- PLOT CENTROIDS ---</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="bu">len</span>(cluster_ids), figsize<span class="op">=</span>(<span class="dv">2</span><span class="op">*</span><span class="bu">len</span>(cluster_ids), <span class="dv">2</span>))</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> np.atleast_1d(axes)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, ax <span class="kw">in</span> <span class="bu">enumerate</span>(axes):</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    ax.imshow(centroids[i].reshape(img_shape), cmap<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f"Cluster </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    ax.axis(<span class="st">"off"</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Paste this into a <code>Python Script</code> widget connected to the output of <code>K-Means</code>. It will display the centroids as images, allowing you to interpret what each cluster represents.</p>
+<div class="question-card">
+<p>📝 <strong>Questions:</strong></p>
+<ol type="1">
+<li>What do the visualized centroids reveal about the characteristics of each cluster?</li>
+<li>How do the clusters compare to the original categories in the Fashion-MNIST dataset?</li>
+<li>What insights can be drawn from the clustering results regarding the dataset’s structure and potential challenges in classification?</li>
+</ol>
+</div>
+</section>
+<section id="low-dimensional-representation" class="level2">
+<h2 class="anchored" data-anchor-id="low-dimensional-representation">2.3 Low-Dimensional Representation</h2>
+<div class="objective-card">
+<p>🎯 <strong>Objective:</strong> Learn how to apply dimensionality reduction techniques to visualize high-dimensional image data.</p>
+</div>
+<p><img src="_resources/images/pixel.jpg" class="img-right img-fluid"> High-dimensional data like images can be challenging to visualize directly. The original dataset lives in a 784-dimensional space (28×28), but we can use dimensionality reduction to project the data onto two dimensions while preserving as much structure as possible. Two common methods are: - <strong>Principal Component Analysis (PCA):</strong> a linear technique that finds the directions of maximum variance in the data. - <strong>t-Distributed Stochastic Neighbor Embedding (t-SNE):</strong> a non-linear technique that preserves local relationships and is particularly effective for visualizing clusters.</p>
+<p>Use the following <code>Python Script</code> to perform PCA on the Fashion-MNIST dataset and visualize the results:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.offsetbox <span class="im">import</span> OffsetImage, AnnotationBbox</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CONFIGURATION ---</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>img_shape <span class="op">=</span> (<span class="dv">28</span>, <span class="dv">28</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># --- LOAD DATA ---</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> in_data.X</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># --- GET CLUSTER LABELS ---</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>meta_names <span class="op">=</span> [m.name <span class="cf">for</span> m <span class="kw">in</span> in_data.domain.metas]</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'Cluster'</span> <span class="kw">in</span> meta_names:</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    clusters, _ <span class="op">=</span> in_data.get_column_view(<span class="st">'Cluster'</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    clusters <span class="op">=</span> np.array(clusters)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    clusters <span class="op">=</span> np.zeros(X.shape[<span class="dv">0</span>], dtype<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>cluster_labels <span class="op">=</span> np.array([<span class="bu">str</span>(c) <span class="cf">for</span> c <span class="kw">in</span> clusters])</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># --- PCA PROJECTION ---</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>X_2D <span class="op">=</span> pca.fit_transform(X)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># --- COMPUTE CENTROIDS ---</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>unique_labels <span class="op">=</span> np.unique(cluster_labels)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>centroids <span class="op">=</span> [np.mean(X[cluster_labels <span class="op">==</span> lbl], axis<span class="op">=</span><span class="dv">0</span>) <span class="cf">for</span> lbl <span class="kw">in</span> unique_labels]</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>centroid_positions <span class="op">=</span> [np.mean(X_2D[cluster_labels <span class="op">==</span> lbl], axis<span class="op">=</span><span class="dv">0</span>) <span class="cf">for</span> lbl <span class="kw">in</span> unique_labels]</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># --- PLOT PCA PROJECTION ---</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">6</span>))</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>scatter <span class="op">=</span> plt.scatter(X_2D[:,<span class="dv">0</span>], X_2D[:,<span class="dv">1</span>],</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>                      c<span class="op">=</span>np.arange(<span class="bu">len</span>(unique_labels))[np.searchsorted(unique_labels, cluster_labels)],</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>                      cmap<span class="op">=</span><span class="st">'tab10'</span>, s<span class="op">=</span><span class="dv">15</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>handles, _ <span class="op">=</span> scatter.legend_elements()</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>plt.legend(handles, unique_labels, title<span class="op">=</span><span class="st">"Cluster"</span>, loc<span class="op">=</span><span class="st">"best"</span>)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"PCA 1"</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"PCA 2"</span>)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"PCA Projection with Cluster Centroids"</span>)</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="co"># --- ADD CENTROID IMAGES ---</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pos, centroid <span class="kw">in</span> <span class="bu">zip</span>(centroid_positions, centroids):</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    imagebox <span class="op">=</span> OffsetImage(centroid.reshape(img_shape), cmap<span class="op">=</span><span class="st">'gray'</span>, zoom<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    ab <span class="op">=</span> AnnotationBbox(imagebox, pos, frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    plt.gca().add_artist(ab)</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can do the same with t-SNE:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> TSNE</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.offsetbox <span class="im">import</span> OffsetImage, AnnotationBbox</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CONFIGURATION ---</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>img_shape <span class="op">=</span> (<span class="dv">28</span>, <span class="dv">28</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>perplexity <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>random_state <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># --- LOAD DATA ---</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> in_data.X</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CLUSTER LABELS ---</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>meta_names <span class="op">=</span> [m.name <span class="cf">for</span> m <span class="kw">in</span> in_data.domain.metas]</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'Cluster'</span> <span class="kw">in</span> meta_names:</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    cluster_values, _ <span class="op">=</span> in_data.get_column_view(<span class="st">'Cluster'</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    clusters <span class="op">=</span> np.array(cluster_values)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    clusters <span class="op">=</span> np.zeros(X.shape[<span class="dv">0</span>], dtype<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>cluster_labels <span class="op">=</span> np.array([<span class="bu">str</span>(c) <span class="cf">for</span> c <span class="kw">in</span> clusters])</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co"># --- RUN t-SNE ---</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>, perplexity<span class="op">=</span>perplexity, random_state<span class="op">=</span>random_state, init<span class="op">=</span><span class="st">'pca'</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>X_2D <span class="op">=</span> tsne.fit_transform(X)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co"># --- COMPUTE CENTROIDS ---</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>unique_labels <span class="op">=</span> np.unique(cluster_labels)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>centroids <span class="op">=</span> [np.mean(X[cluster_labels <span class="op">==</span> lbl], axis<span class="op">=</span><span class="dv">0</span>) <span class="cf">for</span> lbl <span class="kw">in</span> unique_labels]</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>centroid_positions <span class="op">=</span> [np.mean(X_2D[cluster_labels <span class="op">==</span> lbl], axis<span class="op">=</span><span class="dv">0</span>) <span class="cf">for</span> lbl <span class="kw">in</span> unique_labels]</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co"># --- PLOT t-SNE PROJECTION ---</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">6</span>))</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>scatter <span class="op">=</span> plt.scatter(X_2D[:,<span class="dv">0</span>], X_2D[:,<span class="dv">1</span>],</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>                      c<span class="op">=</span>np.arange(<span class="bu">len</span>(unique_labels))[np.searchsorted(unique_labels, cluster_labels)],</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>                      cmap<span class="op">=</span><span class="st">'tab10'</span>, s<span class="op">=</span><span class="dv">15</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>handles, _ <span class="op">=</span> scatter.legend_elements()</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>plt.legend(handles, unique_labels, title<span class="op">=</span><span class="st">"Cluster"</span>, loc<span class="op">=</span><span class="st">"best"</span>)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"t-SNE 1"</span>)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"t-SNE 2"</span>)</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"t-SNE Projection with Cluster Centroids"</span>)</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="co"># --- ADD CENTROID IMAGES ---</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pos, centroid <span class="kw">in</span> <span class="bu">zip</span>(centroid_positions, centroids):</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    imagebox <span class="op">=</span> OffsetImage(centroid.reshape(img_shape), cmap<span class="op">=</span><span class="st">'gray'</span>, zoom<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    ab <span class="op">=</span> AnnotationBbox(imagebox, pos, frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    plt.gca().add_artist(ab)</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Paste either of these into a <code>Python Script</code> widget connected to the output of <code>K-Means</code>. The script will project the high-dimensional data into 2D and plot it, coloring points by their cluster assignment. The centroids are also displayed as images.</p>
+<div class="question-card">
+<p>📝 <strong>Questions:</strong> 1. How do the PCA and t-SNE projections differ in terms of cluster separation and structure? 2. Do the clusters identified by K-Means correspond to distinct regions in the 2D space? 3. What insights can be drawn from the low-dimensional representations regarding the dataset’s structure and potential challenges in classification?</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="final-note" class="level1">
+<h1>Final note</h1>
+<div class="final-note-card">
+<p>✨ Congratulations on completing Lab 5! You’ve explored the fascinating world of unsupervised learning, delving into clustering and dimensionality reduction techniques. These tools are invaluable for uncovering hidden patterns in data, especially when labels are scarce or unavailable.</p>
+<p>Next session we will switch to a different paradigm: <strong>recommender systems</strong>. Here, the goal is to predict user preferences based on past behavior.</p>
+</div>
+</section>
+<section id="explore-the-labs" class="level1 unnumbered unlisted margin">
+<h1 class="unnumbered unlisted">Explore the Labs</h1>
+<div class="lab-grid">
+  <a href="./lab1.html" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab1.jpg" alt="Lab 1">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3 class="anchored" data-anchor-id="explore-the-labs">Lab 1</h3>
+          <span class="subtitle">Introduction to Orange and Data Handling</span>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="./lab2.html" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab2.jpg" alt="Lab 2">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3 class="anchored">Lab 2</h3>
+          <span class="subtitle">Data Preprocessing</span>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="./lab3.html" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab3.jpg" alt="Lab 3">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3 class="anchored">Lab 3</h3>
+          <span class="subtitle">Regression Problems</span>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="./lab4.html" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab4.jpg" alt="Lab 4">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3 class="anchored">Lab 4</h3>
+          <span class="subtitle">Classification Problems</span>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="./lab5.html" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab5.jpg" alt="Lab 5">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3 class="anchored">Lab 5</h3>
+          <span class="subtitle">Unsupervised Learning</span>
+        </div>
+      </div>
+    </div>
+  </a>
+  <!-- <a href="lab6.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab6.jpg" alt="Lab 6">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3>Lab 6</h3>
+          <span class="subtitle">Recommender Systems</span>
+        </div>
+      </div>
+    </div>
+  </a> -->
+</div>
+</section>
+
+
+
+</main> <!-- /main -->
+<script>
+
+/* language.js — dedupe-safe version
+
+   If you include this as an external .js file, remove the <script> wrappers.
+
+*/
+
+
+
+let currentLang = localStorage.getItem("lang") || "en";
+
+
+
+// keep your existing labels object (trimmed here for brevity — keep your full object)
+
+const navbarLabels = {
+
+  en: {
+
+    title: "Computation and Intelligence",
+
+    home: "🏠 Home",
+
+    labs: "🔬 Labs",
+
+    labItems: ["Lab 1","Lab 2","Lab 3","Lab 4","Lab 5","Lab 6","Lab 7"],
+
+    setup: "🔧 Setup"
+
+  },
+
+  es: {
+
+    title: "Computación e Inteligencia",
+
+    home: "🏠 Inicio",
+
+    labs: "🔬 Laboratorios",
+
+    labItems: ["Laboratorio 1","Laboratorio 2","Laboratorio 3","Laboratorio 4","Laboratorio 5","Laboratorio 6","Laboratorio 7"],
+
+    setup: "🔧 Configuración"
+
+  }
+
+};
+
+
+
+// --- helper: consolidate/remove duplicate .navbar-brand elements ---
+
+function consolidateBrand() {
+
+  const brands = Array.from(document.querySelectorAll(".navbar-brand"));
+
+  if (brands.length <= 1) return brands[0] || null;
+
+
+
+  // Prefer the brand that contains an <img>, otherwise prefer the one with longest text
+
+  let preferred = brands.find(b => b.querySelector("img")) ||
+
+                  brands.reduce((a,b) => ( (a.textContent || "").length >= (b.textContent || "").length ? a : b ));
+
+
+
+  // If any duplicate has useful href and preferred doesn't, copy it
+
+  brands.forEach((b) => {
+
+    if (b === preferred) return;
+
+    try {
+
+      if (!preferred.getAttribute("href") && b.getAttribute("href")) {
+
+        preferred.setAttribute("href", b.getAttribute("href"));
+
+      }
+
+      // Remove duplicate from DOM
+
+      b.remove();
+
+    } catch (e) {
+
+      // ignore removal errors
+
+      console.warn("brand dedupe: couldn't remove a duplicate", e);
+
+    }
+
+  });
+
+
+
+  return preferred;
+
+}
+
+
+
+// Watch for later DOM changes that might re-insert duplicates (Quarto or other scripts)
+
+function observeBrandDedupe() {
+
+  const root = document.querySelector("nav") || document.body;
+
+  if (!root) return;
+
+  const observer = new MutationObserver((mutations) => {
+
+    for (const m of mutations) {
+
+      if (m.addedNodes && m.addedNodes.length) {
+
+        // If any added node contains .navbar-brand, run consolidation
+
+        for (const node of m.addedNodes) {
+
+          if (node.nodeType !== 1) continue;
+
+          if (node.matches && node.matches(".navbar-brand")) {
+
+            consolidateBrand();
+
+            return;
+
+          }
+
+          if (node.querySelector && node.querySelector(".navbar-brand")) {
+
+            consolidateBrand();
+
+            return;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  });
+
+  observer.observe(root, { childList: true, subtree: true });
+
+}
+
+
+
+// --- update functions (use consolidated brand) ---
+
+function updateNavbarText(lang) {
+
+  document.title = navbarLabels[lang].title;
+
+
+
+  // Ensure single brand element
+
+  const brand = consolidateBrand() || document.querySelector(".navbar-brand");
+
+  if (brand) {
+
+    const img = brand.querySelector("img");
+
+    if (img) {
+
+      img.alt = navbarLabels[lang].title;
+
+    } else {
+
+      brand.textContent = navbarLabels[lang].title;
+
+    }
+
+  }
+
+
+
+  // Home link
+
+  const homeLink =
+
+      document.querySelector(".navbar .navbar-nav.me-auto > li:nth-child(1) > a") ||
+
+      document.querySelector(".navbar .navbar-nav:not(.ms-auto) > li:nth-child(1) > a");
+
+  if (homeLink) homeLink.textContent = navbarLabels[lang].home;
+
+
+
+  // Setup link
+
+  const setupLink =
+
+      document.querySelector(".navbar .navbar-nav.me-auto > li:nth-child(2) > a") ||
+
+      document.querySelector(".navbar .navbar-nav:not(.ms-auto) > li:nth-child(2) > a");
+
+  if (setupLink) setupLink.textContent = navbarLabels[lang].setup;
+
+
+
+  // Labs dropdown toggle
+
+  const labsToggle =
+
+      document.querySelector(".navbar .navbar-nav.me-auto > li:nth-child(3) > a[data-bs-toggle='dropdown']") ||
+
+      document.querySelector(".navbar .navbar-nav:not(.ms-auto) > li:nth-child(3) > a[data-bs-toggle='dropdown']");
+
+  if (labsToggle) labsToggle.textContent = navbarLabels[lang].labs;
+
+
+
+  // Labs dropdown items
+
+  const labLinks = document.querySelectorAll(".navbar .dropdown-menu a.dropdown-item");
+
+  labLinks.forEach((link, i) => {
+
+    if (navbarLabels[lang].labItems[i]) {
+
+      link.textContent = navbarLabels[lang].labItems[i];
+
+    }
+
+  });
+
+}
+
+
+
+function updatedURL(lang, url) {
+
+  if (url.endsWith("/") || url.endsWith("index.html")) {
+
+    if (lang === "es") url = url.replace("index.html", "index.es.html");
+
+    else if (url.endsWith("index.es.html")) url = url.replace("index.es.html", "index.html");
+
+  } else if (url.includes(".es.html")) {
+
+    if (lang === "en") url = url.replace(".es.html", ".html");
+
+  } else if (url.endsWith(".html")) {
+
+    if (lang === "es") url = url.replace(".html", ".es.html");
+
+  }
+
+  return url;
+
+}
+
+
+
+function updateNavbarHref(lang) {
+
+  const brand = consolidateBrand() || document.querySelector(".navbar-brand");
+
+  if (brand) {
+
+    let href = brand.getAttribute("href");
+
+    if (href) brand.setAttribute("href", updatedURL(lang, href));
+
+  }
+
+
+
+  const homeLink =
+
+      document.querySelector(".navbar .navbar-nav.me-auto > li:nth-child(1) > a") ||
+
+      document.querySelector(".navbar .navbar-nav:not(.ms-auto) > li:nth-child(1) > a");
+
+  if (homeLink) {
+
+    let href = homeLink.getAttribute("href");
+
+    if (href) homeLink.setAttribute("href", updatedURL(lang, href));
+
+  }
+
+
+
+  const setupLink =
+
+      document.querySelector(".navbar .navbar-nav.me-auto > li:nth-child(2) > a") ||
+
+      document.querySelector(".navbar .navbar-nav:not(.ms-auto) > li:nth-child(2) > a");
+
+  if (setupLink) {
+
+    let href = setupLink.getAttribute("href");
+
+    if (href) setupLink.setAttribute("href", updatedURL(lang, href));
+
+  }
+
+
+
+  const labsToggle =
+
+      document.querySelector(".navbar .navbar-nav.me-auto > li:nth-child(3) > a[data-bs-toggle='dropdown']") ||
+
+      document.querySelector(".navbar .navbar-nav:not(.ms-auto) > li:nth-child(3) > a[data-bs-toggle='dropdown']");
+
+  if (labsToggle) {
+
+    let href = labsToggle.getAttribute("href");
+
+    if (href) labsToggle.setAttribute("href", updatedURL(lang, href));
+
+  }
+
+
+
+  const labLinks = document.querySelectorAll(".navbar .dropdown-menu a.dropdown-item");
+
+  labLinks.forEach((link) => {
+
+    let href = link.getAttribute("href");
+
+    if (href) link.setAttribute("href", updatedURL(lang, href));
+
+  });
+
+}
+
+
+
+function switchLang() {
+
+  let url = window.location.href;
+
+  let hash = window.location.hash;
+
+  let targetLang = (currentLang === "es") ? "en" : "es";
+
+  localStorage.setItem("lang", targetLang);
+
+  currentLang = targetLang;
+
+  url = url.replace(hash, "");
+
+  if (url.endsWith("/") || url.endsWith("index.html")) {
+
+    if (targetLang === "es") url = url.replace("index.html", "index.es.html");
+
+  } else if (url.endsWith("index.es.html")) {
+
+    if (targetLang === "en") url = url.replace("index.es.html", "index.html");
+
+  } else if (url.includes(".es.html")) {
+
+    if (targetLang === "en") url = url.replace(".es.html", ".html");
+
+  } else if (url.endsWith(".html")) {
+
+    if (targetLang === "es") url = url.replace(".html", ".es.html");
+
+  }
+
+  window.location.href = url + hash;
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // First dedupe immediately
+
+  consolidateBrand();
+
+
+
+  // Observe for later re-renders
+
+  observeBrandDedupe();
+
+
+
+  updateNavbarText(currentLang);
+
+  updateNavbarHref(currentLang);
+
+
+
+  const switcher = document.querySelector("a[href='javascript:void(0)']");
+
+  if (switcher) {
+
+    switcher.style.cursor = "pointer";
+
+    switcher.addEventListener("click", (e) => {
+
+      e.preventDefault();
+
+      switchLang();
+
+    });
+
+  }
+
+
+
+  // If root, redirect to saved language
+
+  if (window.location.pathname.endsWith("/") || window.location.pathname.endsWith("/Computation_and_Intelligence/")) {
+
+    let saved = localStorage.getItem("lang") || "en";
+
+    if (saved === "es") window.location.href = "index.es.html";
+
+    else window.location.href = "index.html";
+
+  }
+
+});
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sevisal\.github\.io\/Computation_and_Intelligence\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 Carlos Sevilla Salcedo</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -44,5 +44,27 @@
       </div>
     </div>
   </a>
+  <a href="lab5.es.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab5.jpg" alt="Lab 5">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3>Laboratorio 5</h3>
+          <span class="subtitle">Aprendizaje No Supervisado</span>
+        </div>
+      </div>
+    </div>
+  </a>
+  <!-- <a href="lab6.es.qmd" class="lab-card">
+    <div class="card-inner">
+      <img src="_resources/images/lab6.jpg" alt="Lab 6">
+      <div class="overlay">
+        <div class="overlay-text">
+          <h3>Laboratorio 6</h3>
+          <span class="subtitle">Sistemas de Recomendación</span>
+        </div>
+      </div>
+    </div>
+  </a> -->
 </div>
 ```

@@ -1,0 +1,495 @@
+---
+title: "Lab session 5: Unsupervised Learning"
+format:
+    html:
+        toc: true
+        toc-depth: 5
+        toc-location: left
+        toc-title: "**Contents**"
+---
+
+# Session objectives
+
+::: {.objective-card}
+🎯 **General objective:** Explore the principles and applications of unsupervised learning using visual and intuitive examples. Learn how clustering and dimensionality reduction can reveal hidden structure in complex datasets, particularly image data.
+:::
+
+![](_resources/images/unsupervised.jpg){.img-right}
+
+Unlike regression or classification, **unsupervised learning** does not rely on predefined labels. Its goal is to uncover **patterns, groups, or latent structures** in the data itself. This makes it especially useful when labels are unavailable, expensive, or subjective — as often happens in exploratory data analysis or in scientific research where we seek to identify new phenomena.
+
+Unsupervised learning algorithms find structure in unlabeled data. In other words, the algorithm tries to “make sense” of the data by itself. Unlike supervised learning, there is no ground truth to compare predictions against. 
+
+Two major families of unsupervised learning methods are:
+
+- **Clustering:** grouping similar samples together (e.g., K-Means, hierarchical clustering).
+- **Dimensionality reduction:** compressing data into a smaller set of variables while preserving as much information as possible (e.g., PCA, t-SNE, UMAP).
+
+Both techniques are complementary: clustering helps us identify potential categories, while dimensionality reduction helps us visualise or simplify high-dimensional data.
+
+This lab session will guide you through practical applications of these techniques using the **Cars93** dataset for clustering and the **Fashion-MNIST** dataset for dimensionality reduction and clustering of images. You will learn how to preprocess data, choose appropriate algorithms, evaluate results, and interpret findings in a meaningful way.
+
+---
+
+# 1. Clustering with the Cars93 dataset
+
+::: {.objective-card}
+🎯 **General goal:** Explore unsupervised grouping of vehicles using a compact set of numeric features. Learn how K-Means discovers representative centroids, how to decide the number of clusters, and how to interpret the centroid profiles back in the original units.
+:::
+
+![](_resources/images/smallcar.gif){.img-right}
+
+The **Cars93** dataset collects measurements and descriptive variables for 93 car models. It is small enough for interactive exploration, yet rich enough to illustrate common issues in clustering: features with different scales, the need for sensible preprocessing, and the interpretation of learned cluster centres.
+
+In this part of the lab we will focus only on the following numeric features:  
+`Price`, `MPG.highway`, `MPG.city`, `Horsepower`, `Fuel.tank.capacity`, `Passengers`, `Weight`, `Length`, and `RPM`.  
+By restricting attention to this subset we aim to isolate the mechanical and size-related signals that typically drive vehicle clustering. The experiments in this lab must use **only** the features listed above.
+
+
+## 1.1. Data preprocessing and exploration 
+::: {.objective-card}
+🎯 **Objective:** 
+:::
+
+Load the dataset from the following [link](https://raw.githubusercontent.com/selva86/datasets/master/Cars93.csv) and inspect its global statistics: range, typical scales and missing values. Interpret what each feature measures (units and semantic meaning) and consider simple preprocessing choices that make clustering meaningful. 
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. What are the key preprocessing steps you will take to prepare the data for clustering?
+2. How do the features differ in scale and distribution? Which features might dominate distance calculations if left unscaled?
+3. Are there any missing values or outliers that need to be addressed before clustering?
+:::
+
+## 1.2. K-Means clustering and evaluation
+::: {.objective-card}
+🎯 **Objective:** Learn how to apply K-Means clustering to the Cars93 dataset and evaluate the results.
+:::
+
+![](_resources/images/group.jpg){.img-right}
+K-Means is a simple and widely used clustering algorithm that partitions data into *K* groups based on feature similarity. K-Means partitions the feature space into *K* regions by iteratively assigning points to the nearest centroid and recomputing centroids as cluster means. The centroids are the arithmetic means that summarise each group. K-Means is simple, fast and interpretable, but it depends strongly on the number of clusters *K* and on the distance metric induced by the chosen preprocessing.
+
+When choosing *K* you should balance two goals: (1) cluster quality, which can be quantified with internal scores such as the **silhouette**, and (2) parsimony — we avoid many tiny clusters that add little interpretability. The silhouette score measures how well each point fits its assigned cluster compared to other clusters; higher silhouette indicates clearer separation.
+
+Use the `K-Means` widget in Orange to try several values of *K* and inspect the centroids in a table.
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. How does the silhouette score change as you vary *K*? Is there a clear optimal value?
+2. Examine the centroid profiles for different *K*. Do they represent meaningful vehicle types?
+3. How sensitive are the clusters to your preprocessing choices (e.g., scaling)?
+:::
+
+
+## 1.3. Interpreting and visualising clusters
+::: {.objective-card}
+🎯 **Objective:** Learn how to interpret and visualize the clusters obtained from K-Means.
+:::
+
+Once you have chosen a suitable *K* and obtained clusters, the next step is to interpret what they represent. The centroid profiles can be converted back to the original feature units to understand the typical characteristics of each cluster. 
+
+K-Means is unsupervised: it finds structure in the input features without seeing the car type or segment labels. To evaluate how meaningful the discovered groups are you can compare them to known labels (e.g. type or manufacturer) and look at label distributions inside clusters. For this we will use a small Python snippet inside Orange’s `Python Script` widget. The snippet below visualises, for each cluster, the distribution of true labels (if a true label exists in the table). Paste it into a `Python Script` widget that receives the `K-Means` output (so `in_data` contains the assigned `Cluster` meta and any available class variable).
+
+```python
+# Histogram: true-label distribution per cluster
+# Paste this into a Python Script widget connected to the output of K-Means.
+# It expects a single Orange input (available as `in_data`).
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# --- LOAD DATA ---
+X = in_data.X
+y = in_data.Y
+class_var = in_data.domain.class_var
+
+# --- CONVERT LABELS TO STRINGS IF POSSIBLE ---
+if class_var and class_var.is_discrete and class_var.values:
+    labels = np.array([class_var.values[int(v)] for v in y])
+else:
+    labels = np.array(y).astype(str)
+
+# --- EXTRACT CLUSTERS ---
+meta_names = [m.name for m in in_data.domain.metas]
+if 'Cluster' in meta_names:
+    clusters, _ = in_data.get_column_view('Cluster')
+    clusters = np.array(clusters)
+    cluster_ids = np.unique(clusters)
+    n_clusters = len(cluster_ids)
+else:
+    clusters = np.zeros(len(X))
+    cluster_ids = [0]
+    n_clusters = 1
+
+# --- PLOT HISTOGRAMS OF LABEL DISTRIBUTION PER CLUSTER ---
+fig, ax = plt.subplots(nrows=1, ncols=n_clusters, figsize=(5 * n_clusters, 4))
+
+# ensure iterable axes even if one cluster
+if n_clusters == 1:
+    ax = [ax]
+
+for i, cid in enumerate(cluster_ids):
+    mask = clusters == cid
+    cluster_labels = labels[mask]
+    unique_vals, counts = np.unique(cluster_labels, return_counts=True)
+
+    ax[i].bar(unique_vals, counts, color="cornflowerblue", alpha=0.8)
+    ax[i].set_title(f"Cluster {cid}")
+    ax[i].set_xlabel("True label")
+    ax[i].set_ylabel("Count")
+    ax[i].grid(which='major', color='gray', alpha=0.4, linestyle='dotted')
+
+    # rotate x-axis tick labels by 45 degrees for readability
+    ax[i].set_xticks(range(len(unique_vals)))
+    ax[i].set_xticklabels(unique_vals, rotation=45, ha='right')
+
+plt.tight_layout()
+plt.show()
+```
+
+This code generates a histogram for each cluster, showing how many cars of each true label are present. This helps assess whether the clusters correspond to meaningful categories.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. Do the clusters correspond to known vehicle types or segments? Which clusters are most homogeneous?
+2. Are there clusters that mix many different labels? What might this indicate about the features used?
+:::
+
+## 1.4. Centroids analysis
+::: {.objective-card}
+🎯 **Objective:** Learn how to interpret K-Means centroids in the original feature space.
+:::
+
+![](_resources/images/escale.png){.img-right}
+
+Centroids summarise what K-Means has learned. If you standardised features before clustering, centroids are expressed in the scaled space. To interpret them in real units (e.g., price in dollars, weight in pounds) you must undo the scaling. Orange’s widgets do not provide an automatic inverse transform, so we will reconstruct centroids and de-standardise them in a short `Python Script` that accepts two inputs: the original `File` (pre-scaling) and the `K-Means` centroids (post-scaling). The script below assumes you used standardization (zero mean, unit variance).
+
+```python
+import numpy as np
+import Orange
+
+# --- ACCESS INPUTS ---
+if in_datas[0].X.shape[0] > in_datas[1].X.shape[0]:
+    orig_data = in_datas[0]        # original data
+    centroid_data = in_datas[1]    # output from KMeans or scaled data
+elif in_datas[0].X.shape[0] < in_datas[1].X.shape[0]:
+    orig_data = in_datas[1]        # original data
+    centroid_data = in_datas[0]    # output from KMeans or scaled data
+else:
+    print('Error! One of your input data should be the centroids!')
+
+# --- COMPUTE MEAN AND STD ---
+X_orig = orig_data.X
+means = np.nanmean(X_orig, axis=0)
+stds = np.nanstd(X_orig, axis=0)
+
+# --- INVERSE TRANSFORM CENTROIDS ---
+centroids_scaled = centroid_data.X
+centroids_rescaled = centroids_scaled * stds + means
+
+# --- CREATE DOMAIN WITHOUT CLASS VARIABLE ---
+attrs = orig_data.domain.attributes  # only features
+new_domain = Orange.data.Domain(attrs)  # exclude class_var
+
+# --- CREATE TABLE ---
+centroid_table = Orange.data.Table.from_numpy(
+    new_domain,
+    centroids_rescaled
+)
+centroid_table.name = "De-standardized Centroids"
+
+out_data = centroid_table
+```
+
+Paste this into a `Python Script` widget that receives two inputs (first the original `File` widget; second the `K-Means` centroids). You can connect the output to a `Data Table`, `Heat Map` or `Box Plot` to inspect which features are high or low in each centroid. 
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What do the de-standardized centroids reveal about the typical characteristics of each cluster?
+2. Which features most clearly distinguish the clusters? Are there any surprising patterns?
+3. Do the centroids correspond to meaningful vehicle types or market segments?
+:::
+
+---
+
+# 2. Low-Dimensional Representation and Clustering on an Image Dataset
+
+In this second part, we will work with image data — specifically, the **Fashion-MNIST** dataset — to explore clustering and low-dimensional embeddings.  
+Unlike the tabular *Cars93* data, these datasets have thousands of features (pixels), so visualization and interpretation require **dimensionality reduction**.
+
+---
+
+## 2.1 Preprocess the Dataset
+
+The **Fashion-MNIST** dataset contains grayscale images of 28×28 pixels, each corresponding to one of ten clothing categories.
+
+<div style="width:50%; margin:auto;">
+| Label | Item        |
+|:------|:-------------|
+| 0 | T-shirt/top |
+| 1 | Trouser |
+| 2 | Pullover |
+| 3 | Dress |
+| 4 | Coat |
+| 5 | Sandal |
+| 6 | Shirt |
+| 7 | Sneaker |
+| 8 | Bag |
+| 9 | Ankle boot |
+</div>
+
+Ensure the labels are **categorical**, not numeric (you can use the `Edit Domain` widget to change them).
+
+To visualize a few samples from the dataset, connect the `File` widget to a `Python Script` widget and paste the following:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Get data and labels
+X = in_data.X
+y = in_data.Y
+class_var = in_data.domain.class_var
+n_samples, n_features = X.shape
+
+# Shuffle data for visualization
+idx = np.arange(n_samples)
+np.random.shuffle(idx)
+X = X[idx]
+y = y[idx]
+
+# Convert numeric labels to strings if available
+if class_var.is_discrete and class_var.values:
+    labels = np.array([class_var.values[int(v)] for v in y])
+else:
+    labels = y.astype(int)
+
+# Determine image size
+side = int(np.sqrt(n_features))
+if side * side != n_features:
+    print(f"Warning: {n_features} features not a perfect square — forcing 28×28")
+    side = 28
+
+# Plot random samples
+n_show = min(25, n_samples)
+plt.figure(figsize=(6,6))
+for i in range(n_show):
+    plt.subplot(5, 5, i + 1)
+    plt.imshow(X[i].reshape(side, side), cmap="gray")
+    plt.axis("off")
+    plt.title(str(labels[i]))
+plt.tight_layout()
+plt.show()
+```
+
+This code will display a grid of 25 random images from the dataset, each labeled with its corresponding category.
+
+:::: {.question-card}
+📝 **Questions:**
+
+1. What do the visualized samples reveal about the dataset's diversity and complexity?
+2. How well do the images represent their respective categories?
+3. What challenges might arise when clustering or classifying these images?
+:::
+
+## 2.2. Clustering and Centroid Analysis
+::: {.objective-card}
+🎯 **Objective:** Apply K-Means clustering to the Fashion-MNIST dataset and analyze the resulting clusters.
+:::
+
+Due to the high dimensionality of image data, clustering directly on pixel values can be challenging. However, K-Means can still provide insights into the dataset's structure. Use the `K-Means` widget in Orange to cluster the images, experimenting with different values of `K`.
+
+Then visualize the cluster centroids using the following Python Script:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# --- CONFIGURATION ---
+img_shape = (28, 28)  # adjust to your dataset
+
+# --- LOAD DATA ---
+X = in_data.X
+
+# --- EXTRACT CLUSTERS ---
+meta_names = [m.name for m in in_data.domain.metas]
+if 'Cluster' in meta_names:
+    clusters, _ = in_data.get_column_view('Cluster')
+    clusters = np.array(clusters)
+    cluster_ids = np.unique(clusters)
+else:
+    clusters = np.zeros(X.shape[0], dtype=int)
+    cluster_ids = [0]
+
+# --- COMPUTE CENTROIDS ---
+centroids = [np.mean(X[clusters == c], axis=0) for c in cluster_ids]
+
+# --- PLOT CENTROIDS ---
+fig, axes = plt.subplots(1, len(cluster_ids), figsize=(2*len(cluster_ids), 2))
+axes = np.atleast_1d(axes)
+for i, ax in enumerate(axes):
+    ax.imshow(centroids[i].reshape(img_shape), cmap="gray")
+    ax.set_title(f"Cluster {i}")
+    ax.axis("off")
+
+plt.tight_layout()
+plt.show()
+```
+
+Paste this into a `Python Script` widget connected to the output of `K-Means`. It will display the centroids as images, allowing you to interpret what each cluster represents.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What do the visualized centroids reveal about the characteristics of each cluster?
+2. How do the clusters compare to the original categories in the Fashion-MNIST dataset?
+3. What insights can be drawn from the clustering results regarding the dataset's structure and potential challenges in classification?
+:::
+
+## 2.3 Low-Dimensional Representation
+
+::: {.objective-card}
+🎯 **Objective:** Learn how to apply dimensionality reduction techniques to visualize high-dimensional image data.
+:::
+
+![](_resources/images/pixel.jpg){.img-right}
+High-dimensional data like images can be challenging to visualize directly. The original dataset lives in a 784-dimensional space (28×28), but we can use dimensionality reduction to project the data onto two dimensions while preserving as much structure as possible. 
+Two common methods are:
+- **Principal Component Analysis (PCA):** a linear technique that finds the directions of maximum variance in the data.
+- **t-Distributed Stochastic Neighbor Embedding (t-SNE):** a non-linear technique that preserves local relationships and is particularly effective for visualizing clusters.
+
+Use the following `Python Script` to perform PCA on the Fashion-MNIST dataset and visualize the results:
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+
+# --- CONFIGURATION ---
+img_shape = (28, 28)
+
+# --- LOAD DATA ---
+X = in_data.X
+
+# --- GET CLUSTER LABELS ---
+meta_names = [m.name for m in in_data.domain.metas]
+if 'Cluster' in meta_names:
+    clusters, _ = in_data.get_column_view('Cluster')
+    clusters = np.array(clusters)
+else:
+    clusters = np.zeros(X.shape[0], dtype=int)
+
+cluster_labels = np.array([str(c) for c in clusters])
+
+# --- PCA PROJECTION ---
+pca = PCA(n_components=2, random_state=42)
+X_2D = pca.fit_transform(X)
+
+# --- COMPUTE CENTROIDS ---
+unique_labels = np.unique(cluster_labels)
+centroids = [np.mean(X[cluster_labels == lbl], axis=0) for lbl in unique_labels]
+centroid_positions = [np.mean(X_2D[cluster_labels == lbl], axis=0) for lbl in unique_labels]
+
+# --- PLOT PCA PROJECTION ---
+plt.figure(figsize=(7,6))
+scatter = plt.scatter(X_2D[:,0], X_2D[:,1],
+                      c=np.arange(len(unique_labels))[np.searchsorted(unique_labels, cluster_labels)],
+                      cmap='tab10', s=15, alpha=0.6)
+
+handles, _ = scatter.legend_elements()
+plt.legend(handles, unique_labels, title="Cluster", loc="best")
+plt.xlabel("PCA 1")
+plt.ylabel("PCA 2")
+plt.title("PCA Projection with Cluster Centroids")
+
+# --- ADD CENTROID IMAGES ---
+for pos, centroid in zip(centroid_positions, centroids):
+    imagebox = OffsetImage(centroid.reshape(img_shape), cmap='gray', zoom=0.6)
+    ab = AnnotationBbox(imagebox, pos, frameon=False)
+    plt.gca().add_artist(ab)
+
+plt.tight_layout()
+plt.show()
+```
+
+You can do the same with t-SNE (It might take a few minutes to compute):
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.manifold import TSNE
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+
+# --- CONFIGURATION ---
+img_shape = (28, 28)
+perplexity = 30
+random_state = 42
+
+# --- LOAD DATA ---
+X = in_data.X
+
+# --- CLUSTER LABELS ---
+meta_names = [m.name for m in in_data.domain.metas]
+if 'Cluster' in meta_names:
+    cluster_values, _ = in_data.get_column_view('Cluster')
+    clusters = np.array(cluster_values)
+else:
+    clusters = np.zeros(X.shape[0], dtype=int)
+
+cluster_labels = np.array([str(c) for c in clusters])
+
+# --- RUN t-SNE ---
+tsne = TSNE(n_components=2, perplexity=perplexity, random_state=random_state, init='pca')
+X_2D = tsne.fit_transform(X)
+
+# --- COMPUTE CENTROIDS ---
+unique_labels = np.unique(cluster_labels)
+centroids = [np.mean(X[cluster_labels == lbl], axis=0) for lbl in unique_labels]
+centroid_positions = [np.mean(X_2D[cluster_labels == lbl], axis=0) for lbl in unique_labels]
+
+# --- PLOT t-SNE PROJECTION ---
+plt.figure(figsize=(7,6))
+scatter = plt.scatter(X_2D[:,0], X_2D[:,1],
+                      c=np.arange(len(unique_labels))[np.searchsorted(unique_labels, cluster_labels)],
+                      cmap='tab10', s=15, alpha=0.6)
+
+handles, _ = scatter.legend_elements()
+plt.legend(handles, unique_labels, title="Cluster", loc="best")
+plt.xlabel("t-SNE 1")
+plt.ylabel("t-SNE 2")
+plt.title("t-SNE Projection with Cluster Centroids")
+
+# --- ADD CENTROID IMAGES ---
+for pos, centroid in zip(centroid_positions, centroids):
+    imagebox = OffsetImage(centroid.reshape(img_shape), cmap='gray', zoom=0.7)
+    ab = AnnotationBbox(imagebox, pos, frameon=False)
+    plt.gca().add_artist(ab)
+
+plt.tight_layout()
+plt.show()
+```
+
+Paste either of these into a `Python Script` widget connected to the output of `K-Means`. The script will project the high-dimensional data into 2D and plot it, coloring points by their cluster assignment. The centroids are also displayed as images.
+
+::: {.question-card}
+📝 **Questions:**
+1. How do the PCA and t-SNE projections differ in terms of cluster separation and structure?
+2. Do the clusters identified by K-Means correspond to distinct regions in the 2D space?
+3. What insights can be drawn from the low-dimensional representations regarding the dataset's structure and potential challenges in classification?
+:::
+
+---
+
+# Final note
+
+::: {.final-note-card}
+✨ Congratulations on completing Lab 5! You've explored the fascinating world of unsupervised learning, delving into clustering and dimensionality reduction techniques. These tools are invaluable for uncovering hidden patterns in data, especially when labels are scarce or unavailable.
+
+Next session we will switch to a different paradigm: **recommender systems**. Here, the goal is to predict user preferences based on past behavior.
+:::
+
+::: {.margin}
+# Explore the Labs {.unnumbered .unlisted}
+{{< include lab-cards.qmd >}}
+:::

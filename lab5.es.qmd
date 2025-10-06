@@ -1,0 +1,57 @@
+---
+title: "Sesión de laboratorio 5: Aprendizaje No Supervisado"
+format:
+    html:
+        toc: true
+        toc-depth: 5
+        toc-location: left
+        toc-title: "**Contents**"
+---
+
+# Objetivos de la sesión
+
+::: {.objective-card}
+🎯 **Objetivo general:** Aprender a plantear y evaluar problemas de aprendizaje no supervisado, desarrollando modelos que puedan identificar patrones y estructuras en los datos sin ejemplos etiquetados.
+:::
+
+![](_resources/images/The_Square_Hole.jpg){.img-right}
+
+El aprendizaje no supervisado es una de las tareas más utilizadas en el aprendizaje automático, especialmente en la investigación biomédica y clínica. A diferencia de la regresión, donde predecimos un resultado continuo, aquí el objetivo es encontrar patrones y estructuras en los datos sin tener etiquetas predefinidas. Este cambio de perspectiva lo cambia todo: desde el tipo de algoritmos que utilizamos, hasta cómo evaluamos el éxito, y las consecuencias de diferentes tipos de errores. Un modelo que agrupa erróneamente la condición de un paciente, por ejemplo, tiene una implicación muy diferente a la de un modelo que subestima ligeramente un biomarcador continuo.
+
+Los buenos flujos de trabajo de aprendizaje no supervisado requieren un pensamiento cuidadoso sobre la selección de características, la elección del número de grupos o componentes, y la interpretación de los resultados. Incluso los modelos altamente precisos pueden ser engañosos si se ajustan en exceso a artefactos en los datos o si no generalizan más allá de la cohorte de entrenamiento. Por lo tanto, la evaluación exige más que una sola métrica: la inercia, el coeficiente de silueta y las matrices de confusión proporcionan perspectivas complementarias sobre el rendimiento. Esta sesión cultivará una intuición para estos temas, mostrando cómo se comportan diferentes algoritmos bajo diversas condiciones, y cómo las estrategias de validación adecuadas nos ayudan a juzgar la fiabilidad de nuestros resultados.
+
+# Actividades propuestas
+
+
+---
+
+## 1. 
+::: {.objective-card}
+🎯 **Objetivo:** 
+:::
+
+
+
+::: {.question-card}
+📝 **Preguntas:**  
+
+1. 
+
+:::
+
+---
+
+# Mini-proyecto: 
+
+
+
+# Nota final
+
+::: {.final-note-card}
+✨ ¡Felicidades 
+:::
+
+::: {.margin}
+# Explore the Labs {.unnumbered .unlisted}
+{{< include lab-cards.qmd >}}
+:::
