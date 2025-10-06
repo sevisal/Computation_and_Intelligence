@@ -483,7 +483,7 @@ Pega cualquiera de estos en un widget de `Python Script` conectado a la salida d
 ✨ ¡Felicidades por completar el Laboratorio 5! Has explorado el fascinante mundo del aprendizaje no supervisado, profundizando en técnicas de clustering y reducción de dimensionalidad. Estas herramientas son invaluables para descubrir patrones ocultos en los datos, especialmente cuando las etiquetas son escasas o no están disponibles.
 
 La próxima sesión cambiaremos a un paradigma diferente: **sistemas de recomendación**. Aquí, el objetivo es predecir las preferencias del usuario basándose en el comportamiento pasado.
-
+:::
 
 ::: {.margin}
 # Explora los Laboratorios {.unnumbered .unlisted}
