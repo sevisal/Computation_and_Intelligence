@@ -82,7 +82,7 @@ En esta parte, conectarás los datos de entrenamiento a un widget de **Logistic 
 ![](_resources/images/neighbor.jpg){.img-right}
 A continuación, exploraremos el algoritmo de **k-vecinos más cercanos (k-NN)**, que es un método de clasificación sencillo pero efectivo. El algoritmo k-NN clasifica un nuevo punto de datos en función de la clase mayoritaria de sus 'k' vecinos más próximos en el conjunto de entrenamiento. Es un método no paramétrico, lo que significa que no hace supuestos sobre la distribución subyacente de los datos. La elección de 'k' (el número de vecinos a considerar) puede afectar significativamente el rendimiento del modelo. Un 'k' pequeño puede llevar a sobreajuste, mientras que un 'k' grande puede suavizar en exceso la frontera de decisión.
 
-En esta parte, conectarás los datos de entrenamiento a un widget **k-NN** en Orange, configurarás sus parámetros y entrenarás el modelo. Utiliza el widget **Scatter Plot** para visualizar cómo se distribuyen los puntos de datos respecto a las variables `HBB` y `HBD`.
+Usa el widget `Scatter Plot` para visualizar cómo se distribuyen los puntos de entrenamiento respecto a las variables `HBB` y `HBD`. No es necesario conectar la salida del widget de `k-NN` al Scatter Plot (ya que k-NN es no paramétrico); conecta únicamente los datos de entrenamiento . Colorea los puntos según la variable objetivo (tipo de célula: AML vs. sano) para ver qué tan separadas están las clases en este espacio 2D.
 
 ::: {.question-card}
 📝 **Preguntas:**  

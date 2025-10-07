@@ -159,7 +159,7 @@ Este código genera un histograma para cada clúster, mostrando cuántos automó
 
 ![](_resources/images/escale.png){.img-right}
 
-Los centroides resumen lo que K-Means ha aprendido. Si estandarizaste las características antes de la agrupación, los centroides se expresan en el espacio escalado. Para interpretarlos en unidades reales (por ejemplo, precio en dólares, peso en libras), debes deshacer la escala. Los widgets de Orange no proporcionan una transformación inversa automática, por lo que reconstruiremos los centroides y los desestandarizaremos en un breve `Python Script` que acepta dos entradas: el `File` original (pre-escalado) y los `centroides de K-Means` (post-escalado). El script a continuación asume que utilizaste estandarización (media cero, varianza unitaria).
+Los centroides resumen lo que K-Means ha aprendido. Si estandarizaste las características antes de la agrupación, los centroides se expresan en el espacio escalado. Para interpretarlos en unidades reales (por ejemplo, precio en dólares, peso en libras), debes deshacer la escala. Los widgets de Orange no proporcionan una transformación inversa automática, por lo que reconstruiremos los centroides y los desestandarizaremos en un breve `Python Script` que acepta dos entradas: el dataset original después de la selección de características (pre-escalado) y los `centroides de K-Means` (post-escalado). El script a continuación asume que utilizaste estandarización (media cero, varianza unitaria).
 
 ```python
 import numpy as np
@@ -212,14 +212,14 @@ Pega esto en un widget de `Python Script` que reciba dos entradas (primero el wi
 
 # 2. Representación de Baja Dimensionalidad y Clustering en un Conjunto de Datos de Imágenes
 
-En esta segunda parte, trabajaremos con datos de imágenes, específicamente, el conjunto de datos **Fashion-MNIST**, para explorar el clustering y las incrustaciones de baja dimensionalidad.  
+En esta segunda parte, trabajaremos con datos de imágenes para explorar el clustering y las representaciones de baja dimensionalidad. Específicamente, usaremos un subconjunto de la base de datos **Fashion-MNIST** (disponible [aquí](https://github.com/sevisal/Computation_and_Intelligence/blob/main/_resources/data/fashion-mnist_reduced.csv)).  
 A diferencia de los datos tabulares *Cars93*, estos conjuntos de datos tienen miles de características (píxeles), por lo que la visualización y la interpretación requieren **reducción de dimensionalidad**.
 
 ---
 
 ## 2.1 Preprocesamiento del Conjunto de Datos
 
-El conjunto de datos **Fashion-MNIST** contiene imágenes en escala de grises de 28×28 píxeles, cada una correspondiente a una de diez categorías de ropa.
+El conjunto de datos **Fashion-MNIST** contiene imágenes en escala de grises de 28×28 píxeles, cada una correspondiente a una de diez categorías de ropa codificadas en la variable *label*.
 
 <div style="width:50%; margin:auto;">
 | Label | Item        |
@@ -470,6 +470,7 @@ Pega cualquiera de estos en un widget de `Python Script` conectado a la salida d
 
 ::: {.question-card}
 📝 **Preguntas:**
+
 1. ¿Cómo difieren las proyecciones de PCA y t-SNE en términos de separación y estructura de clústeres?
 2. ¿Los clústeres identificados por K-Means corresponden a regiones distintas en el espacio 2D?
 3. ¿Qué información se puede obtener de las representaciones de baja dimensión sobre la estructura del conjunto de datos y los posibles desafíos en la clasificación?

@@ -79,9 +79,11 @@ In this part, you will connect the training data to a **Logistic Regression** wi
 ### 2.2 k-Nearest Neighbours (k-NN)
 
 ![](_resources/images/neighbor.jpg){.img-right}
-Next, we will explore the **k-Nearest Neighbours (k-NN)** algorithm, which is a simple yet effective classification method. The k-NN algorithm classifies a new data point based on the majority class of its 'k' nearest neighbours in the training set. It is a non-parametric method, meaning it does not make any assumptions about the underlying data distribution. The choice of 'k' (the number of neighbours to consider) can significantly affect the model's performance. A small 'k' can lead to overfitting, while a large 'k' can smooth out the decision boundary too much.
+Next, we will explore the **k-NN** algorithm, which is a simple yet effective classification method. The k-NN algorithm classifies a new data point based on the majority class of its 'k' nearest neighbours in the training set. It is a non-parametric method, meaning it does not make any assumptions about the underlying data distribution. The choice of 'k' (the number of neighbours to consider) can significantly affect the model's performance. A small 'k' can lead to overfitting, while a large 'k' can smooth out the decision boundary too much.
 
-In this part, you will connect the training data to a **k-NN** widget in Orange, configure its parameters, and train the model. Use the **Scatter Plot** widget to visualise how the data points are distributed with respect to variables `HBB` and `HBD`.
+In this part, you will connect the training data to a **k-NN** widget in Orange, configure its parameters, and train the model. 
+
+Use the **Scatter Plot** widget to visualise how the training data points are distributed with respect to variables `HBB` and `HBD`. You don't need to connect the output of the `k-NN` widget to the `Scatter Plot` widget (as k-NN is non-parametric), just connect the training data to it. Colour the points by the target variable (cell type: AML vs. healthy) to see how well-separated the classes are in this 2D space.
 
 ::: {.question-card}
 📝 **Questions:**

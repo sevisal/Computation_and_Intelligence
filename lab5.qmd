@@ -160,7 +160,7 @@ This code generates a histogram for each cluster, showing how many cars of each 
 
 ![](_resources/images/escale.png){.img-right}
 
-Centroids summarise what K-Means has learned. If you standardised features before clustering, centroids are expressed in the scaled space. To interpret them in real units (e.g., price in dollars, weight in pounds) you must undo the scaling. Orange’s widgets do not provide an automatic inverse transform, so we will reconstruct centroids and de-standardise them in a short `Python Script` that accepts two inputs: the original `File` (pre-scaling) and the `K-Means` centroids (post-scaling). The script below assumes you used standardization (zero mean, unit variance).
+Centroids summarise what K-Means has learned. If you standardised features before clustering, centroids are expressed in the scaled space. To interpret them in real units (e.g., price in dollars, weight in pounds) you must undo the scaling. Orange’s widgets do not provide an automatic inverse transform, so we will reconstruct centroids and de-standardise them in a short `Python Script` that accepts two inputs: the original dataset after the corresponding feature selection (pre-scaling) and the `K-Means` centroids (post-scaling). The script below assumes you used standardization (zero mean, unit variance).
 
 ```python
 import numpy as np
@@ -213,14 +213,14 @@ Paste this into a `Python Script` widget that receives two inputs (first the ori
 
 # 2. Low-Dimensional Representation and Clustering on an Image Dataset
 
-In this second part, we will work with image data — specifically, the **Fashion-MNIST** dataset — to explore clustering and low-dimensional embeddings.  
+In this second part, we will work with image data to explore clustering and low-dimensional embeddings. Specifically, we will use a subset of the **Fashion-MNIST** dataset (available [here](https://github.com/sevisal/Computation_and_Intelligence/blob/main/_resources/data/fashion-mnist_reduced.csv)) — .  
 Unlike the tabular *Cars93* data, these datasets have thousands of features (pixels), so visualization and interpretation require **dimensionality reduction**.
 
 ---
 
 ## 2.1 Preprocess the Dataset
 
-The **Fashion-MNIST** dataset contains grayscale images of 28×28 pixels, each corresponding to one of ten clothing categories.
+The **Fashion-MNIST** dataset contains grayscale images of 28×28 pixels, each corresponding to one of ten clothing categories codified in variable *label*.
 
 <div style="width:50%; margin:auto;">
 | Label | Item        |
@@ -471,6 +471,7 @@ Paste either of these into a `Python Script` widget connected to the output of `
 
 ::: {.question-card}
 📝 **Questions:**
+
 1. How do the PCA and t-SNE projections differ in terms of cluster separation and structure?
 2. Do the clusters identified by K-Means correspond to distinct regions in the 2D space?
 3. What insights can be drawn from the low-dimensional representations regarding the dataset's structure and potential challenges in classification?
