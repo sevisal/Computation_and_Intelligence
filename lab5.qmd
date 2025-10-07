@@ -213,7 +213,7 @@ Paste this into a `Python Script` widget that receives two inputs (first the ori
 
 # 2. Low-Dimensional Representation and Clustering on an Image Dataset
 
-In this second part, we will work with image data to explore clustering and low-dimensional embeddings. Specifically, we will use a subset of the **Fashion-MNIST** dataset (available [here](https://github.com/sevisal/Computation_and_Intelligence/blob/main/_resources/data/fashion-mnist_reduced.csv)) — .  
+In this second part, we will work with image data to explore clustering and low-dimensional embeddings. Specifically, we will use a subset of the **Fashion-MNIST** dataset (available [here](https://github.com/sevisal/Computation_and_Intelligence/blob/main/_resources/data/fashion-mnist_reduced.csv)).  
 Unlike the tabular *Cars93* data, these datasets have thousands of features (pixels), so visualization and interpretation require **dimensionality reduction**.
 
 ---
