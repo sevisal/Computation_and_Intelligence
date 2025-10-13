@@ -1,0 +1,180 @@
+---
+title: "Lab session 6: Recommender Systems"
+format:
+    html:
+        toc: true
+        toc-depth: 5
+        toc-location: left
+        toc-title: "**Contents**"
+---
+
+# Session objectives
+
+::: {.objective-card}
+🎯 **General objective:**  
+Understand the fundamental ideas behind recommender systems and learn how to design, implement, and evaluate simple recommendation models using Orange. You will explore different approaches — popularity-based, content-based, and collaborative filtering — and compare their advantages and limitations.
+:::
+
+![](_resources/images/recommend.jpg){.img-right}
+
+Recommender systems are the invisible engines that personalize our digital experiences. They guide what we watch on Netflix, what we buy on Amazon, and even what we read next on Goodreads. By learning user preferences and item relationships, these systems predict which items are most relevant to each user, increasing both satisfaction and engagement.
+
+In this lab, you will:
+
+- Explore the data used to train recommender systems.
+- Implement and evaluate three main recommendation strategies:
+  1. **Popularity-based models**, which suggest what’s generally liked.
+  2. **Content-based filtering**, which finds items similar to what a user already likes.
+  3. **Collaborative filtering**, which relies on the wisdom of similar users.
+
+Before starting, make sure you have the Orange environment ready. The `orange3-recommendation` add-on extends Orange with tools specifically for building recommender systems:
+```bash
+conda activate orange3
+pip install orange3-recommendation
+```
+This package provides additional widgets for building recommender systems in Orange.
+
+---
+
+# 1. Data exploration and preprocessing
+::: {.objective-card}
+🎯 **Objective:** Explore the dataset to understand its structure, features, and potential issues.
+:::
+
+![](_resources/images/book.gif){.img-right}
+In this section, we will explore the book recommendation dataset. This dataset has been built from different users who have rated various books and your objective will be to be able to make recommendations based on this information. 
+
+Load the dataset from the following [link]() and explore its structure. Use the `File` widget in Orange to load the dataset and visualize its contents using the `Data Table` widget. Visualise the distribution of ratings using the `Distributions` widget.
+
+Partition the data into training and testing sets using the `Data Sampler` widget. This will allow us to evaluate the performance of our recommender systems later.
+
+
+::: {.question-card}
+📝 **Questions:**  
+
+1. What are the key features of the dataset that can be used for building recommender systems?
+2. How can we handle missing values or inconsistencies in the dataset?
+3. What can we infer from the distribution of ratings?
+:::
+
+---
+
+# 2. Popularity-based recommendation
+::: {.objective-card}
+🎯 **Objective:** Implement a popularity-based recommendation system and evaluate its performance.
+:::
+
+![](_resources/images/rating.png){.img-right}
+In this section, we will implement a simple way to recommend books based on the ratings. We will calculate what is the most likely book that a user would like based on the ratings of other users. Specifically, we will calculate the mean rating of each book and recommend the books with the highest average ratings. 
+
+Note that a popularity-based recommender ignores individual user preferences.
+Instead, it assumes that items liked by many users are more likely to be liked by a new user.
+
+To do this, we will use the `Baselines` widget in Orange. Pass the training data and configure it to calculate the user average as the recommendation strategy. Then, connect the output to a `Predictions` widget to evaluate its performance with the test data.
+
+Repeat the process using the average rating of each book as the recommendation strategy. Compare the results of both approaches.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What are the key features used in the popularity-based recommendation system?
+2. How does the choice of recommendation strategy (user average vs. item average) affect the performance of the system?
+3. What are the limitations of popularity-based recommendation systems?
+:::
+
+# 3. Content-based filtering
+::: {.objective-card}
+🎯 **Objective:** Implement a content-based filtering recommender system and evaluate its performance.
+:::
+
+In this section, we will implement a content-based filtering recommender system. This approach recommends items based on the similarity between items. We will use the features of the books (e.g., genre, author, etc.) to calculate the similarity between books. To do this, we will consider a scenario in which the user tells us which book they like and we will recommend similar books based on that information. 
+
+![](_resources/images/genre.jpg){.img-center}
+
+To implement this, we will use the books features, available [here](), and load them into Orange using the `File` widget. Then, we will use the `Distance` widget to calculate the similarity between books based on their features. You can visualize the similarity matrix using the `Distance matrix` widget.
+
+Next, we will use the `Python Script` widget to create a custom recommendation function that takes a book as input and recommends similar books based on the similarity matrix. The Python code can be as follows:
+
+```python
+import numpy as np
+
+# --- Choose the book you want to query ---
+book_title = "Harry Potter and the Goblet of Fire (Book 4)"   # You can change this to any book in the dataset
+
+# --- Inputs from Orange ---
+data = in_data               # Orange Table
+dist = np.array(in_object)   # DistMatrix as NumPy array
+
+# Extract book titles from metas (adjust the field name if needed)
+book_names = [str(inst["title"]) if "title" in data.domain else str(inst.metas[0]) for inst in data]
+
+# Try to find the index of the chosen book
+try:
+    idx = book_names.index(book_title)
+except ValueError:
+    print(f"❌ Book '{book_title}' not found!")
+    idx = None
+
+if idx is not None:
+    # Get distances from this book to all others
+    distances = dist[idx]
+
+    # Find the 5 nearest (excluding itself)
+    nearest_idx = np.argsort(distances)[1:6]
+
+    print(f"\n📚 5 most similar to '{book_title}':\n")
+    for i in nearest_idx:
+        print(f"  {book_names[i]}  (distance = {distances[i]:.3f})")
+```
+
+Try it with different books and see the recommendations.
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What are the key features used in the content-based filtering system?
+2. How does the choice of similarity metric affect the recommendations?
+3. What are the limitations of content-based filtering systems?
+:::
+
+---
+
+# 4. Collaborative filtering
+::: {.objective-card}
+🎯 **Objective:** Implement a collaborative filtering recommender system and evaluate its performance.
+:::
+
+![](_resources/images/collaboration.gif){.img-right}
+Finally, we will implement a collaborative filtering recommender system. This approach recommends items based on the preferences of similar users. We will use the ratings given by users to find similar users and recommend books that those users liked.
+
+Here we will focus on a type of collaborative filtering called matrix factorization. This method decomposes the user-item interaction matrix into two lower-dimensional matrices, one representing users and the other representing items. The dot product of these matrices can be used to predict missing ratings:
+$$
+R \approx P \cdot Q^T,
+$$
+where \(R\) is the original user-item interaction matrix, \(P\) is the user feature matrix, and \(Q\) is the item feature matrix.
+
+To implement this, we will use the `BRISMF` widget in Orange. Pass the training data to the widget and configure its parameters (e.g., number of factors, regularization). Then, connect the output to a `Predictions` widget to evaluate its performance with the test data.
+
+We can also visualize the latent features learned by the model using the low dimensional representation of users and items. Use the `t-SNE` widget to reduce the dimensionality of the item feature matrix (matrix\(Q\)) and visualize it using the `Scatter Plot` widget. 
+
+
+::: {.question-card}
+📝 **Questions:**
+
+1. What are the key features used in the collaborative filtering system?
+2. How does matrix factorization improve the recommendations?
+3. What are the limitations of collaborative filtering systems?
+:::
+
+---
+
+# Final note
+
+::: {.final-note-card}
+✨ Congratulations on completing the lab session on recommender systems! You have explored various techniques for building recommender systems, including popularity-based recommendations, content-based filtering, and collaborative filtering. Each method has its strengths and limitations, and understanding these will help you choose the right approach for different scenarios.
+:::
+
+::: {.margin}
+# Explore the Labs {.unnumbered .unlisted}
+{{< include lab-cards.qmd >}}
+:::

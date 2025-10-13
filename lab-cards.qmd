@@ -55,7 +55,7 @@
       </div>
     </div>
   </a>
-  <!-- <a href="lab6.qmd" class="lab-card">
+  <a href="lab6.qmd" class="lab-card">
     <div class="card-inner">
       <img src="_resources/images/lab6.jpg" alt="Lab 6">
       <div class="overlay">
@@ -65,6 +65,6 @@
         </div>
       </div>
     </div>
-  </a> -->
+  </a>
 </div>
 ```

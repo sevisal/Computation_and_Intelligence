@@ -1,0 +1,468 @@
+title	author	year	bookID	bookID_encoded	fiction	non-fiction	mystery	thriller	romance	science fiction	fantasy	historical fiction	biography	autobiography	history	science	technology	health	cooking	travel	poetry	drama	children's literature	young adult	crime	horror	comedy	adventure
+The Testament	John Grisham	1999	0440234743	239	0	0	0	1	0	0	0	1	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0
+Beloved (Plume Contemporary Fiction)	Toni Morrison	1994	0452264464	310	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Wild Animus	Rich Shapero	2004	0971880107	449	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Airframe	Michael Crichton	1997	0345402871	117	1	0	0	1	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Timeline	MICHAEL CRICHTON	2000	0345417623	122	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+To Kill a Mockingbird	Harper Lee	1988	0446310786	252	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0
+Seabiscuit: An American Legend	LAURA HILLENBRAND	2002	0449005615	284	0	1	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+From the Corner of His Eye	Dean Koontz	2001	0553582747	358	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Isle of Dogs	Patricia Cornwell	2002	0425182908	213	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1
+The Street Lawyer	JOHN GRISHAM	1999	0440225701	236	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Joy Luck Club	Amy Tan	1994	0804106304	434	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+The Tao of Pooh	Benjamin Hoff	1983	0140067477	38	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Seabiscuit	LAURA HILLENBRAND	2003	0345465083	131	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Catcher in the Rye	J.D. Salinger	1991	0316769487	85	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Midnight in the Garden of Good and Evil: A Savannah Story	John Berendt	1994	0679429220	391	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Pretend You Don't See Her	Mary Higgins Clark	1998	0671867156	390	0	1	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Pillars of the Earth	Ken Follett	1996	0451166892	295	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Five People You Meet in Heaven	Mitch Albom	2003	0786868716	428	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Beach House	James Patterson	2003	0446612545	278	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Angels &amp; Demons	Dan Brown	2001	0671027360	376	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Girl Who Loved Tom Gordon	Stephen King	2000	0671042858	382	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+Little Altars Everywhere: A Novel	Rebecca Wells	1996	0060976845	21	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Before I Say Good-Bye	Mary Higgins Clark	2001	0671004573	369	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+Atonement : A Novel	IAN MCEWAN	2003	038572179X	191	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Bridget Jones's Diary	Helen Fielding	1997	0330332775	93	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The God of Small Things	Arundhati Roy	1998	0060977493	22	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Big Bad Wolf: A Novel	James Patterson	2003	0316602906	81	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Four Blind Mice	James Patterson	2002	0316693006	83	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Congo	Michael Crichton	1995	0345378490	110	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1
+Plainsong (Vintage Contemporaries)	KENT HARUF	2000	0375705856	142	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+All That Remains (Kay Scarpetta Mysteries (Paperback))	Patricia D. Cornwell	1993	0380718332	153	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Brethren	JOHN GRISHAM	2000	0385497466	179	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The King of Torts	John Grisham	2003	0385508042	183	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Bleachers	John Grisham	2003	0385511612	186	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Sisterhood of the Traveling Pants	ANN BRASHARES	2003	0385730586	193	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1
+Roses Are Red (Alex Cross Novels)	James Patterson	2001	0446605484	264	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Rescue	Nicholas Sparks	2001	0446610399	275	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Manhattan Hunt Club	JOHN SAUL	2002	0449006522	285	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Girl with a Pearl Earring	Tracy Chevalier	2001	0452282152	312	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+Deception Point	Dan Brown	2002	0671027387	377	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Tis : A Memoir	Frank McCourt	1999	0684848783	403	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Chicken Soup for the Soul (Chicken Soup for the Soul)	Jack Canfield	1993	155874262X	454	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0
+Wicked: The Life and Times of the Wicked Witch of the West	Gregory Maguire	1996	0060987103	23	0	1	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Life of Pi	Yann Martel	2002	0151008116	52	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Lies and the Lying Liars Who Tell Them: A Fair and Balanced Look at the Right	Al Franken	2003	0525947647	327	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Secret History	DONNA TARTT	1993	0804111359	437	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Chicken Soup for the Woman's Soul (Chicken Soup for the Soul Series (Paper))	Jack Canfield	1996	1558744150	456	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0
+Animal Farm	George Orwell	2004	0451526341	308	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Catch 22	Joseph Heller	1996	0684833395	400	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+A Painted House	John Grisham	2001	044023722X	243	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Vinegar Hill (Oprah's Book Club (Paperback))	A. Manette Ansay	1998	0380730138	155	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+The Secret Life of Bees	Sue Monk Kidd	2003	0142001740	49	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Digital Fortress : A Thriller	Dan Brown	2003	0312995423	76	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Heart of the Sea (Irish Trilogy)	Nora Roberts	2000	0515128554	318	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	1
+The Little Prince	Antoine de Saint-ExupÃ©ry	1968	0156528207	53	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Jonathan Livingston Seagull	Richard Bach	1976	0380012863	150	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Moonlight Becomes You	Mary Higgins Clark	1997	0671867113	389	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Divine Secrets of the Ya-Ya Sisterhood : A Novel	Rebecca Wells	1996	0060173289	3	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Perfect Storm : A True Story of Men Against the Sea	Sebastian Junger	1998	006101351X	28	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	1
+The Lovely Bones: A Novel	Alice Sebold	2002	0316666343	82	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Hannibal	Thomas Harris	2000	0440224675	235	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+The Four Agreements: A Practical Guide to Personal Freedom	Don Miguel Ruiz	1997	1878424319	466	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Firm	John Grisham	1992	044021145X	222	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+A Widow for One Year	JOHN IRVING	1999	0345424719	123	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Empire Falls	Richard Russo	2002	0375726403	146	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Black and Blue	ANNA QUINDLEN	1999	0440226104	237	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+She's Come Undone (Oprah's Book Club)	Wally Lamb	1998	0671021001	372	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Nickel and Dimed: On (Not) Getting By in America	Barbara Ehrenreich	2002	0805063897	440	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Left Behind: A Novel of the Earth's Last Days (Left Behind No. 1)	Tim Lahaye	1996	0842329129	443	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Bean Trees	Barbara Kingsolver	1989	0060915544	9	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Daughter of Fortune	Isabel Allende	2000	0060932759	16	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Red Tent (Bestselling Backlist)	Anita Diamant	1998	0312195516	55	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Nanny Diaries: A Novel	Emma McLaughlin	2002	0312278586	58	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+Postmortem	Patricia Daniels Cornwell	1993	0380710218	152	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0
+Three Junes	JULIA GLASS	2003	0385721420	190	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Back Roads	Tawni O'Dell	2001	0451202341	304	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1
+A Thousand Acres (Ballantine Reader's Circle)	JANE SMILEY	1992	0449907481	291	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Four Blondes	Candace Bushnell	2001	080213825X	432	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Chamber	John Grisham	1994	0385424728	171	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Partner	John Grisham	1997	0385472951	172	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Chosen Prey	John Sandford	2004	0425182878	212	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Night Sins	TAMI HOAG	1995	055356451X	350	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1	0	0
+The Vampire Lestat (Vampire Chronicles, Book II)	ANNE RICE	1986	0345313860	94	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+The Mummy or Ramses the Damned	Anne Rice	1991	0345369947	107	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Daisy Fay and the Miracle Man	Fannie Flagg	1992	0446394521	255	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Angela's Ashes: A Memoir	Frank McCourt	1999	068484267X	401	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Fast Food Nation: The Dark Side of the All-American Meal	Eric Schlosser	2002	0060938455	18	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+One for the Money (Stephanie Plum Novels (Paperback))	Janet Evanovich	1995	0061009059	27	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Along Came a Spider (Alex Cross Novels)	James Patterson	1993	0446364193	254	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Who Moved My Cheese? An Amazing Way to Deal with Change in Your Work and in Your Life	Spencer Johnson	1998	0399144463	196	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Where the Heart Is (Oprah's Book Club (Paperback))	Billie Letts	1998	0446672211	281	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Girls' Guide to Hunting and Fishing	Melissa Bank	2000	0140293248	44	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Icy Sparks	Gwyn Hyman Rubio	2001	0142000205	47	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Da Vinci Code	Dan Brown	2003	0385504209	181	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Bridget Jones : The Edge of Reason	Helen Fielding	2000	0670892963	364	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Pilot's Wife : A Novel Tag: Author of the Weight of Water (Oprah's Book Club (Hardcover))	Anita Shreve	1999	0316789089	90	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Skipping Christmas	JOHN GRISHAM	2001	0385505833	182	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1
+Daddy's Little Girl	Mary Higgins Clark	2002	0743206045	411	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Nights in Rodanthe	Nicholas Sparks	2002	0446531332	258	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Like Water for Chocolate: A Novel in Monthly Installments, With Recipes, Romances, and Home Remedies	Laura Esquivel	1992	0385420161	169	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Two Towers (The Lord of the Rings, Part 2)	J.R.R. TOLKIEN	1986	0345339711	98	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Suzanne's Diary for Nicholas	James Patterson	2001	0316969443	92	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0
+2nd Chance	James Patterson	2002	0316693200	84	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+The Bad Beginning (A Series of Unfortunate Events, Book 1)	Lemony Snicket	1999	0064407667	33	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+Me Talk Pretty One Day	David Sedaris	2001	0316776963	86	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+About a Boy (Movie Tie-In)	Nick Hornby	2002	1573229571	464	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1
+Dreamcatcher	Stephen King	2001	0743211383	413	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+The Hitchhiker's Guide to the Galaxy	Douglas Adams	1995	0345391802	116	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Giver (21st Century Reference)	LOIS LOWRY	1994	0440219078	228	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+A Time to Kill	JOHN GRISHAM	1992	0440211727	223	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1	0	0
+Charming Billy	Alice McDermott	1999	038533334X	164	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+Middlesex: A Novel	Jeffrey Eugenides	2003	0312422156	63	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Rainmaker	JOHN GRISHAM	1996	044022165X	231	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Amazing Adventures of Kavalier &amp; Clay	Michael Chabon	2001	0312282990	59	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+The Phantom Tollbooth	Norton Juster	1993	0394820371	194	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0
+The Princess Bride: S Morgenstern's Classic Tale of True Love and High Adventure	WILLIAM GOLDMAN	1987	0345348036	101	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+SHIPPING NEWS	Annie Proulx	1994	0671510053	383	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0
+Anne of Green Gables (Anne of Green Gables Novels (Paperback))	L.M. MONTGOMERY	1982	055321313X	330	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Fall On Your Knees (Oprah #45)	Ann-Marie MacDonald	2002	0743237188	416	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1
+While I Was Gone	Sue Miller	1999	0345443284	128	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+The House of the Spirits	Isabel Allende	1986	0553273914	337	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Interpreter of Maladies	Jhumpa Lahiri	1999	039592720X	195	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+Divine Secrets of the Ya-Ya Sisterhood: A Novel	Rebecca Wells	1997	0060928336	13	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+She's Come Undone (Oprah's Book Club (Paperback))	Wally Lamb	1996	0671003755	366	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Dragonfly in Amber	DIANA GABALDON	1993	0440215625	227	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Naked	David Sedaris	1998	0316777730	87	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+Kiss the Girls	James Patterson	1995	0446601241	260	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Witching Hour (Lives of the Mayfair Witches)	ANNE RICE	1993	0345384466	112	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Jack &amp; Jill (Alex Cross Novels)	James Patterson	1997	0446604801	262	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The House on Mango Street (Vintage Contemporaries)	SANDRA CISNEROS	1991	0679734775	393	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Perks of Being a Wallflower	Stephen Chbosky	1999	0671027344	375	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+American Gods	Neil Gaiman	2002	0380789035	158	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Red Dragon	Thomas Harris	2000	0440206154	220	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jurassic Park	Michael Crichton	1999	0345370775	108	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Neverwhere	Neil Gaiman	1998	0380789019	157	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1
+The Thorn Birds	Colleen McCullough	1978	0380018179	151	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Memoirs of a Geisha Uk	Arthur Golden	0	0099771519	37	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lamb : The Gospel According to Biff, Christ's Childhood Pal	Christopher Moore	2003	0380813815	160	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Color of Water: A Black Man's Tribute to His White Mother	James McBride	1997	1573225789	461	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Anne Frank: The Diary of a Young Girl	ANNE FRANK	1993	0553296981	348	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Stand: Complete and Uncut	Stephen King	1991	0451169530	297	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+Shopaholic Takes Manhattan (Summer Display Opportunity)	Sophie Kinsella	2002	0385335881	167	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1
+Confessions of a Shopaholic (Summer Display Opportunity)	SOPHIE KINSELLA	2001	0385335482	165	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Good Omens	Neil Gaiman	1996	0441003257	247	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Message in a Bottle	Nicholas Sparks	1999	0446606812	267	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Fatal Voyage	Kathy Reichs	2002	0671028375	378	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0
+The Poisonwood Bible: A Novel	Barbara Kingsolver	1999	0060930535	15	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+A Lesson Before Dying (Vintage Contemporaries (Paperback))	Ernest J. Gaines	1997	0375702709	137	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jewel	Bret Lott	1999	0671038184	379	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Their Eyes Were Watching God: A Novel	Zora Neale Hurston	1990	0060916508	10	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+A Prayer for Owen Meany	John Irving	1990	0345361792	105	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0
+The Shipping News : A Novel	Annie Proulx	2001	0743225406	414	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The No. 1 Ladies' Detective Agency (Today Show Book Club #8)	Alexander McCall Smith	2003	1400034779	453	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Shopgirl	Steve Martin	2001	0786885688	430	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+Breath, Eyes, Memory	Edwidge Danticat	1998	037570504X	141	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0
+A Walk in the Woods: Rediscovering America on the Appalachian Trail (Official Guides to the Appalachian Trail)	Bill Bryson	1999	0767902521	423	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1
+The Kitchen God's Wife	Amy Tan	1992	080410753X	435	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+Songs in Ordinary Time (Oprah's Book Club (Paperback))	Mary McGarry Morris	1996	0140244824	42	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Last Juror	John Grisham	2004	0385510438	185	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0
+At Home in Mitford (The Mitford Years)	Jan Karon	1996	014025448X	43	0	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Bel Canto: A Novel	Ann Patchett	2002	0060934417	17	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+All Around the Town	Mary Higgins Clark	1993	0671793489	388	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+The Loop	Nicholas Evans	1999	0440224624	234	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0
+Good in Bed	Jennifer Weiner	2002	0743418174	419	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+Ellen Foster	Kaye Gibbons	1997	0375703055	138	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Hours : A Novel	Michael Cunningham	2000	0312243022	56	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Cold Mountain : A Novel	CHARLES FRAZIER	1998	0375700757	136	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Fried Green Tomatoes at the Whistle Stop Cafe	Fannie Flagg	1989	0070212570	36	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+The Last Time They Met : A Novel	Anita Shreve	2002	0316781266	89	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+A Heartbreaking Work of Staggering Genius	Dave Eggers	2001	0375725784	145	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Dress Lodger (Ballantine Reader's Circle)	Sheri Holman	2001	0345436911	125	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Fellowship of the Ring (The Lord of the Rings, Part 1)	J.R.R. TOLKIEN	1986	0345339703	97	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Blue Nowhere : A Novel	Jeffery Deaver	2002	0671042262	381	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+A Year in Provence	Peter Mayle	1991	0679731148	392	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1
+Summer Sisters	Judy Blume	1999	0440226430	238	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+What to Expect When You're Expecting (Revised Edition)	Arlene Eisenberg	1996	089480829X	448	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+What to Expect the First Year	Arlene Eisenberg	1989	0894805770	447	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Miss Julia Speaks Her Mind : A Novel	Ann B. Ross	2000	0688177751	408	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Big Stone Gap: A Novel (Ballantine Reader's Circle)	Adriana Trigiani	2001	0345438329	126	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Reader	Bernhard Schlink	1999	0375707972	144	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Back When We Were Grownups : A Novel (Ballantine Reader's Circle)	ANNE TYLER	2002	0345446860	130	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+One for the Money (A Stephanie Plum Novel)	Janet Evanovich	2003	0312990456	75	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lord of the Flies	William Gerald Golding	1959	0399501487	198	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+The Alienist	Caleb Carr	1995	0553572997	351	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Into the Wild	Jon Krakauer	1997	0385486804	176	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1
+The Curious Incident of the Dog in the Night-Time (Today Show Book Club #13)	Mark Haddon	2003	0385512104	187	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Smoke Jumper	Nicholas Evans	2002	0440235162	240	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1
+Cause of Death	Patricia Daniels Cornwell	1997	0425158616	203	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Alchemist: A Fable About Following Your Dream	Paulo Coelho	1995	0062502182	31	1	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Poisonwood Bible	Barbara Kingsolver	1999	0060175400	4	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Point of Origin	Patricia Daniels Cornwell	1999	0425169863	208	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Rising Sun	MICHAEL CRICHTON	1992	0345380371	111	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+1st to Die: A Novel	James Patterson	2002	0446610038	273	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Into Thin Air : A Personal Account of the Mt. Everest Disaster	JON KRAKAUER	1998	0385492081	178	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Snow Falling on Cedars	David Guterson	1995	067976402X	398	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+Everything's Eventual : 14 Dark Tales	Stephen King	2002	0743457358	421	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Here on Earth	Alice Hoffman	1998	0425167313	207	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Lost World	Michael Crichton	1996	034540288X	118	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+The Shelters of Stone (Earth's Children Series, No 5)	JEAN M. AUEL	2002	0609610597	362	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+White Oleander : A Novel	Janet Fitch	2001	0316182540	78	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Handmaid's Tale	Margaret Atwood	1989	0449212602	286	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Girl Who Loved Tom Gordon : A Novel	Stephen King	1999	0684867621	405	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Murder Book	Jonathan Kellerman	2003	0345413903	121	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Ishmael: An Adventure of the Mind and Spirit	Daniel Quinn	1995	0553375407	349	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Hearts In Atlantis	Stephen King	2000	0671024248	374	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+The Dive From Clausen's Pier : A Novel (Vintage Contemporaries (Paperback))	ANN PACKER	2003	0375727132	147	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+The Simple Truth	David Baldacci	1999	0446607711	269	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+1984	George Orwell	1990	0451524934	307	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+The Mists of Avalon	MARION ZIMMER BRADLEY	1987	0345350499	102	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Hot Six : A Stephanie Plum Novel (A Stephanie Plum Novel)	Janet Evanovich	2001	0312976275	69	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jemima J: A Novel About Ugly Ducklings and Swans	Jane Green	2001	0767905180	424	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Harry Potter and the Sorcerer's Stone (Harry Potter (Paperback))	J. K. Rowling	1999	059035342X	361	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Daughter of Fortune: A Novel	Isabel Allende	2001	038082101X	161	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Seven Habits Of Highly Effective People	Stephen R. Covey	1990	0671708635	386	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Fahrenheit 451	RAY BRADBURY	1987	0345342968	100	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Ender's Game (Ender Wiggins Saga (Paperback))	Orson Scott Card	1994	0812550706	442	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+The Andromeda Strain	MICHAEL CRICHTON	1992	0345378482	109	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Loves Music, Loves to Dance	Mary Higgins Clark	1992	0671758896	387	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Dolores Claiborne	Stephen King	2004	0451177096	300	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+The Eye of the World (The Wheel of Time, Book 1)	Robert Jordan	1990	0812511816	441	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Tuesdays with Morrie: An Old Man, a Young Man, and Life's Greatest Lesson	MITCH ALBOM	1997	0385484518	175	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pigs in Heaven	Barbara Kingsolver	1994	0060922532	12	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Tell No One	Harlan Coben	2002	0440236703	242	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Eats, Shoots &amp; Leaves: The Zero Tolerance Approach to Punctuation	Lynne Truss	2004	1592400876	465	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Black Notice	Patricia Daniels Cornwell	2000	0425175405	210	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Mystic River	Dennis Lehane	2002	0380731851	156	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sick Puppy	Carl Hiaasen	2001	0446604666	261	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	1	0	0
+Prey	Michael Crichton	2003	0061015725	29	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Fear Nothing	DEAN KOONTZ	1998	0553579754	354	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+J Is for Judgment	Sue Grafton	1999	0449221482	289	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+A Is for Alibi (Kinsey Millhone Mysteries (Paperback))	SUE GRAFTON	1987	0553279912	343	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sphere	MICHAEL CRICHTON	1988	0345353145	104	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+The Pelican Brief	John Grisham	1993	0440214041	226	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Bridget Jones: The Edge of Reason	Helen Fielding	2001	0140298479	46	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Interview with the Vampire	Anne Rice	1993	0345337662	95	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+The Queen of the Damned (Vampire Chronicles (Paperback))	Anne Rice	1993	0345351525	103	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+"\O\"" Is for Outlaw"""	SUE GRAFTON	2001	0449003787	282	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1
+The Book of Ruth (Oprah's Book Club (Paperback))	Jane Hamilton	1990	0385265700	163	0	1	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+How to Be Good	Nick Hornby	2002	1573229326	463	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Color Purple	Alice Walker	1985	0671617028	384	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Notebook	Nicholas Sparks	1998	0446605239	263	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Diary of a Mad Bride (Summer Display Opportunity)	Laura Wolf	2002	0385335830	166	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0
+Carolina Moon	Nora Roberts	2001	0515130389	319	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+East of Eden (Oprah's Book Club)	John Steinbeck	2003	0142004235	51	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Three Fates	Nora Roberts	2004	0515135062	325	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Pay It Forward	Catherine Ryan Hyde	2000	0743412028	418	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Bastard Out of Carolina	Dorothy Allison	1993	0452269571	311	0	1	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Face the Fire (Three Sisters Island Trilogy)	Nora Roberts	2002	051513287X	323	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Stupid White Men ...and Other Sorry Excuses for the State of the Nation!	Michael Moore	2002	0060392452	7	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Harry Potter and the Sorcerer's Stone (Book 1)	J. K. Rowling	1998	0590353403	360	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Dude, Where's My Country?	Michael Moore	2003	0446532231	259	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Bee Season: A Novel	Myla Goldberg	2001	0385498802	180	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ANGELA'S ASHES	Frank McCourt	1996	0684874350	407	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1
+Violets Are Blue	James Patterson	2002	0446611212	276	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Tale of the Body Thief (Vampire Chronicles (Paperback))	Anne Rice	1993	034538475X	113	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Cruel &amp; Unusual (Kay Scarpetta Mysteries (Paperback))	Patricia D. Cornwell	1994	0380718340	154	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+The Eyre Affair: A Novel	Jasper Fforde	2003	0142001805	50	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Body Farm	Patricia Daniels Cornwell	1995	0425147622	200	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+The Hours: A Novel	Michael Cunningham	2002	0312305060	60	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Midwives: A Novel	Chris Bohjalian	1998	0375706771	143	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Song of Solomon (Oprah's Book Club (Paperback))	Toni Morrison	1987	0452260116	309	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Atlas Shrugged	Ayn Rand	1996	0451191145	303	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+I Know This Much Is True	Wally Lamb	1999	0060987561	25	0	1	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+To the Nines: A Stephanie Plum Novel	Janet Evanovich	2003	0312265867	57	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Don't Sweat the Small Stuff and It's All Small Stuff : Simple Ways to Keep the Little Things from Taking Over Your Life (Don't Sweat the Small Stuff Series)	Richard Carlson	1997	0786881852	429	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Call of the Wild	Jack London	0	1559029838	459	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Girl, Interrupted	SUSANNA KAYSEN	1994	0679746048	396	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0
+Wish You Well	David Baldacci	2001	0446610100	274	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+Four To Score (A Stephanie Plum Novel)	Janet Evanovich	1999	0312966970	67	1	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Watership Down	Richard Adams	1976	0380002930	149	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	1	1
+High Five (A Stephanie Plum Novel)	Janet Evanovich	2000	0312971346	68	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Five Quarters of the Orange	Joanne Harris	2002	0060958022	19	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Like Water for Chocolate: A Novel in Monthly Installments With Recipes, Romances and Home Remedies	Laura Esquivel	1994	0385474016	173	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+The Dive From Clausen's Pier (Alex Awards)	ANN PACKER	2002	0375412824	133	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	1
+"A Child Called \It\"": One Child's Courage to Survive"""	Dave Pelzer	1995	1558743669	455	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Final Target	Iris Johansen	2002	0553582135	357	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+A Map of the World	Jane Hamilton	1999	0385720106	188	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Siddhartha	Hermann Hesse	1981	0553208845	329	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Tribulation Force: The Continuing Drama of Those Left Behind (Left Behind No. 2)	Tim LaHaye	1997	0842329218	444	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Runaway Jury	JOHN GRISHAM	1997	0440221471	229	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Without Remorse	Tom Clancy	2004	0425143325	199	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+The Woman Next Door	Barbara Delinsky	2002	0743411250	417	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Divine Secrets of the Ya-Ya Sisterhood: A Novel	Rebecca Wells	2002	0060502258	8	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Hobbit : The Enchanting Prelude to The Lord of the Rings	J.R.R. TOLKIEN	1986	0345339681	96	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Chicken Soup for the Teenage Soul (Chicken Soup for the Soul)	Jack Canfield	1997	1558744630	457	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0
+Contact	Carl Sagan	1997	0671004107	367	0	1	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1
+Harry Potter and the Chamber of Secrets (Book 2)	J. K. Rowling	2000	0439064872	215	1	0	1	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+The Curious Incident of the Dog in the Night-Time (Vintage Contemporaries)	Mark Haddon	2004	1400032717	452	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Love in the Time of Cholera (Penguin Great Books of the 20th Century)	Gabriel Garcia Marquez	1994	0140119906	39	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Ashes to Ashes	TAMI HOAG	2000	0553579606	353	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	1	0	0
+The Professor and the Madman: A Tale of Murder, Insanity, and the Making of The Oxford English Dictionary	Simon Winchester	1999	006099486X	26	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0
+Presumed Innocent	Scott Turow	1989	0446359866	253	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Politically Correct Bedtime Stories: Modern Tales for Our Life and Times	James Finn Garner	1994	002542730X	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+4 Blondes	Candace Bushnell	2002	0451203895	306	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Night	Elie Wiesel	1982	0553272535	336	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+STONES FROM THE RIVER	Ursula Hegi	1997	068484477X	402	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Falling Angels	Tracy Chevalier	2002	0452283205	314	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+The Valley of Horses	JEAN M. AUEL	1984	0553250531	332	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Client	John Grisham	1994	0440213525	225	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Harry Potter and the Prisoner of Azkaban (Book 3)	J. K. Rowling	1999	0439136350	216	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Charlotte's Web (Trophy Newbery)	E. B. White	1974	0064400557	32	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Lucky : A Memoir	Alice Sebold	2002	0316096199	77	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Catch Me If You Can: The True Story of a Real Fake	Stan Redding	2000	0767905385	425	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Circle of Friends	Maeve Binchy	1991	0440211263	221	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Bourne Identity	Robert Ludlum	1984	0553260111	333	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Under the Tuscan Sun	Frances Mayes	1997	0767900383	422	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+Tis: A Memoir	Frank McCourt	2000	0684865742	404	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Bag of Bones	Stephen King	1999	067102423X	373	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+The Prince of Tides	Pat Conroy	1987	0553268880	334	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+A Bend in the Road	Nicholas Sparks	2002	0446611867	277	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	1
+Shopaholic Ties the Knot	Sophie Kinsella	2003	0385336179	168	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+One Door Away from Heaven	Dean R. Koontz	2002	0553582755	359	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Bridges of Madison County	Robert James Waller	1992	044651652X	256	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+The Return of the King (The Lord of the Rings, Part 3)	J.R.R. TOLKIEN	1986	0345339738	99	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+High Fidelity	Nick Hornby	1996	1573225517	460	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+A Confederacy of Dunces (Evergreen Book)	John Kennedy Toole	1987	0802130208	431	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+Mrs Dalloway	Virginia Woolf	1990	0156628708	54	1	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Prodigal Summer	Barbara Kingsolver	2000	0060199652	5	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+Flesh and Blood	Jonathan Kellerman	2002	034541389X	120	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+White Oleander : A Novel (Oprah's Book Club)	Janet Fitch	2000	0316284955	79	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Confessions of an Ugly Stepsister : A Novel	Gregory Maguire	2000	0060987529	24	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Zen and the Art of Motorcycle Maintenance: An Inquiry into Values	ROBERT PIRSIG	1984	0553277472	340	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+House of Sand and Fog	Andre Dubus III	2000	0375727345	148	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+White Teeth: A Novel	Zadie Smith	2001	0375703861	140	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sophie's World: A Novel About the History of Philosophy	Jostein Gaarder	1996	0425152251	201	1	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Silence of the Lambs	Thomas Harris	1991	0312924585	65	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+The Hot Zone	Richard Preston	1995	0385479565	174	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Rapture of Canaan	Sheri Reynolds	1997	0425162443	205	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+Heaven and Earth (Three Sisters Island Trilogy)	Nora Roberts	2003	0515132020	321	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Dance upon the Air (Three Sisters Island Trilogy)	Nora Roberts	2003	0515131229	320	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	1
+What Looks Like Crazy On An Ordinary Day	Pearl Cleage	1998	038079487X	159	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Angela's Ashes (MMP) : A Memoir	Frank McCourt	1999	0684872153	406	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Corrections: A Novel	Jonathan Franzen	2002	0312421273	62	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Coraline	Neil Gaiman	2002	0380977788	162	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Guilty Pleasures (Anita Blake Vampire Hunter (Paperback))	Laurell K. Hamilton	1995	0441304834	249	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Stranger in a Strange Land (Remembering Tomorrow)	Robert A. Heinlein	1995	0441790348	251	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Disclosure	Michael Crichton	1994	0345391055	115	0	1	0	1	0	0	0	0	1	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Corrections	Jonathan Franzen	2001	0374129983	132	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Golden Compass (His Dark Materials, Book 1)	PHILIP PULLMAN	1997	0345413350	119	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Pilot's Wife : A Novel	Anita Shreve	1999	0316601950	80	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+About a Boy	Nick Hornby	1999	1573227331	462	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Prey: A Novel	Michael Crichton	2002	0066214122	35	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Blessings	ANNA QUINDLEN	2002	0375502238	134	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+A Case of Need	Michael Crichton	1994	0451183665	301	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Blow Fly: A Scarpetta Novel	Patricia Cornwell	2003	0399150897	197	1	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Devil Wears Prada : A Novel	LAUREN WEISBERGER	2003	038550926X	184	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+On the Street Where You Live	Mary Higgins Clark	2002	0671004530	368	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Prodigal Summer: A Novel	Barbara Kingsolver	2001	0060959037	20	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+We Were the Mulvaneys	Joyce Carol Oates	1996	0452282829	313	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Brave New World	Aldous Huxley	1998	0060929871	14	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Balzac and the Little Chinese Seamstress : A Novel	DAI SIJIE	2002	0385722206	192	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Year of Wonders	Geraldine Brooks	2002	0142001430	48	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+All I Really Need to Know	ROBERT FULGHUM	1989	080410526X	433	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Running with Scissors: A Memoir	Augusten Burroughs	2003	031242227X	64	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Tara Road	Maeve Binchy	2000	0440235596	241	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0
+Hornet's Nest	Patricia Daniels Cornwell	1998	042516098X	204	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Handmaid's Tale : A Novel	Margaret Atwood	1998	038549081X	177	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Chocolat	Joanne Harris	2000	0552998486	328	1	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Green Mile	Stephen King	1999	0671041789	380	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Harry Potter and the Goblet of Fire (Book 4)	J. K. Rowling	2000	0439139597	217	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Slaughterhouse Five or the Children's Crusade: A Duty Dance With Death	Kurt Vonnegut	1991	0440180295	219	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	1	0	0
+P Is for Peril	Sue Grafton	2002	0449003795	283	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+The Celestine Prophecy (Celestine Prophecy)	James Redfield	1994	044651862X	257	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Harry Potter and the Order of the Phoenix (Book 5)	J. K. Rowling	2003	043935806X	218	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Insomnia	Stephen King	1995	0451184963	302	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+The Tommyknockers	Stephen King	1994	0451156609	292	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Tears of the Giraffe (No.1 Ladies Detective Agency)	Alexander McCall Smith	2002	1400031354	451	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+A Walk to Remember	Nicholas Sparks	2000	0446608955	271	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	1
+Holes (Yearling Newbery)	LOUIS SACHAR	2000	0440414806	245	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Summons	John Grisham	2002	0440241073	244	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Winner	David Baldacci	1998	0446606324	266	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Villa	Nora Roberts	2002	0515132187	322	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Virgin Suicides	Jeffrey Eugenides	1994	0446670251	280	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0
+From Potter's Field	Patricia Daniels Cornwell	1996	0425154092	202	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Summerhouse	Jude Deveraux	2002	0671014196	371	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Cold Mountain	Charles Frazier	1997	0871136791	446	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+D Is for Deadbeat (Kinsey Millhone Mysteries (Paperback))	Sue Grafton	1988	0553271636	335	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Midnight in the Garden of Good and Evil	John Berendt	1999	0679751521	397	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Three To Get Deadly : A Stephanie Plum Novel (A Stephanie Plum Novel)	Janet Evanovich	1998	0312966091	66	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Two for the Dough	Janet Evanovich	1996	0671001795	365	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Where the Red Fern Grows	Wilson Rawls	1984	0553274295	338	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Bonesetter's Daughter	Amy Tan	2002	0804114986	438	0	1	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Dark Half	Stephen King	1994	0451167317	296	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Fast Women	Jennifer Crusie	2002	0312980159	71	1	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Full House (Janet Evanovich's Full Series)	Janet Evanovich	2002	0312983271	72	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	1	0
+Einstein's Dreams	Alan Lightman	1994	0446670111	279	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+F Is for Fugitive (Kinsey Millhone Mysteries (Paperback))	Sue Grafton	1990	0553284789	347	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+E Is for Evidence: A Kinsey Millhone Mystery (Kinsey Millhone Mysteries (Paperback))	Sue Grafton	1989	0553279556	342	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+A Separate Peace	John Knowles	1985	0553280414	346	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Sweet Potato Queens' Book of Love	JILL CONNER BROWNE	1999	0609804138	363	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Drowning Ruth (Oprah's Book Club)	CHRISTINA SCHWARZ	2001	0345439104	127	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+The Last Precinct	Patricia Cornwell	2001	0425180638	211	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Cider House Rules	John Irving	1994	0345387651	114	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Animal Dreams	Barbara Kingsolver	1991	0060921145	11	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+I Is for Innocent	Sue Grafton	1994	0449221512	290	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+A Wrinkle in Time	Madeleine L'Engle	1976	0440998050	246	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The English Patient	Michael Ondaatje	1996	0679745203	395	1	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+I Know Why the Caged Bird Sings	MAYA ANGELOU	1983	0553279378	341	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Hard Eight : A Stephanie Plum Novel (A Stephanie Plum Novel)	Janet Evanovich	2003	0312983867	74	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Q Is for Quarry	Sue Grafton	2003	0425192725	214	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Full Tilt (Janet Evanovich's Full Series)	Janet Evanovich	2003	031298328X	73	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Open House (Oprah's Book Club (Paperback))	Elizabeth Berg	2001	0345435168	124	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Glass Lake	Maeve Binchy	1996	0440221595	230	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Horse Whisperer	Nicholas Evans	1996	0440222656	232	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+River, Cross My Heart	Breena Clarke	1999	0316899984	91	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0
+Girl in Hyacinth Blue	Susan Vreeland	2000	014029628X	45	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Angus, Thongs and Full-Frontal Snogging: Confessions of Georgia Nicolson	Louise Rennison	2001	0064472272	34	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1
+The Weight of Water : A Novel Tag: Author of Resistance and Strange Fits of Passion	Anita Shreve	1998	0316780375	88	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Southern Cross	Patricia Daniels Cornwell	1999	0425172546	209	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Of Mice and Men (Penguin Great Books of the 20th Century)	John Steinbeck	1993	0140177396	40	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+B Is for Burglar (Kinsey Millhone Mysteries (Paperback))	Sue Grafton	1986	0553280341	344	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0
+C Is for Corpse (Kinsey Millhone Mysteries (Paperback))	Sue Grafton	1987	0553280368	345	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	1	0	0
+Gerald's Game	Stephen King	2001	0451176464	299	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+When the Wind Blows	James Patterson	1999	0446607657	268	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Neuromancer (Remembering Tomorrow)	William Gibson	1995	0441569595	250	1	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Seven Up (A Stephanie Plum Novel)	Janet Evanovich	2002	0312980140	70	1	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Stone Diaries	Carol Shields	1995	014023313X	41	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Open House	Elizabeth Berg	2000	0375506039	135	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Dune (Remembering Tomorrow)	Frank Herbert	1996	0441172717	248	1	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+G Is for Gumshoe (Kinsey Millhone Mysteries (Paperback))	Sue Grafton	1991	0449219364	287	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Other Boleyn Girl	Philippa Gregory	2002	0743227441	415	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+The Bonfire of the Vanities	Tom Wolfe	1988	0553275976	339	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0
+The Search	Iris Johansen	2001	0553582127	356	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+The Virgin Blue	Tracy Chevalier	2003	0452284449	315	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+One Flew Over the Cuckoo's Nest	Ken Kesey	1989	0451163966	294	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0
+Men Are from Mars, Women Are from Venus: A Practical Guide for Improving Communication and Getting What You Want in Your Relationships	John Gray	1992	006016848X	2	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Outlander	DIANA GABALDON	1992	0440212561	224	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+The Great Gatsby	F. Scott Fitzgerald	1995	0684801523	399	1	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+A Virtuous Woman (Oprah's Book Club (Paperback))	Kaye Gibbons	1997	0375703063	139	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+False Memory	Dean R. Koontz	2000	0553580221	355	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Go Ask Alice	Anonymous	1998	0689817851	409	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Visions of Sugar Plums	Janet Evanovich	2002	0312306326	61	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Needful Things	Stephen King	2004	0451172817	298	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+From a Buick 8 : A Novel	Stephen King	2002	0743211375	412	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Welcome to the World, Baby Girl!	Fannie Flagg	1999	080411868X	439	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0
+A Fine Balance	Rohinton Mistry	2001	140003065X	450	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Deja Dead	Kathy Reichs	1998	0671011367	370	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+In Her Shoes : A Novel	Jennifer Weiner	2003	0743418204	420	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+I Know This Much Is True (Oprah's Book Club)	Wally Lamb	1998	0060391626	6	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Gap Creek: The Story Of A Marriage	Robert Morgan	2000	0743203631	410	0	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Hundred Secret Senses	Amy Tan	1996	080411109X	436	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pop Goes the Weasel	James Patterson	2000	0446608815	270	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Tears of the Moon (Irish Trilogy)	Nora Roberts	2000	0515128546	317	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Gunslinger (The Dark Tower, Book 1)	Stephen King	1994	0451160525	293	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+The Lost Boy: A Foster Child's Search for the Love of a Family	Dave Pelzer	1997	1558745157	458	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+Unnatural Exposure	Patricia Daniels Cornwell	1998	0425163407	206	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Scarlet Feather	Maeve Binchy	2002	0451203771	305	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Lucky Man: A Memoir	Michael J. Fox	2002	0786867647	427	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Midnight Bayou	Nora Roberts	2004	0515133973	324	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+Like Water for Chocolate : A Novel in Monthly Installments with Recipes, Romances, and Home Remedies	LAURA ESQUIVEL	1995	038542017X	170	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+Beach Music	Pat Conroy	1996	0553574574	352	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+The Saving Graces: A Novel	Patricia Gaffney	2000	0061097101	30	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Cradle and All	James Patterson	2001	0446609404	272	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Nicolae: The Rise of Antichrist (Left Behind No. 3)	Tim F. Lahaye	1998	0842329242	445	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+The Clan of the Cave Bear (Earth's Children (Paperback))	Jean M. Auel	1984	0553250426	331	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Evening Class	Maeve Binchy	1998	0440223202	233	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Artemis Fowl (Artemis Fowl, Book 1)	Eoin Colfer	2002	0786817070	426	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Key of Valor (Roberts, Nora. Key Trilogy, 3.)	Nora Roberts	2003	0515136530	326	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Wifey	Judy Blume	1989	0671693816	385	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Boy Next Door	Meggin Cabot	2002	0060096195	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+The Blind Assassin	Margaret Atwood	2001	0385720955	189	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+The World According to Garp	John Irving	1994	034536676X	106	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Jewels of the Sun (Irish Trilogy)	Nora Roberts	2004	0515126772	316	0	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+American Psycho (Vintage Contemporaries)	Bret Easton Ellis	2000	0679735771	394	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1	0	0
+H Is for Homicide (Kinsey Millhone Mysteries (Paperback))	Sue Grafton	1993	0449219461	288	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Cat &amp; Mouse (Alex Cross Novels)	James Patterson	1998	0446606189	265	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+The Talisman	STEPHEN KING	2001	0345444884	129	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0

@@ -40,6 +40,7 @@ dependencies:
   - nltk
   - spacy
   - scikit-surprise
+  - orange3-recommendation
 ```
 
 3. Guarda el archivo como **`orange3-env.yml`** en una ubicación fácil de encontrar.
