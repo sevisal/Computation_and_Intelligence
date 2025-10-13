@@ -44,7 +44,7 @@ This package provides additional widgets for building recommender systems in Ora
 ![](_resources/images/book.gif){.img-right}
 In this section, we will explore the book recommendation dataset. This dataset has been built from different users who have rated various books and your objective will be to be able to make recommendations based on this information. 
 
-Load the dataset from the following [link]() and explore its structure. Use the `File` widget in Orange to load the dataset and visualize its contents using the `Data Table` widget. Visualise the distribution of ratings using the `Distributions` widget.
+Load the dataset from the following [link](https://github.com/sevisal/Computation_and_Intelligence/blob/main/_resources/data/ratings_encoded.tab) and explore its structure. Use the `File` widget in Orange to load the dataset and visualize its contents using the `Data Table` widget. Visualise the distribution of ratings using the `Distributions` widget.
 
 Partition the data into training and testing sets using the `Data Sampler` widget. This will allow us to evaluate the performance of our recommender systems later.
 
@@ -91,7 +91,7 @@ In this section, we will implement a content-based filtering recommender system.
 
 ![](_resources/images/genre.jpg){.img-center}
 
-To implement this, we will use the books features, available [here](), and load them into Orange using the `File` widget. Then, we will use the `Distance` widget to calculate the similarity between books based on their features. You can visualize the similarity matrix using the `Distance matrix` widget.
+To implement this, we will use the books features, available [here](https://github.com/sevisal/Computation_and_Intelligence/blob/main/_resources/data/books_genres.tab), and load them into Orange using the `File` widget. Then, we will use the `Distance` widget to calculate the similarity between books based on their features. You can visualize the similarity matrix using the `Distance matrix` widget.
 
 Next, we will use the `Python Script` widget to create a custom recommendation function that takes a book as input and recommends similar books based on the similarity matrix. The Python code can be as follows:
 
