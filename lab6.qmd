@@ -168,6 +168,64 @@ We can also visualize the latent features learned by the model using the low dim
 
 ---
 
+# 5. Recommendation using Surprise
+::: {.objective-card}
+🎯 **Objective:** Implement a recommendation system using the Surprise library and evaluate its performance.
+:::
+
+In this section, we will implement a recommendation system using the [Surprise](http://surpriselib.com/) library, which is a Python scikit for building and analyzing recommender systems. Surprise provides various algorithms for collaborative filtering, including matrix factorization techniques like SVD.
+
+To use Surprise within Orange, we can utilize the `Python Script` widget. Below is an example code that demonstrates how to use Surprise to build a recommendation model using the SVD algorithm. This code assumes that the input data has been preprocessed and contains the necessary columns: userID, bookID, and rating.
+
+```python
+# --- Imports ---
+import pandas as pd
+from surprise import Reader, Dataset, SVD
+from surprise.model_selection import cross_validate
+
+# --- Extract data from Orange input ---
+# in_data is an Orange Table object automatically provided by Orange
+# We need to convert it to a pandas DataFrame
+df = pd.DataFrame(in_data.X, columns=[var.name for var in in_data.domain.attributes])
+
+# If the target variable (rating) is in Y:
+if in_data.domain.has_continuous_class or in_data.domain.has_discrete_class:
+    df["rating"] = in_data.Y
+
+# If userID and bookID are stored as metas:
+for i, var in enumerate(in_data.domain.metas):
+    df[var.name] = [str(val) for val in in_data.metas[:, i]]
+
+# --- Inspect your dataframe ---
+print(df.head())
+
+# Make sure it has columns: userID, bookID, rating
+# If not, rename accordingly
+df = df.rename(columns={
+    "userID": "userID",
+    "bookID": "bookID",
+    "rating": "bookRating"
+})
+
+# --- Prepare the Surprise dataset ---
+reader = Reader(rating_scale=(1, 10))
+data = Dataset.load_from_df(df[["userID", "bookID", "bookRating"]], reader)
+
+# --- Train a simple model using SVD ---
+algo = SVD()
+
+# Evaluate with 3-fold cross-validation
+results = cross_validate(algo, data, measures=['RMSE', 'MAE'], cv=5, verbose=True)
+
+print("\n✅ Cross-validation results:")
+for key, value in results.items():
+    print(f"{key}: {value}")
+```
+
+You can modify the code to experiment with different algorithms provided by Surprise, such as KNNBasic, NMF, etc. Additionally, you can tune hyperparameters to improve the model's performance.
+
+---
+
 # Final note
 
 ::: {.final-note-card}
