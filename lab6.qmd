@@ -173,7 +173,7 @@ We can also visualize the latent features learned by the model using the low dim
 🎯 **Objective:** Implement a recommendation system using the Surprise library and evaluate its performance.
 :::
 
-![](_resources/images/surprise.gif){.img-right}
+![](_resources/images/surprise.gif){.img-right style="width:180px"}
 In this section, we will implement a recommendation system using the [Surprise](http://surpriselib.com/) library, which is a Python scikit for building and analyzing recommender systems. Surprise provides various algorithms for collaborative filtering, including matrix factorization techniques like SVD.
 
 To use Surprise within Orange, we can utilize the `Python Script` widget. Below is an example code that demonstrates how to use Surprise to build a recommendation model using the SVD algorithm. This code assumes that the input data has been preprocessed and contains the necessary columns: userID, bookID, and rating.
