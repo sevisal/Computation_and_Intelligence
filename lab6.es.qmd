@@ -27,7 +27,11 @@ En este laboratorio vas a:
     3. **Filtrado colaborativo**, que se basa en la sabiduría de usuarios similares.
 
 Antes de comenzar, asegúrate de tener el entorno de Orange preparado. El complemento `orange3-recommendation` extiende Orange con herramientas específicas para construir sistemas de recomendación:
-
+```bash
+conda activate orange3
+pip install orange3-recommendation
+```
+Este paquete proporciona widgets adicionales para construir sistemas de recomendación en Orange.
 ---
 
 # 1. Exploración y preprocesamiento de datos
