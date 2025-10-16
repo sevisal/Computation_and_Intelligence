@@ -90,7 +90,7 @@ En esta sección, implementaremos un sistema de recomendación basado en conteni
 
 Para implementar esto, utilizaremos las características de los libros, disponibles [aquí](https://github.com/sevisal/Computation_and_Intelligence/blob/main/_resources/data/books_genres.tab), y las cargaremos en Orange utilizando el widget `File`. Luego, utilizaremos el widget `Distance` para calcular la similitud entre libros en función de sus características. Puedes visualizar la matriz de similitud utilizando el widget `Distance matrix`.
 
-A continuación, utilizaremos el widget `Python Script` para crear una función de recomendación personalizada que tome un libro como entrada y recomiende libros similares en función de la matriz de similitud. El código en Python puede ser el siguiente:
+A continuación, utilizaremos el widget `Python Script` para crear una función de recomendación personalizada que tome un libro y recomiende libros similares en función de la matriz de similitud. Para ello, tendremos que pasar como entrada al modelo la matriz de similitud y los datos de todos los libros que hemos cargado con el widget `File`. El código en Python puede ser el siguiente:
 
 ```python
 import numpy as np

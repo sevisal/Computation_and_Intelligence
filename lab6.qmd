@@ -82,6 +82,8 @@ Repeat the process using the average rating of each book as the recommendation s
 3. What are the limitations of popularity-based recommendation systems?
 :::
 
+---
+
 # 3. Content-based filtering
 ::: {.objective-card}
 🎯 **Objective:** Implement a content-based filtering recommender system and evaluate its performance.
@@ -93,7 +95,7 @@ In this section, we will implement a content-based filtering recommender system.
 
 To implement this, we will use the books features, available [here](https://github.com/sevisal/Computation_and_Intelligence/blob/main/_resources/data/books_genres.tab), and load them into Orange using the `File` widget. Then, we will use the `Distance` widget to calculate the similarity between books based on their features. You can visualize the similarity matrix using the `Distance matrix` widget.
 
-Next, we will use the `Python Script` widget to create a custom recommendation function that takes a book as input and recommends similar books based on the similarity matrix. The Python code can be as follows:
+Next, we will use the `Python Script` widget to create a custom recommendation function that takes a book and recommends similar books based on the similarity matrix. To do so, we need to have as input the similarity matrix and the data of all the books that we have loaded with the `File` widget. The Python code can be as follows:
 
 ```python
 import numpy as np
