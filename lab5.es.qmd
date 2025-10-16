@@ -488,5 +488,5 @@ La próxima sesión cambiaremos a un paradigma diferente: **sistemas de recomend
 
 ::: {.margin}
 # Explora los Laboratorios {.unnumbered .unlisted}
-{{< include lab-cards.qmd >}}
+{{< include lab-cards.es.qmd >}}
 :::
